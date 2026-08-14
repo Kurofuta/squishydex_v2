@@ -1,0 +1,113 @@
+:root {
+    --bg: #FFF5F8;
+    --bg-card: #FFFFFF;
+    --primary: #FCAEDB; /*#FF6B9D */
+    --primary-light: #FFB3CC;
+    --primary-dark: #FA70C0;
+    --text: #2D2A32;
+    --text-muted: #8B8494;
+    --border: #F0E4EA;
+    --shadow: 0 4px 20px rgba(255, 107, 157, 0.12);
+    --shadow-hover: 0 8px 30px rgba(255, 107, 157, 0.2);
+    --sidebar-width: 380px;
+    --radius: 16px;
+    --radius-sm: 10px;
+}
+
+*, *::before, *::after {
+margin: 0;
+padding: 0;
+}
+
+@font-face {
+  font-family: 'Sigokae';
+  src: url('../fonts/sigokae/Sigokae Demo.otf') format('opentype'),
+       url('../fonts/sigokae/Sigokae Demo.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#img_home{
+width: 600px;
+}
+
+#presentation{
+text-align: center;
+}
+
+body{
+font-family: 'Sigokae', sans-serif;
+background: var(--bg);
+color: var(--text);
+min-height: 100vh;
+margin: 0;
+padding: 0;
+top : 0;
+}
+
+main {
+padding: 3px 60px 40px 60px;
+max-width: 1200px;
+}
+
+h2{
+margin-top: 25px;    
+margin-bottom: 10px; 
+}
+
+#navbar {
+background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+display: flex;
+text-align: center;
+padding: 20px 0px;
+  }
+
+  #menu {
+align-items: center;
+gap: 10px;
+width: 100%;
+  }
+
+#menu>a{
+color: black;
+text-decoration: none;
+padding: 25px;
+}
+
+#menu>a:hover{
+background-color: blue;
+transition-duration: 0.25s;
+}
+
+#sign_in_up>a{
+color: black;
+text-decoration: none;
+padding: 25px;
+}
+
+
+#titre_navbar{
+    text-align: left;
+}
+
+/*
+main{
+max-width: 1000px;
+margin: 0 auto;
+padding: 30px 20px;
+}
+*/
+
+h1,h2{
+margin-top: 40px;
+margin-bottom: 15px;
+color: var(--text);
+}
+
+
+p{
+line-height: 1.6;
+margin-bottom: 20px;
+color: var(--text-muted);
+}
+        

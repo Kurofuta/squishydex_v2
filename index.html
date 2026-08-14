@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registre Squishy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="icon" href="static/images/logos/logo.jpg" type="image/x-icon">
+</head> 
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo">
+                <img id="logo-icon" src="{{ url_for('static', filename='images/logos/logo.jpg') }}" >
+                <h1>SquishyDex</h1>
+            </div>
+            <nav class="tabs" id="main-tabs">
+                <button class="tab active" data-tab="gallery">Galerie</button>
+                <button class="tab" data-tab="add">Ajouter</button>
+            </nav>
+            <div class="stats" id="stats">
+                <div class="stat">
+                    <span class="stat-value" id="stat-owned">0</span>
+                    <span class="stat-label">Possédés</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value" id="stat-total">0</span>
+                    <span class="stat-label">Total</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value" id="stat-qty">0</span>
+                    <span class="stat-label">Quantité</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main" id="view-gallery">
+        <aside class="filters">
+            <h2>Filtres</h2>
+            <label class="filter-option">
+                <input type="radio" name="filter" value="all" checked>
+                <span>Tous</span>
+            </label>
+            <label class="filter-option">
+                <input type="radio" name="filter" value="owned">
+                <span>Possédés</span>
+            </label>
+            <label class="filter-option">
+                <input type="radio" name="filter" value="missing">
+                <span>Manquants</span>
+            </label>
+            <hr>
+            <h3>Catégories</h3>
+            <div id="category-filters"></div>
+        </aside>
+
+        <section class="gallery-section">
+            <div class="gallery" id="gallery"></div>
+        </section>
+
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-empty" id="sidebar-empty">
+                <span class="sidebar-empty-icon">✨</span>
+                <p>Clique sur un squishy pour voir les détails</p>
+            </div>
+            <div class="sidebar-content hidden" id="sidebar-content">
+                <button class="sidebar-close" id="sidebar-close" aria-label="Fermer">&times;</button>
+
+                <header class="sidebar-header">
+                    <h2 id="sidebar-name"></h2>
+                    <span class="sidebar-category" id="sidebar-category"></span>
+                </header>
+
+                <div class="sidebar-image-wrap">
+                    <img id="sidebar-img" src="" alt="">
+                </div>
+
+                <div class="sidebar-summary">
+                    <div class="summary-item">
+                        <span class="summary-label">Statut</span>
+                        <span class="badge" id="sidebar-status"></span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Quantité totale</span>
+                        <span class="summary-value" id="sidebar-qty"></span>
+                    </div>
+                </div>
+
+                <section class="sidebar-colors">
+                    <h3 class="colors-title">Couleurs</h3>
+                    <div class="colors-list" id="colors-list"></div>
+                </section>
+            </div>
+        </aside>
+    </main>
+
+    <main class="main add-view hidden" id="view-add">
+        <section class="add-section">
+            <div class="add-card">
+                <h2>Ajouter un squishy</h2>
+                <p class="add-subtitle">Remplis les informations pour l'ajouter à ton registre.</p>
+
+                <form id="add-form" class="add-form">
+                    <div class="form-row">
+                        <label class="form-label" for="add-name">Nom</label>
+                        <input type="text" id="add-name" name="name" required placeholder="Ex : Dumpling Bleu">
+                    </div>
+
+                    <div class="form-row">
+                        <label class="form-label" for="add-category">Catégorie</label>
+                        <select id="add-category" name="category" required>
+                            {% for cat in categories %}
+                            <option value="{{ cat }}">{{ cat }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-row form-row-split">
+                        <div>
+                            <label class="form-label" for="add-color-name">Couleur</label>
+                            <input type="text" id="add-color-name" name="color_name" required placeholder="Ex : Rose">
+                        </div>
+                        <div>
+                            <label class="form-label" for="add-color-hex">Teinte</label>
+                            <input type="color" id="add-color-hex" name="color_hex" value="#FFB6C1">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <label class="form-label" for="add-quantity">Quantité</label>
+                        <input type="number" id="add-quantity" name="quantity" min="0" value="1">
+                        <span class="form-hint">0 = non possédé (grisé dans la galerie)</span>
+                    </div>
+
+                    <div class="form-row">
+                        <label class="form-label" for="add-image">Image</label>
+                        <input type="file" id="add-image" name="image" accept="image/*" required>
+                        <div class="image-preview hidden" id="image-preview">
+                            <img id="preview-img" src="" alt="Aperçu">
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Ajouter au registre</button>
+                    </div>
+                    <p class="form-message hidden" id="form-message"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

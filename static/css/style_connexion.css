@@ -1,0 +1,34 @@
+:root {
+    --bg: #FFF5F8;
+    --bg-card: #FFFFFF;
+    --primary: #FCAEDB; /*#FF6B9D */
+    --primary-light: #FFB3CC;
+    --primary-dark: #FA70C0;
+    --text: #2D2A32;
+    --text-muted: #8B8494;
+    --border: #F0E4EA;
+    --shadow: 0 4px 20px rgba(255, 107, 157, 0.12);
+    --shadow-hover: 0 8px 30px rgba(255, 107, 157, 0.2);
+    --sidebar-width: 380px;
+    --radius: 16px;
+    --radius-sm: 10px;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    padding: 15px 40px;
+}
+
+body{
+    top : 0;
+    font-family: 'Nunito', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
