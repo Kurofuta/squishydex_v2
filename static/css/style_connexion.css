@@ -32,3 +32,45 @@ body{
     margin: 0;
     padding: 0;
 }
+
+nav {
+    display: flex;
+    flex-direction: row-reverse; 
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.buttons-container{
+    color: black
+}
+
+form{
+    border-radius: 10px;
+    padding: 20px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row-reverse; 
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Ajoute un peu d'espace autour pour que ça respire */
+    margin-bottom: 30px;
+}
+
+.bouton-retour {
+    text-decoration: none;
+    color: black;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#bouton-retour>a :hover{
+    background-color: rgba(255, 255, 255, 0.4); 
+    color: black;
+    border-radius: 6px;
+}
