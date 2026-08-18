@@ -19,58 +19,85 @@
     padding: 0;
 }
 
-header{
-    padding: 15px 40px;
-}
+@font-face {
+    font-family: 'Sigokae';
+    src: url('../fonts/ashigea_regular/Ashigea-Regular.otf') format('opentype'),
+         url('../fonts/ashigea_regular/ffonts_info_Ashigea-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
 
 body{
-    top : 0;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Sigokae', sans-serif;
     background: var(--bg);
     color: var(--text);
     min-height: 100vh;
     margin: 0;
     padding: 0;
-}
+    top : 0;
+  }
 
-nav {
+#navbar{
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     display: flex;
-    flex-direction: row-reverse; 
-    justify-content: space-between;
-    align-items: center; 
-}
-
-.buttons-container{
-    color: black
-}
-
-form{
-    border-radius: 10px;
-    padding: 20px;
-}
-
-nav {
-    display: flex;
-    flex-direction: row-reverse; 
-    justify-content: space-between;
+    text-align: center;
+    padding: 20px 0px;
+  }
+  
+  #menu{
     align-items: center;
-    padding: 10px 20px; /* Ajoute un peu d'espace autour pour que ça respire */
-    margin-bottom: 30px;
-}
-
-.bouton-retour {
-    text-decoration: none;
+    gap: 10px;
+    width: 100%;
+    }
+  
+  #menu>a, .btn{
     color: black;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-#bouton-retour>a :hover{
+    text-decoration: none;
+    padding: 8px 14px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  #menu>a:hover, .btn:hover{
     background-color: rgba(255, 255, 255, 0.4); 
     color: black;
     border-radius: 6px;
-}
+  }
+
+  #return-button{
+    align-items: center;
+    gap: 10px;
+    width: 15%;
+    }
+  
+  #return-button>a{
+    color: black;
+  text-decoration: none;
+  padding: 8px 14px;
+  transition: all 0.2s ease-in-out;
+  min-width: 150px;
+  }
+
+  #return-button>a:hover{
+    background-color: rgba(255, 255, 255, 0.4); 
+    color: black;
+    border-radius: 6px;
+  
+  }
+
+  #titre_connexion>h2{
+    margin-top: 40px;
+    margin-bottom: 15px;
+    color: var(--text);
+    text-align: center;
+    font-size: 35px;
+  }
+
+  #form_connexion{
+    text-align: center;
+    margin-left: 600px;
+    color: var(--text);
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #FFD9F1;
+    max-width: 300px;
+  }

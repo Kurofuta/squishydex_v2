@@ -76,24 +76,25 @@ h2{
   transition: all 0.2s ease-in-out;
 }
 
-#menu>a:hover, .btn:hover{
+#menu>a:hover{
   background-color: rgba(255, 255, 255, 0.4); 
   color: black;
   border-radius: 6px;
 
 }
 
-
-
 #sign_in_up>a{
   color: black;
   text-decoration: none;
-  padding: 25px;
+  padding: 8px 14px;
+  transition: all 0.2s ease-in-out;
 }
 
+#sign_in_up>a:hover{
+  background-color: rgba(255, 255, 255, 0.4); 
+  color: black;
+  border-radius: 6px;
 
-#titre_navbar{
-    text-align: left;
 }
 
 h1,h2{
