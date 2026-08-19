@@ -94,10 +94,34 @@ body{
 
   #form_connexion{
     text-align: center;
-    margin-left: 600px;
+    margin-left: 700px;
     color: var(--text);
     font-size: 20px;
     border-radius: 10px;
     background-color: #FFD9F1;
     max-width: 300px;
+
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 10px; 
+    padding: 20px
+  }
+
+  #btn_valider_connexion{
+    background-color: #FA70C0;
+    border : none;
+    border-radius : 6px;
+    color : white; 
+    padding :10px 20px;
+    font-size: 16px;
+    cursor : pointer;
+    margin-top: 15px;
+  }
+
+  #lien_pas_de_compte{
+    margin-top: 10px;
+    font-size: 13px;
+    color : black;
+    align-items: center;
   }

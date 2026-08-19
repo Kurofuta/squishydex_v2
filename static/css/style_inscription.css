@@ -1,0 +1,30 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+  }
+  
+  @font-face {
+    font-family: 'Sigokae';
+    src: url('../fonts/ashigea_regular/Ashigea-Regular.otf') format('opentype'),
+         url('../fonts/ashigea_regular/ffonts_info_Ashigea-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  body{
+    font-family: 'Sigokae', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    top : 0;
+  }
+
+  #navbar{
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    display: flex;
+    text-align: center;
+    padding: 20px 0px;
+  }
+
