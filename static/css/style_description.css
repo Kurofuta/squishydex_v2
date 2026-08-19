@@ -21,8 +21,8 @@
 
 @font-face {
   font-family: 'Sigokae';
-  src: url('../fonts/ashigea_regular/Ashigea-Regular.otf') format('opentype'),
-       url('../fonts/ashigea_regular/ffonts_info_Ashigea-Regular.ttf') format('truetype');
+  src: url('../fonts/cherry/Cherry\ Juice.otf') format('opentype'),
+       url('../fonts/cherry/cherry.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -57,20 +57,17 @@ h2{
 
 #navbar{
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-  display: flex;
-  text-align: center;
+  z-index: 5;
+  position: fixed;
   padding: 20px 0px;
+  text-align: center;
+  width: 100%;
 }
 
 
-#menu{
-  align-items: center;
-  gap: 10px;
-  flex: 1; 
-  }
 
 #menu>a, .btn{
-  color: black;
+  color: white;
   text-decoration: none;
   padding: 8px 14px;
   transition: all 0.2s ease-in-out;
@@ -83,12 +80,16 @@ h2{
 
 }
 
-#sign_in_up {
-  white-space: nowrap;
+#sign_in_up { 
+  z-index: 5;
+  position: fixed;
+  padding: 20px 0;
+  top: 0;
+  right: 0;
 }
 
 #sign_in_up>a{
-  color: black;
+  color: white;
   text-decoration: none;
   padding: 8px 14px;
   transition: all 0.2s ease-in-out;
@@ -96,7 +97,7 @@ h2{
 
 #sign_in_up>a:hover{
   background-color: rgba(255, 255, 255, 0.4); 
-  color: black;
+  color: white;
   border-radius: 6px;
 }
 
@@ -107,7 +108,7 @@ h1,h2{
 }
 
 
-p{
+.section_para{
   line-height: 1.6;
   margin-bottom: 20px;
   color: var(--text-muted);
