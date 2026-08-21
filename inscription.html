@@ -4,27 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>inscription</title>
-    <link rel="stylesheet" href="static/css/style_connexion.css">
+    <link rel="stylesheet" href="static/css/style_inscription.css">
 </head>
 <body>
 
-    <header>
-        <nav id="navbar">
-          <div id="menu">
-            <a href="#presentation">présentation</a>
-            <a href="#etapes">Comment ça marche ?</a>
-            <a href="#details">Détails ajout d'un squishy</a>
-            <a href="#combats">Combats</a>
-          </div>
+  <header>
+    <nav id="navbar">
+      <img src="images/logos/logo.jpg" alt="Logo" class="logo_nav">
 
-          <div id="return-button">
-            <a href="description.html">&larr;retour au site</a>
-          </div>
-          
-        </nav>
-      </header>
+      <div id="menu">
+        <a href="#presentation">présentation</a>
+        <a href="#etapes">Comment ça marche ?</a>
+        <a href="#details">Détails ajout d'un squishy</a>
+        <a href="#combats">Combats</a>
+      </div>
 
-      <section>
-        <div id="sign_up_title";
-        <h2>Inscription</h2>
+      <div id="return-button">
+        <a href="description.html">&larr;retour au site</a>
+      </div>
+      
+    </nav>
+  </header>
+
+  <section>
+    <div id="sign_up_title">
+      <h2>Inscription</h2>
     </div>
+
+    <form id="form_inscription">
+        <label for="pseudo">Pseudo :</label>
+        <input type="text" class="input_form" placeholder="Entre ton pseudo" name="pseudo"/>
+
+        <label for="e_mail">E-mail :</label>
+        <input type="email" class="input_form"  name="e_mail"/>
+
+        <label for="password">Mot de passe :</label>
+        <input type="password" class="input_form"  name="password"/>
+
+        <label for="password_confirm">Confirmation_password :</label>
+        <input type="password" class="input_form"  name="password"/>
+
+        <button type="submit" id="btn_valider_inscription">S'inscrire</button>
+
+        <a href="connexion.html" id="déjà_un_compte">Déjà un compte ?</a>
+
+
+  
+    </form>
+
+  </section>
+</body>

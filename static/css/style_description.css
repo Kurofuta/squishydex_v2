@@ -21,8 +21,8 @@
 
 @font-face {
   font-family: 'Sigokae';
-  src: url('../fonts/cherry/Cherry\ Juice.otf') format('opentype'),
-       url('../fonts/cherry/cherry.ttf') format('truetype');
+  src: url('../fonts/cherry/cherryjuice.otf') format('opentype'),
+       url('../fonts/cherry/cherryjuice.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -64,7 +64,10 @@ h2{
   width: 100%;
 }
 
-
+.logo_nav{
+height: 40px;
+width: auto;
+}
 
 #menu>a, .btn{
   color: white;

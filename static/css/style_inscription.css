@@ -1,3 +1,19 @@
+:root {
+  --bg: #FFF5F8;
+  --bg-card: #FFFFFF;
+  --primary: #FCAEDB; /*#FF6B9D */
+  --primary-light: #FFB3CC;
+  --primary-dark: #FA70C0;
+  --text: #2D2A32;
+  --text-muted: #8B8494;
+  --border: #F0E4EA;
+  --shadow: 0 4px 20px rgba(255, 107, 157, 0.12);
+  --shadow-hover: 0 8px 30px rgba(255, 107, 157, 0.2);
+  --sidebar-width: 380px;
+  --radius: 16px;
+  --radius-sm: 10px;
+}
+
 *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -5,8 +21,8 @@
   
   @font-face {
     font-family: 'Sigokae';
-    src: url('../fonts/ashigea_regular/Ashigea-Regular.otf') format('opentype'),
-         url('../fonts/ashigea_regular/ffonts_info_Ashigea-Regular.ttf') format('truetype');
+    src: url('../fonts/cherryjuice/cherryjuice.otf') format('opentype'),
+         url('../fonts/cherry/cherryjuice.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
@@ -28,10 +44,99 @@
     padding: 20px 0px;
   }
 
-  #sign_up_title{
+  #menu{
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    }
+  
+  #menu>a, .btn{
+    color: white;
+    text-decoration: none;
+    padding: 8px 14px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  #menu>a:hover, .btn:hover{
+    background-color: rgba(255, 255, 255, 0.4); 
+    color: black;
+    border-radius: 6px;
+  }
+
+  #return-button{
+    align-items: center;
+    gap: 10px;
+    width: 15%;
+    }
+  
+  #return-button>a{
+    color: white;
+  text-decoration: none;
+  padding: 8px 14px;
+  transition: all 0.2s ease-in-out;
+  min-width: 150px;
+  }
+
+  #return-button>a:hover{
+    background-color: rgba(255, 255, 255, 0.4); 
+    color: black;
+    border-radius: 6px;
+  
+  }
+
+  #presentation{
+    text-align: center;
+  }
+
+  #sign_up_title>h2{
     margin-top: 40px;
     margin-bottom: 15px;
     color: var(--text);
     text-align: center;
     font-size: 35px;
   }
+
+  #form_inscription{
+    text-align: center;
+    margin: auto;
+    color: var(--text);
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #FFD9F1;
+    max-width: 300px;
+
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 10px; 
+    padding: 20px
+  }
+
+.input_form{
+  height: 25px;
+  width: 200px;
+  font-family: 'Sigokae', sans-serif;
+  border-radius: 10px;
+  background-color:#FFF5F8;
+  padding: 5px;
+  border: none;
+}
+
+#btn_valider_inscription{
+  background-color: #FA70C0;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+#déjà_un_compte{
+  margin-top: 10px;
+  font-size: 13px;
+  color: black;
+  align-items: center;
+}
+
