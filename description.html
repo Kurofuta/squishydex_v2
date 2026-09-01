@@ -11,17 +11,28 @@
 
     <header>
         <nav id="navbar">
-            <img src="images/logo.png" class="logo_nav">
-          <div id="menu">
-            <a href="#presentation">Présentation</a>
-            <a href="#etapes">Comment ça marche ?</a>
-            <a href="#details">Détails ajout d'un squishy</a>
-            <a href="#combats">Combats</a>
-          </div>
-
-          <div id="sign_in_up">
-            <a href="connexion.html" >Connexion</a> / <a href="inscription.html">Inscription</a>
-          </div>
+            <img src="static\images\logos\logo.jpg" id="logo_nav">
+            <ul id="menu">
+                <li><a href="#presentation">Présentation</a></li>
+                <!-- <a href="#etapes">Comment ça marche ?</a> -->
+                <li><a href="#details">Obtention d'un squishy</a></li>
+                <li><a href="#combats">Combats</a></li>
+                <li class="dropdown">
+                    <a href="#ressources">Ressources<i class="arrow down"></i></a> 
+                    
+                    <ul class="sous-menu">
+                      <li><a href="#xp">L'experience</a></li>
+                      <li><a href="#pieces">Les pièces</a></li>
+                    </ul>
+                  </li>
+                <li><a href="#shop">Shop</a></li>
+                </ul>
+                
+            <div id="sign_in_up">
+                <button id="theme-toggle" aria-label="Changer de thème">🌙</button>
+                <a id="log_in" href="connexion.html" >Connexion</a> 
+                <a id="sign_up" href="inscription.html">Inscription</a>
+            </div>
 
         </nav>
       </header>
@@ -34,7 +45,7 @@
     </section>
 
 
-    <section id="etapes">
+    <!-- <section id="etapes">
         <h2>Comment ça marche ?</h2>
         <ol>
             <li>Renseigne-toi avec ce site pour tout comprendre.</li>
@@ -42,42 +53,199 @@
             <li>Rend-toi dans la rubrique combats pour mieux les appréhender.</li>
             <li>Pour finir, éclate toi seul ou entre pote, et possède la plus grande collection !</li>
         </ol>  
-    </section>
+    </section> -->
 
 <section id="details">
-    <h2>Détails ajout d'un squishy</h2>
-    <p>Pour ajouter un nouveau squishy à ta collection, rien de plus simple ! Clique sur l'onglet "Ajouter" situé tout en haut de la page, dans l'en-tête du site. Il te suffira ensuite de créer sa fiche en important une photo, puis de préciser sa matière, sa couleur, ainsi que le nombre d'exemplaires que tu possèdes.
+    <h2 class="para_title">Obtention d'un squishy</h2>
+    <article>
+        <h4 class="para_subtitle">Système de Coffres et Raretés</h4>
+        <p class="para_section">Pour rendre l'ouverture des coffres excitante, associe chaque couleur à un taux d'obtention et à un bonus d'XP spécifique si le joueur tombe sur un doublon :</p>
+        <ul id="rarity_list">
+            <li>Commun (Gris/Blanc) : 60% de chance — Doublon = +5 XP</li>
+            <li>Rare (Bleu) : 25% de chance — Doublon = +15 XP</li>
+            <li>Épique (Violet) : 10% de chance — Doublon = +40 XP</li>
+            <li>Légendaire (Doré) : 4% de chance — Doublon = +100 XP</li>
+            <li>Mythique (Rouge/Arc-en-ciel) : 1% de chance — Doublon = +250 XP</li>
+        </ul>
+    </article>
 </section>
 
 
 <section id="combats">
-    <h2>Rubrique combats</h2>
-    <p>Une rubrique dédiée aux combats est disponible sur le site ! Pour un maximum de fun, tu auras le choix : tu pourras t'entraîner en affrontant des bots, ou bien défier directement tes potes pour prouver qui possède la meilleure équipe de squishies.</p>
-    
-    <article id="xp">
-        <h3>Comment fonctionne l'exp</h3>
-        <p>feffeirfbhiuerf</p>
+    <h2 class="para_title">Rubrique combats</h2>
+    <article>
+        <h4 class="para_subtitle">Progression du Plateau (Contre les Bots)</h4>
+        <p class="para_section">Pour atteindre 100 niveaux, divise le plateau en "Paliers". Tous les 10 niveaux, tu peux intégrer un combat de "Boss" plus difficile qui donne des récompenses doublées.</p>
+
+    <table id="fight_table">
+        <tr>
+            <th>Palier du plateau</th>
+            <th>Niveaux</th>
+            <th>XP Gagnée (Victoire)</th>
+            <th>Pièces (Victoire)</th>
+            <th>Pièces (Défaite)</th>
+        </tr>
+        <tr>
+            <td class="label_row">Débutant</td>
+            <td>1 à 10</td>
+            <td>2 à 15 XP</td>
+            <td>5 à 20</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td class="label_row">Intermédiaire</td>
+            <td>11 à 30</td>
+            <td>20 à 45 XP</td>
+            <td>25 à 50</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td class="label_row">Avancé</td>
+            <td>31 à 60</td>
+            <td>50 à 90 XP</td>
+            <td>60 à 100</td>
+            <td>10</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="label_row">Maître</td>
+            <td>61 à 90</td>
+            <td>100 à 150 XP</td>
+            <td>120 à 200</td>
+            <td>25</td>
+        </tr>
+    </table>
     </article>
-
-    <article id="pieces">
-        <h3>Comment fonctionne les pièces</h3>
-        <p>feffeirfbhiuerf</p>
+    <article id="amical_match">
+        <h4 class="para_subtitle">Comment fonctionne les match amicaux (à venir!!!)</h4>
+        <p class="para_section">Pour affronter tes potes, la préparation est super simple ! Tout d'abord, rends-toi dans la rubrique Social pour les ajouter en utilisant leur code personnel. Ensuite, direction la rubrique Combats : choisis le mode "Amicaux", rentre le code de ton ami(e), et il ne te reste plus qu'à attendre qu'il ou elle rejoigne la partie pour que le duel commence.</p>
     </article>
-
-    <article id="match amical">
-        <h3>Comment fonctionne les match amicaux</h3>
-        <p>Pour affronter tes potes, la préparation est super simple ! Tout d'abord, rends-toi dans la rubrique Social pour les ajouter en utilisant leur code personnel. Ensuite, direction la rubrique Combats : choisis le mode "Amicaux", rentre le code de ton ami(e), et il ne te reste plus qu'à attendre qu'il ou elle rejoigne la partie pour que le duel commence.</p>
-    </article>
-
-
-
 </section>
 
+<section id="xp">
+    <h2 class="para_title">A quoi sert l'xp ?</h2>
+    <article>
+        <h4 class="para_subtitle">Amélioration des Squishys :</h4>
+
+        <table id="xp_table">
+            <tr>
+                <th>Niveau du Squishy</th>
+                <th>XP Requise</th>
+            </tr>
+            <tr>
+                <td class="label_row">1 ➔ 2</td>
+                <td>10 XP</td>
+            </tr>
+            <tr>
+                <td class="label_row">9 ➔ 10</td>
+                <td>250 XP</td>
+            </tr>
+            <tr>
+                <td class="label_row">24 ➔ 25</td>
+                <td>1 500 XP</td>
+            </tr>
+            <tr>
+                <td class="label_row">49 ➔ 50 (Max)</td>
+                <td>10 000 XP</td>
+            </tr>
+        </table>
+    </article>
+</section>
+    
+<section id="pieces">
+        <h2 class="para_title">A quoi servent les pièces ?</h2>
+    <article>
+        <h4 class="para_subtitle">Amélioration des squishy :</h4>
+    
+        <table id="coin_table">
+            <tr>
+                <th >Niveau du Squishy</th>
+                <th>Pièces Requises</th>
+            </tr>
+            <tr>
+                <td class="label_row">1 ➔ 2</td>
+                <td>15 pièces</td>
+            </tr>
+            <tr>
+                <td class="label_row">2 ➔ 3</td>
+                <td>50 pièces</td>
+            </tr>
+            <tr>
+                <td class="label_row">9 ➔ 10</td>
+                <td>400 pièces</td>
+            </tr>
+            <tr>
+                <td class="label_row">24 ➔ 25</td>
+                <td>2 000 pièces</td>
+            </tr>
+            <tr>
+                <td class="label_row">49 ➔ 50 (Max)</td>
+                <td>15 000 pièces</td>
+            </tr>
+        </table>
+        <h4 class="para_subtitle">Les pièces servent aussi pour le shop.</h4>
+    </section>
+
+    <section id="shop">
+        <h2 class="para_title">Shop :</h2>
+        <article>
+        <h4 class="para_subtitle">Boutique de Coffres :</h4>
+        <table id="chests_table">
+            <tr>
+                <th>Type de Coffre</th>
+                <th>Prix (Pièces)</th>
+                <th>Contenu et Probabilités</th>
+            </tr>
+            <tr>
+                <td class="label_row">Coffre Basique</td>
+                <td>100</td>
+                <td>80% Commun, 20% Rare</td>
+            </tr>
+                <td class="label_row">Coffre Brillant</td>
+                <td>450</td>
+                <td>60% Rare, 35% Épique, 5% Légendaire</td>
+            </tr>
+            <tr>
+                <td class="label_row">Coffre Suprême</td>
+                <td>1 500</td>
+                <td>70% Épique, 25% Légendaire, 5% Mythique</td>
+            </tr>
+        </table>
+    </article>
+    <article id="utils_article">
+        <h4 class="para_subtitle">Boutique d'Expérience (Consommables) :</h4> 
+           <table id="utilities_table">
+            <tr>
+                <th>Objet</th>
+                <th>Prix (Pièces)</th>
+                <th>Effet sur le Squishy</th>
+            </tr>
+            <tr>
+                <td class="label_row">Potion d'XP Mineure</td>
+                <td>35</td>
+                <td>Donne instantanément +15 XP</td>
+            </tr>
+                <td class="label_row">Potion d'XP Majeure</td>
+                <td>180</td>
+                <td>Donne instantanément +100 XP</td>
+            </tr>
+            <tr>
+                <td class="label_row">Ticket Multiplicateur</td>
+                <td>250</td>
+                <td>Double l'XP gagnée lors des 10 prochains combats</td>
+            </tr>
+        </table>
+    </article>
+</section>
+
+
+
 <section>
-        <h3> mon site squishydex va vous permettre de recenser vos squishy mais pas que !!! Vous aller pouvoir aussi participer à des combats avec vos amies ou d'autres adversaires . obtenir des point durant ses combats qui sont expliquer dans la rubrique associé, qui vous expliquera tout les points sur les combats.</h3>
-        </section>
+        <h4 class="para_subtitle"> mon site squishydex va vous permettre de recenser vos squishy mais pas que !!! Vous aller pouvoir aussi participer à des combats avec vos amies ou d'autres adversaires . obtenir des point durant ses combats qui sont expliquer dans la rubrique associé, qui vous expliquera tout les points sur les combats.</h4>
+</section>
 
 </main>
 
 </body>
+<script src="static\js\anim.js"></script>
 </html>

@@ -17,7 +17,10 @@
 *, *::before, *::after {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
+  scroll-margin-top: 60px;
 }
+
 
 @font-face {
   font-family: 'Sigokae';
@@ -25,14 +28,6 @@
        url('../fonts/cherry/cherryjuice.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-}
-
-#img_home{
-  width: 600px;
-}
-
-#presentation{
-  text-align: center;
 }
 
 body{
@@ -45,15 +40,18 @@ body{
   top : 0;
 }
 
-main {
-  padding: 3px 60px 40px 60px;
-  max-width: 1200px;
+body.dark-theme {
+  --bg: #181216;
+  --bg-card: #241b21;
+  --primary: #F962BA;
+  --primary-light: #FFB3CC;
+  --primary-dark: #F60993;
+  --text: #F5EEF2;
+  --text-muted: #A698A0;
+  --border: #3D2E37;
 }
 
-h2{
-  margin-top: 25px;    
-  margin-bottom: 10px; 
-}
+/*---------------navbar--------------------*/
 
 #navbar{
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
@@ -64,23 +62,94 @@ h2{
   width: 100%;
 }
 
-.logo_nav{
-height: 40px;
-width: auto;
+#logo_nav{
+  height: 40px;
+  width: 50px;
+  left: 0;
+  position: fixed;
+  margin-top: -10px;
+  margin-left: 10px;
+  border-radius: 10px;
 }
 
-#menu>a, .btn{
+#menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu > li > a {
   color: white;
   text-decoration: none;
   padding: 8px 14px;
   transition: all 0.2s ease-in-out;
 }
 
-#menu>a:hover{
+#menu > li > a:hover{
   background-color: rgba(255, 255, 255, 0.4); 
   color: black;
   border-radius: 6px;
+}
 
+.arrow {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  margin-left: 5px;
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down{
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+/* --- LE SECRET DU MENU DÉROULANT --- */
+
+/* 1. Positionnement du parent */
+.dropdown {
+  position: relative; /* Indispensable pour positionner le sous-menu par rapport à lui */
+}
+
+/* 2. Style et masquage du sous-menu */
+.sous-menu {
+  display: none; /* Caché par défaut */
+  position: absolute; /* S'affiche par-dessus le reste de la page */
+  top: 100%; /* S'aligne exactement sous l'élément parent */
+  left: 0;
+  background-color: white;
+  list-style: none;
+  padding: 0;
+  margin: 8px 0px;
+  min-width: 150px;
+  border-radius: 10px;
+  border: solid 1px var(--primary-dark);
+}
+
+.sous-menu li a {
+  display: block;
+  padding: 10px 15px;
+  color: #2d2d2d;
+  background-color: #FFFFFF;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.sous-menu li a:hover {
+  background-color: var(--primary-dark);
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+/* 3. L'action magique au survol de la souris */
+.dropdown:hover .sous-menu {
+  display: block; /* Affiche le menu quand on survole l'élément parent */
 }
 
 #sign_in_up { 
@@ -91,29 +160,140 @@ width: auto;
   right: 0;
 }
 
-#sign_in_up>a{
+#sign_in_up>a,button{
   color: white;
   text-decoration: none;
-  padding: 8px 14px;
   transition: all 0.2s ease-in-out;
+  border-radius: 10px;
 }
 
 #sign_in_up>a:hover{
-  background-color: rgba(255, 255, 255, 0.4); 
+  background-color: #3BC6A9; 
   color: white;
   border-radius: 6px;
 }
 
-h1,h2{
+#theme-toggle{
+  background-color: var(--primary-dark);
+  border: none;
+  /* width: 30px;
+  height: 30px; */
+}
+
+#theme-toggle:hover{
+  background-color: var(--bg-card);
+  border: none;
+  /* width: 30px;
+  height: 30px; */
+}
+
+#log_in{
+  background-color: #FFD166;
+  padding: 8px 24px 8px 14px;
+  margin-right: -23px;
+}
+
+#sign_up{
+  background-color: #4DE1C1;
+  padding: 8px 14px;
+  margin-right: 10px;
+}
+
+/*---------------body--------------------*/
+
+h1,h2,h3{
   margin-top: 40px;
   margin-bottom: 15px;
   color: var(--text);
 }
 
+main {
+  padding: 3px 60px 40px 60px;
+  max-width: 1200px;
+}
 
-.section_para{
+
+#img_home{
+  width: 600px;
+}
+
+#presentation{
+  text-align: center;
+}
+
+article{
+border-top: solid 1px var(--primary-light);
+}
+
+.para_subtitle{
+  line-height: 1.6;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: var(--text);
+  margin-left: 15px;
+}
+
+.para_section{
   line-height: 1.6;
   margin-bottom: 20px;
-  color: var(--text-muted);
+  color: var(--text);
+  margin-left: 15px;
+}
+
+#rarity_list{
+  margin-bottom: 20px;
+  color: var(--text);
+  margin-left: 65px;
+}
+
+#fight_table{
+  margin-left: 65px;
+  width: 60%;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+th{
+  border-bottom: solid 1px var(--primary-light);
+}
+
+.label_row{
+  border-right: solid 1px var(--primary-light);
+}
+
+#utils_article{
+  border: none;
+}
+#amical_match{
+  border: none;
+}
+
+
+#xp_table{
+  margin-left: 65px;
+  width: 20%;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+#coin_table{
+  margin-left: 65px;
+  width: 20%;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+#chests_table{
+  margin-left: 65px;
+  width: 45%;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+#utilities_table{
+  margin-left: 65px;
+  width: 45%;
+  text-align: center;
+  border-collapse: collapse;
 }
         
