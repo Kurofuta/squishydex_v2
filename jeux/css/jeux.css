@@ -1,0 +1,66 @@
+:root {
+    --bg: #FFF5F8;
+    --bg-card: #FFFFFF;
+    --primary: #FCAEDB; /*#FF6B9D */
+    --primary-light: #FFB3CC;
+    --primary-dark: #FA70C0;
+    --text: #2D2A32;
+    --text-muted: #8B8494;
+    --border: #F0E4EA;
+    --shadow: 0 4px 20px rgba(255, 107, 157, 0.12);
+    --shadow-hover: 0 8px 30px rgba(255, 107, 157, 0.2);
+    --btn-login: #FFB7B2
+    --btn-signup: #9370DB
+    --sidebar-width: 380px;
+    --radius: 16px;
+    --radius-sm: 10px;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    scroll-margin-top: 60px;
+  }
+
+                                                                            /*-------------------------------- NAVBAR --------------------------------*/
+#navbar{
+background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+z-index: 5;
+position: fixed;
+padding: 20px 0px;
+text-align: center;
+width: 100%;
+}
+
+
+#coffre{
+    color: white;
+    text-align: left;
+}
+
+#niveau{
+    color: white;
+}
+
+#progression{
+    color: white;
+}
+
+#piece{
+    color: white;
+}
+
+#nourritures{
+    color: white;
+}
+
+#logo_nav{
+    height: 40px;
+    width: 50px;
+    left: 0;
+    position: fixed;
+    margin-top: -10px;
+    margin-left: 10px;
+    border-radius: 10px;
+}

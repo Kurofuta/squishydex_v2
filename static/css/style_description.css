@@ -9,6 +9,8 @@
     --border: #F0E4EA;
     --shadow: 0 4px 20px rgba(255, 107, 157, 0.12);
     --shadow-hover: 0 8px 30px rgba(255, 107, 157, 0.2);
+    --btn-login: #FFB7B2
+    --btn-signup: #9370DB
     --sidebar-width: 380px;
     --radius: 16px;
     --radius-sm: 10px;
@@ -98,6 +100,7 @@ body.dark-theme {
   display: inline-block;
   padding: 3px;
   margin-left: 5px;
+  margin-bottom: 3px;
 }
 
 .up {
@@ -156,8 +159,10 @@ body.dark-theme {
   z-index: 5;
   position: fixed;
   padding: 20px 0;
-  top: 0;
+  top: -8px;
   right: 0;
+  display: flex;
+  align-items: center;
 }
 
 #sign_in_up>a,button{
@@ -176,8 +181,10 @@ body.dark-theme {
 #theme-toggle{
   background-color: var(--primary-dark);
   border: none;
-  /* width: 30px;
-  height: 30px; */
+  width: 30px;
+  height: 30px; 
+  margin-right: 10px;
+  align-items: center;
 }
 
 #theme-toggle:hover{
@@ -188,13 +195,13 @@ body.dark-theme {
 }
 
 #log_in{
-  background-color: #FFD166;
+  background-color: #FFB7B2;
   padding: 8px 24px 8px 14px;
   margin-right: -23px;
 }
 
 #sign_up{
-  background-color: #4DE1C1;
+  background-color: #9370DB;
   padding: 8px 14px;
   margin-right: 10px;
 }
