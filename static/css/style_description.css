@@ -74,6 +74,17 @@ body.dark-theme {
   border-radius: 10px;
 }
 
+#lien_app{
+  color: white;
+  left: 0;
+  position: fixed;
+  margin-left: 80px;
+  padding: 8px 14px;
+  top: 12px;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
 #menu {
   list-style: none;
   display: flex;
