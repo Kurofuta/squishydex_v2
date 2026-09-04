@@ -9,58 +9,51 @@
     --border: #F0E4EA;
     --shadow: 0 4px 20px rgba(255, 107, 157, 0.12);
     --shadow-hover: 0 8px 30px rgba(255, 107, 157, 0.2);
-    --btn-login: #FFB7B2
-    --btn-signup: #9370DB
+    --btn-login: #FFB7B2;
+    --btn-signup: #9370DB;
     --sidebar-width: 380px;
     --radius: 16px;
     --radius-sm: 10px;
 }
 
 *, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
-    scroll-margin-top: 60px;
-  }
-
-                                                                            /*-------------------------------- NAVBAR --------------------------------*/
-#navbar{
-background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-z-index: 5;
-position: fixed;
-padding: 20px 0px;
-text-align: center;
-width: 100%;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  scroll-margin-top: 60px;
 }
 
-
-#coffre{
-    color: white;
-    text-align: left;
-}
-
-#niveau{
-    color: white;
-}
-
-#progression{
-    color: white;
-}
-
-#piece{
-    color: white;
-}
-
-#nourritures{
-    color: white;
-}
-
-#logo_nav{
-    height: 40px;
-    width: 50px;
-    left: 0;
+.profil_joueur {
     position: fixed;
-    margin-top: -10px;
-    margin-left: 10px;
-    border-radius: 10px;
+    top: 20px;
+    left: 20px;
+    width: 70px;
+    height: 70px;
+    z-index: 10;
 }
+
+.avatar_img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #FA70C0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.badge_niveau{
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    display: flex;
+}  
+
+body {
+    background-image: url('../images/map.jpg');
+    background-size: contain;         /* <-- C'est ICI qu'on règle la taille (ex: contain, 70%, auto 60vh) */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;               /* Doit rester à 100vh pour couvrir tout l'écran */
+}
+

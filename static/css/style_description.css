@@ -9,8 +9,8 @@
     --border: #F0E4EA;
     --shadow: 0 4px 20px rgba(255, 107, 157, 0.12);
     --shadow-hover: 0 8px 30px rgba(255, 107, 157, 0.2);
-    --btn-login: #FFB7B2
-    --btn-signup: #9370DB
+    --btn-login: #FFB7B2;
+    --btn-signup: #9370DB;
     --sidebar-width: 380px;
     --radius: 16px;
     --radius-sm: 10px;
@@ -72,17 +72,26 @@ body.dark-theme {
   margin-top: -10px;
   margin-left: 10px;
   border-radius: 10px;
+  z-index: 10;
 }
 
-#lien_app{
+#page_jeu{
+  display: inline-block;
   color: white;
   left: 0;
   position: fixed;
-  margin-left: 80px;
+  margin-left: 70px;
   padding: 8px 14px;
+  background-color: #FFB7B2;
   top: 12px;
   text-decoration: none;
   border-radius: 10px;
+  z-index: 10;
+  transition: all 0.2s ease-in-out;
+}
+
+#page_jeu:hover, #btn_squishydex:hover, #lien_app:hover {
+  background-color: var(--primary-dark);
 }
 
 #menu {
