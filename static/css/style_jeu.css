@@ -23,6 +23,19 @@
   scroll-margin-top: 60px;
 }
 
+header {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 30px; /* C'est cet espace qui va séparer l'avatar, la barre d'XP et les pièces */
+  z-index: 100;
+}
+
+
+                                                                                    /*-------profil-------*/
+
 .profil_joueur {
     position: fixed;
     top: 20px;
@@ -39,21 +52,195 @@
     object-fit: cover;
     border: 4px solid #FA70C0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}                         
+
+                                                                                    /*-------engrenages-------*/
+
+.settings-button {
+  z-index: 10;
+  background: white;
+  top: 20px;
+  right: 20px;
+  position: fixed;
+  border: 5px solid black;
+  width: 60px;
+  height: 60px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-.badge_niveau{
-    position: absolute;
-    bottom: -5px;
-    right: -5px;
-    display: flex;
-}  
+/* Effet quand on clique sur le bouton */
+.settings-button:active {
+  transform: scale(0.95);
+  background-color: #f0f0f0;
+}
+
+/* Le conteneur invisible pour placer les engrenages */
+.gears-container {
+  position: relative;
+  width: 44px;
+  height: 44px;
+}
+
+/* Placement du grand engrenage */
+.gear-large {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 28px;
+  height: 28px;
+  transition: transform 0.5s ease;
+}
+
+/* Placement du petit engrenage */
+.gear-small {
+  position: absolute;
+  bottom: 0px;
+  right: -2px;
+  width: 22px;
+  height: 22px;
+  transition: transform 0.5s ease;
+}
+
+/* L'animation : on fait tourner les engrenages quand la souris passe dessus ! */
+.settings-button:hover .gear-large {
+  transform: rotate(45deg);
+}
+.settings-button:hover .gear-small {
+  transform: rotate(-45deg);
+}
+
+                                                                    /*-------body-------*/
 
 body {
     background-image: url('../images/map.jpg');
-    background-size: contain;         /* <-- C'est ICI qu'on règle la taille (ex: contain, 70%, auto 60vh) */
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    min-height: 100vh;               /* Doit rester à 100vh pour couvrir tout l'écran */
+    min-height: 100vh;
+}
+
+                                                                    /* ===== Barre d'XP ===== */
+
+.zone_xp {
+    position: fixed;
+    top: 35px;
+    left: 215px;
+    z-index: 10;
+}
+
+.barre_xp {
+    width: 200px;
+    height: 25px;
+    background-color: var(--bg-card);
+    border-radius: 20px;
+    border: 2px solid var(--primary-light);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(252, 174, 219, 0.3);
+}
+
+.barre_remplissage {
+    height: 100%;
+    background: linear-gradient(to right, var(--primary-light), var(--primary-dark));
+    border-radius: 20px;
+    transition: width 0.5s ease;
+}
+
+.texte_niveau {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--text);
+}
+
+                                                                        /*-------coin-------*/
+
+.coin{
+  display: flex;
+  align-items: stretch;
+  width: fit-content;
+  filter: drop-shadow(0px 4px 0px #6e2d00);
+  margin-left: 500px;
+}                                                
+
+.coin_btn{
+  background: linear-gradient(180deg, #FFEA00 0%, #FF9D00 100%);
+  color: white;
+  font-family: 'Arial Black', sans-serif;
+  font-size: 14px;
+  padding: 5px 15px;
+  border: 3px solid #6e2d00; /* Marron foncé identique au bouton Aventure */
+  border-right: none;
+  border-radius: 20px 0 0 20px; /* Arrondi maximal style "pilule" */
+  display: flex;
+  align-items: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.btn_plus{
+  background: linear-gradient(180deg, #7FE333 0%, #44A300 100%);
+  color: white;
+  font-family: 'Arial Black', sans-serif;
+  font-size: 18px;
+  padding: 5px 15px;
+  cursor: pointer;
+  border: 3px solid #6e2d00;
+  border-radius: 0 20px 20px 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  transition: transform 0.1s;
+}
+
+
+                                                                        /*-------btn_aventure-------*/
+
+.btn_aventure{
+    margin-left: 20px;
+    bottom: -800px;
+    position: relative;
+    background: linear-gradient(180deg, #ff8c00 0%, #d35400 100%);
+    border: 3px solid #8b3a00;
+    border-radius: 50px; /* Donne la forme ovale */
+    padding: 15px 45px;
+    color: white;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    box-shadow: 0 6px 0 #6e2d00, 0 10px 15px rgba(0,0,0,0.3);
+    transition: all 0.2s ease;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-aventure:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 9px 0 #6e2d00, 0 15px 20px rgba(0,0,0,0.4);
+  background: linear-gradient(180deg, #ffa500 0%, #e67e22 100%);
+}
+
+.btn-aventure:active {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 #6e2d00, 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.swords {
+  font-size: 32px;
+  margin-bottom: -5px;
+  filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.5));
 }
 
