@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>squishydex</title>
-    <link rel="stylesheet" href="static/css/style_jeu.css">
+    <link rel="stylesheet" href="style_jeu.css">
 </head>
 <body> <!-- Le body DOIT commencer avant ton header -->
   <header>
     <div class="profil_joueur">
       <img
-        src="static/images/profils/pp_jeu.jpg" 
+        src="pp_jeu.jpg" 
         alt="Avatar" class="avatar_img">
     </div>
       <div class="zone_xp">
@@ -58,21 +58,13 @@
     
     <h2>Squishydex</h2>
     <nav class="liens-sidebar">
-      <a href="#">Profil</a>
       <a href="#">Ma Collection</a>
-      <a href="#">Boutique</a>
-      <a href="#">Aventures</a>
-      <a href="#">Paramètres</a>
+      <a href="#">Ouvrir un coffre</a>
+      <a href="#">Arène de combat</a>
+      <a href="#">Échanges</a>
     </nav>
   </div>
   
-  <!-- La boîte de la pop-up -->
-  <div id="ma-popup">
-    <button id="btn-fermer-popup">&times;</button>
-    <h2>Félicitations !</h2>
-    <p>Vous avez obtenu un nouveau squishy rare.</p>
-  </div>
-
   <main>
     <section>
       <article>
@@ -84,7 +76,7 @@
   </main>
 
   <footer>
-    <button id="btn-ouvrir-popup" class="btn_aventure">
+    <button class="btn_aventure">
       <span class="swords">⚔️</span>
       <span class="text">AVENTURE</span>
     </button>
@@ -94,8 +86,7 @@
     </button>
   </footer>
   
-<script src="static\js\sidebar.js"></script>
-<script src="static\js\popup.js"></script>
+<script src="anim.js"></script>
 </body> 
 </html>
 

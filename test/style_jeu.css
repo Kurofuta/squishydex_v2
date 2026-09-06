@@ -121,7 +121,7 @@ header {
 /*--------------------------------------------body-----------------------------------------*/
 
 body {
-    background-image: url('../images/map_1.jpg');
+    background-image: url('map_1.jpg');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -356,7 +356,7 @@ box-shadow: 0 3px 0 #6e2d00, 0 5px 10px rgba(0,0,0,0.2);
   filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.5));
 }
 
-/* ------------------------------------------------ La Sidebar --------------------------------------------- */
+/* --- La Sidebar --- */
 .sidebar {
   position: fixed; /* Reste fixe même si on scrolle */
   top: 0;
@@ -421,43 +421,3 @@ box-shadow: 0 3px 0 #6e2d00, 0 5px 10px rgba(0,0,0,0.2);
 .liens-sidebar a:hover {
   color: #f39c12; /* Couleur au survol */
 }
-
-.sidebar h2 {
-  position: relative;
-  padding-bottom: 12px; /* Espace entre le texte et le trait */
-  margin-bottom: 20px; /* Espace avant le premier lien "Profil" */
-}
-
-.sidebar h2::after {
-  content: "";
-  position: absolute;
-  left: 0; /* Aligne le trait à gauche du texte */
-  bottom: 0;
-  width: 150px; /* Longueur du trait (à ajuster selon tes goûts) */
-  height: 4px; /* Épaisseur du trait */
-  background: var(--primary-light); /* Rappelle le rose de ton interface */
-  border-radius: 4px; /* Bords arrondis pour un effet plus doux */
-}
-
-/* --------------------------------------------popup-----------------------------------------*/
-
-/* popup-aventure */
-#ma-popup {
-  position: fixed;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%); /* Règle d'or pour centrer parfaitement */
-  background: white;
-  width: clamp(1000px, 80vw, 1200px);
-  height: clamp(500px, 60vh, 700px);
-  padding: 30px;
-  border-radius: 16px;
-  z-index: 1001; /* Au-dessus du fond sombre */
-  display: none; /* Invisible par défaut */
-}
-
-/* La classe "interrupteur" que le JavaScript va allumer/éteindre */
-.afficher {
-  display: block !important;
-}
-
-/* popup-boutique */
