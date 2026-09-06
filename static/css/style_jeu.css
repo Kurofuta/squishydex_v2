@@ -135,8 +135,8 @@ body {
 }
 
 .barre_xp {
-    width: 200px;
-    height: 25px;
+    width: clamp(200px, 14.64vw, 400px);
+    height: clamp(25px, 1.83vw, 50px);
     background-color: var(--bg-card);
     border-radius: 20px;
     border: 2px solid var(--primary-light);
