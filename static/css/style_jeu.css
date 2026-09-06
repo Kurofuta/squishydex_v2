@@ -129,8 +129,8 @@ body {
 
 .zone_xp {
     position: fixed;
-    top: 60px;
-    left: 65px;
+    top: clamp(60px, 4.39vw, 120px);
+    left: clamp(65px, 4.78vw, 100px);
     z-index: 0;
 }
 
