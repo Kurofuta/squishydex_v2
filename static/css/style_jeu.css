@@ -40,8 +40,8 @@ header {
     position: fixed;
     top: 20px;
     left: 20px;
-    width: 70px;
-    height: 70px;
+    width: clamp(70px, 5.12vw, 140px);
+    height: clamp(70px, 5.12vw, 140px);
     z-index: 10;
 }
 
@@ -125,13 +125,13 @@ body {
     min-height: 100vh;
 }
 
-                                                                    /* ===== Barre d'XP ===== */
+  /* ============================== Barre d'XP ============================================== */
 
 .zone_xp {
     position: fixed;
-    top: 35px;
-    left: 215px;
-    z-index: 10;
+    top: 60px;
+    left: 65px;
+    z-index: 0;
 }
 
 .barre_xp {
