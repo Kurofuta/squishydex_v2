@@ -1,28 +1,39 @@
 :root {
-    --bg: #FFF5F8;
-    --bg-card: #FFFFFF;
-    --bg-card-50: rgba(92, 92, 92, 0.5);
-    --primary: #FCAEDB; /*#FF6B9D */
-    --primary-light: #FFB3CC;
-    --primary-dark: #FA70C0;
-    --text: #2D2A32;
-    --text-light: #FFFFFF;
-    --text-muted: #8B8494;
-    --border: #F0E4EA;
-    --shadow: 0 4px 20px rgba(255, 107, 157, 0.12);
-    --shadow-hover: 0 8px 30px rgba(255, 107, 157, 0.2);
-    --btn-login: #FFB7B2;
-    --btn-signup: #9370DB;
-    --sidebar-width: 380px;
-    --radius: 16px;
-    --radius-sm: 10px;
+  --bg: #fff5f8;
+  --bg-card: #ffffff;
+  --bg-card-50: rgba(92, 92, 92, 0.5);
+  --primary: #fcaedb; /*#FF6B9D */
+  --primary-light: #ffb3cc;
+  --primary-dark: #fa70c0;
+  --text: #2d2a32;
+  --text-light: #ffffff;
+  --text-muted: #8b8494;
+  --border: #f0e4ea;
+  --shadow: 0 4px 20px rgba(255, 107, 157, 0.12);
+  --shadow-hover: 0 8px 30px rgba(255, 107, 157, 0.2);
+  --btn-login: #ffb7b2;
+  --btn-signup: #9370db;
+  --sidebar-width: 380px;
+  --radius: 16px;
+  --radius-sm: 10px;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
   scroll-margin-top: 60px;
+}
+
+@font-face {
+  font-family: "Sigokae";
+  src:
+    url("../fonts/cherry/cherryjuice.otf") format("opentype"),
+    url("../fonts/cherry/cherryjuice.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 header {
@@ -35,37 +46,36 @@ header {
   z-index: 100;
 }
 
-
- /*---------------------------------------profil-----------------------------*/
+/*---------------------------------------profil-----------------------------*/
 
 .profil_joueur {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    width: clamp(70px, 5.12vw, 140px);
-    height: clamp(70px, 5.12vw, 140px);
-    z-index: 10;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: clamp(70px, 5.12vw, 140px);
+  height: clamp(70px, 5.12vw, 140px);
+  z-index: 10;
 }
 
-.avatar_img{
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #FA70C0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}                         
+.avatar_img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fa70c0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
 
- /*--------------------------------------------engrenages------------------------------------*/
+/*--------------------------------------------engrenages------------------------------------*/
 
 .settings-button {
   z-index: 10;
   background-color: var(--bg-card-50);
-  top: 20px;
-  right: 20px;
+  top: clamp(20px, 1.46vw, 30px);
+  right: clamp(20px, 1.46vw, 30px);
   position: fixed;
   border: 2px solid var(--primary-light);
-  Border-radius: 15px;
+  border-radius: 15px;
   width: 37px;
   height: 37px;
   display: inline-flex;
@@ -73,7 +83,9 @@ header {
   justify-content: center;
   cursor: pointer;
   padding: 0;
-  transition: background-color 0.2s ease, transform 0.1s ease;
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
 }
 
 /* Effet quand on clique sur le bouton */
@@ -121,116 +133,120 @@ header {
 /*--------------------------------------------body-----------------------------------------*/
 
 body {
-    background-image: url('../images/map_1.jpg');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    min-height: 100vh;
+  background-image: url("../images/map_1.jpg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 
-  /* ============================== Barre d'XP ============================================== */
+/* ============================== Barre d'XP ============================================== */
 
 .zone_xp {
-    position: fixed;
-    top: clamp(60px, 4.39vw, 90px);
-    left: clamp(65px, 4.78vw, 100px);
-    z-index: 0;
+  position: fixed;
+  top: clamp(53px, 3.88vw, 80px);
+  left: clamp(60px, 4.39vw, 90px);
+  z-index: 0;
 }
 
 .barre_xp {
-    width: clamp(200px, 14.64vw, 400px);
-    height: clamp(25px, 1.83vw, 50px);
-    background-color: var(--bg-card);
-    border-radius: 20px;
-    border: 2px solid var(--primary-light);
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(252, 174, 219, 0.3);
+  width: clamp(200px, 14.64vw, 400px);
+  height: clamp(25px, 1.83vw, 50px);
+  background-color: var(--bg-card);
+  border-radius: 20px;
+  border: 2px solid var(--primary-light);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(252, 174, 219, 0.3);
 }
 
 .barre_remplissage {
-    height: 100%;
-    background: linear-gradient(to right, var(--primary-light), var(--primary-dark));
-    border-radius: 20px;
-    transition: width 0.5s ease;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    var(--primary-light),
+    var(--primary-dark)
+  );
+  border-radius: 20px;
+  transition: width 0.5s ease;
 }
 
 .texte_niveau {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Arial Black', sans-serif;
-    font-size: 12px;
-    font-weight: bold;
-    color: var(--text-light);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Arial Black", sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--text-light);
 }
 
 /*--------------------------------------------------coin----------------------------------------*/
 
 .barre_pieces {
-    display: flex;
-    align-items: center;
-    top: clamp(20px, 1.46vw, 30px);
-    right: clamp(430px, 32.39vw, 600px);
-    position: fixed;
-    background-color: var(--bg-card-50);
-    border-radius: 20px;
-    border: 2px solid var(--primary-light);
-    height: 25px; /* Même hauteur que la barre d'XP */
-    width: 130px;
-    padding: 4px 0;
-    box-shadow: 0 2px 8px rgba(252, 174, 219, 0.3);
-    justify-content: center;
-    gap: 8px;
-    /* margin-left: 500px; - Tu pourras ajuster cette marge si besoin */
+  display: flex;
+  align-items: center;
+  top: clamp(20px, 1.46vw, 30px);
+  right: clamp(360px, 27.78vw, 500px);
+  position: fixed;
+  background-color: var(--bg-card-50);
+  border-radius: 20px;
+  border: 2px solid var(--primary-light);
+  height: 25px; /* Même hauteur que la barre d'XP */
+  width: 130px;
+  padding: 4px 0;
+  box-shadow: 0 2px 8px rgba(252, 174, 219, 0.3);
+  justify-content: center;
+  gap: 8px;
+  /* margin-left: 500px; - Tu pourras ajuster cette marge si besoin */
 }
 
 .icone_piece {
-    font-size: 14px;
-    filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.2));
-    line-height: 1; /* Pour que l'icône soit bien centrée verticalement */
-    display: flex;
-    align-items: center;
+  font-size: 14px;
+  filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.2));
+  line-height: 1; /* Pour que l'icône soit bien centrée verticalement */
+  display: flex;
+  align-items: center;
 }
 
 .montant_pieces {
-    text-align: center;
-    font-size: 13px;
-    font-weight: bold;
-    color: var(--text-light);
-    font-family: 'Arial Black', sans-serif;
-    line-height: 1; /* Pour que le texte soit bien centré verticalement */
-    display: flex;
-    align-items: center;
-    font-family: 'Arial Black', sans-serif;
-    font-size: 12px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--text-light);
+  font-family: "Arial Black", sans-serif;
+  line-height: 1; /* Pour que le texte soit bien centré verticalement */
+  display: flex;
+  align-items: center;
+  font-family: "Arial Black", sans-serif;
+  font-size: 12px;
 }
 
 .btn_plus_pieces {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(180deg, #7FE333 0%, #44A300 100%);
-    color: white;
-    font-family: 'Arial Black', sans-serif;
-    text-decoration: none;
-    font-size: 16px;
-    width: 19px; 
-    height: 19px;
-    border-radius: 50%; /* Bouton bien rond */
-    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-    transition: transform 0.1s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #7fe333 0%, #44a300 100%);
+  color: white;
+  font-family: "Arial Black", sans-serif;
+  text-decoration: none;
+  font-size: 16px;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%; /* Bouton bien rond */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: transform 0.1s ease;
 }
 
 .btn_plus_pieces:hover {
-    transform: scale(1.1);
-    text-align: center;
+  transform: scale(1.1);
+  text-align: center;
 }
 
 /*-------------------nbr_squishy--------------------*/
@@ -242,14 +258,14 @@ body {
   align-items: center;
   justify-content: center;
   top: clamp(20px, 1.46vw, 30px);
-  right: clamp(280px, 20.15vw, 400px);
+  right: clamp(240px, 18.05vw, 300px);
   position: fixed;
   padding: 4px 0;
   height: 25px;
   width: 100px;
   text-align: center;
   gap: 8px;
-  font-family: 'Arial Black', sans-serif;
+  font-family: "Arial Black", sans-serif;
   background-color: var(--bg-card-50);
   color: var(--text-light);
   font-size: 12px;
@@ -257,14 +273,14 @@ body {
 
 /*------------nourriture_posseder----------------*/
 
-.barre_nourriture{
+.barre_nourriture {
   border: 2px solid var(--primary-light);
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   top: clamp(20px, 1.46vw, 30px);
-  right: clamp(130px, 9.39vw, 200px);
+  right: clamp(110px, 7.22vw, 180px);
   position: fixed;
   padding: 4px 0;
   height: 25px;
@@ -273,87 +289,99 @@ body {
   gap: 8px;
   color: var(--text-light);
   background-color: var(--bg-card-50);
-  font-family: 'Arial Black', sans-serif;
+  font-family: "Arial Black", sans-serif;
   font-size: 12px;
 }
 
 /*--------------------------------------------------btn_aventure----------------------------------*/
 
-.btn_aventure{
-    left: clamp(20px, 1.46vw, 30px);
-    bottom: clamp(20px, 1.46vw, 30px);
-    position: fixed;
-    background: linear-gradient(180deg, #ff8c00 0%, #d35400 100%);
-    border: 3px solid #8b3a00;
-    border-radius: 50px; /* Donne la forme ovale */
-    padding: clamp(10px, 1.36vw, 20px) clamp(35px, 2.59vw, 70px);
-    color: white;
-    font-family: 'Arial Black', sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    cursor: pointer;
-    box-shadow: 0 6px 0 #6e2d00, 0 10px 15px rgba(0,0,0,0.3);
-    transition: all 0.2s ease;
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
+.btn_aventure {
+  left: clamp(20px, 1.46vw, 30px);
+  bottom: clamp(20px, 1.46vw, 30px);
+  position: fixed;
+  background: linear-gradient(180deg, #ff8c00 0%, #d35400 100%);
+  border: 3px solid #8b3a00;
+  border-radius: 50px; /* Donne la forme ovale */
+  padding: clamp(10px, 1.36vw, 20px) clamp(35px, 2.59vw, 70px);
+  color: white;
+  font-family: "Arial Black", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  box-shadow:
+    0 6px 0 #6e2d00,
+    0 10px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .btn-aventure:hover {
   transform: translateY(-3px);
-  box-shadow: 0 9px 0 #6e2d00, 0 15px 20px rgba(0,0,0,0.4);
+  box-shadow:
+    0 9px 0 #6e2d00,
+    0 15px 20px rgba(0, 0, 0, 0.4);
   background: linear-gradient(180deg, #ffa500 0%, #e67e22 100%);
 }
 
 .btn-aventure:active {
   transform: translateY(3px);
-  box-shadow: 0 3px 0 #6e2d00, 0 5px 10px rgba(0,0,0,0.2);
+  box-shadow:
+    0 3px 0 #6e2d00,
+    0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .swords {
   font-size: 32px;
   margin-bottom: -5px;
-  filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.5));
+  filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.5));
 }
 
 /*--------------------------------btn_boutique-----------------------*/
 .btn_boutique {
-    right: clamp(20px, 1.46vw, 30px);
-    bottom: clamp(20px, 1.46vw, 30px);
-    position: fixed;
-    background: linear-gradient(180deg, #3498db 0%, #2980b9 100%);
-    border: 3px solid #1c5a8a;
-    border-radius: 50px;
-    padding: clamp(10px, 1.36vw, 20px) clamp(35px, 2.59vw, 70px);
-    color: white;
-    font-family: 'Arial Black', sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    cursor: pointer;
-    box-shadow: 0 6px 0 #1c5a8a, 0 10px 15px rgba(0,0,0,0.3);
-    transition: all 0.2s ease;
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
+  right: clamp(20px, 1.46vw, 30px);
+  bottom: clamp(20px, 1.46vw, 30px);
+  position: fixed;
+  background: linear-gradient(180deg, #3498db 0%, #2980b9 100%);
+  border: 3px solid #1c5a8a;
+  border-radius: 50px;
+  padding: clamp(10px, 1.36vw, 20px) clamp(35px, 2.59vw, 70px);
+  color: white;
+  font-family: "Arial Black", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  box-shadow:
+    0 6px 0 #1c5a8a,
+    0 10px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .btn-boutique:hover {
   transform: translateY(-3px);
-  box-shadow: 0 9px 0 #1c5a8a, 0 15px 20px rgba(0,0,0,0.4);
+  box-shadow:
+    0 9px 0 #1c5a8a,
+    0 15px 20px rgba(0, 0, 0, 0.4);
   background: linear-gradient(180deg, #3ca9ff 0%, #2c8ce6 100%);
 }
 
 .btn-boutique:active {
   transform: translateY(3px);
-box-shadow: 0 3px 0 #6e2d00, 0 5px 10px rgba(0,0,0,0.2);
+  box-shadow:
+    0 3px 0 #6e2d00,
+    0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .shop {
   font-size: 32px;
   margin-bottom: -5px;
-  filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.5));
+  filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.5));
 }
 
 /* ------------------------------------------------ La Sidebar --------------------------------------------- */
@@ -361,12 +389,12 @@ box-shadow: 0 3px 0 #6e2d00, 0 5px 10px rgba(0,0,0,0.2);
   position: fixed; /* Reste fixe même si on scrolle */
   top: 0;
   left: 0;
-  width: 250px;
+  width: clamp(230px, 20vw, 300px); /* Largeur de la sidebar */
   height: 100vh; /* Prend toute la hauteur de l'écran */
   background-color: #2c3e50;
   color: white;
   z-index: 1000; /* Très élevé pour passer au-dessus de tout */
-  
+
   /* On la cache par défaut sur la gauche */
   transform: translateX(-100%);
   transition: transform 0.3s ease-in-out; /* Animation d'ouverture/fermeture fluide */
@@ -387,7 +415,7 @@ box-shadow: 0 3px 0 #6e2d00, 0 5px 10px rgba(0,0,0,0.2);
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5); /* Noir transparent */
   z-index: 999; /* Juste en dessous de la sidebar (1000) mais au-dessus du reste */
-  
+
   /* Caché par défaut */
   opacity: 0;
   pointer-events: none; /* Empêche de cliquer dessus quand il est invisible */
@@ -410,6 +438,10 @@ box-shadow: 0 3px 0 #6e2d00, 0 5px 10px rgba(0,0,0,0.2);
 }
 
 .liens-sidebar a {
+  font-family: "Sigokae";
+  position: relative;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
   display: block;
   color: white;
   text-decoration: none;
@@ -442,13 +474,15 @@ box-shadow: 0 3px 0 #6e2d00, 0 5px 10px rgba(0,0,0,0.2);
 /* --------------------------------------------popup-----------------------------------------*/
 
 /* popup-aventure */
-#ma-popup {
+#ma-popup,
+#popup-boutique {
   position: fixed;
-  top: 50%; left: 50%;
+  top: 50vh;
+  left: 50vw;
   transform: translate(-50%, -50%); /* Règle d'or pour centrer parfaitement */
   background: white;
-  width: clamp(1000px, 80vw, 1200px);
-  height: clamp(500px, 60vh, 700px);
+  width: clamp(800px, 80vw, 2200px);
+  height: clamp(400px, 70vh, 1100px);
   padding: 30px;
   border-radius: 16px;
   z-index: 1001; /* Au-dessus du fond sombre */
@@ -460,4 +494,288 @@ box-shadow: 0 3px 0 #6e2d00, 0 5px 10px rgba(0,0,0,0.2);
   display: block !important;
 }
 
-/* popup-boutique */
+/* L'arrière-plan sombre */
+.popup-overlay {
+  display: none; /* Caché par défaut */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* La boîte blanche au centre */
+.popup-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 350px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* La croix de fermeture */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+.close-btn:hover {
+  color: red;
+}
+
+/*---------------------------------------------------------popu-boutique*------------------------------------*/
+
+#popup-boutique {
+  color: black;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  width: clamp(800px, 80vw, 2200px);
+  height: clamp(400px, 70vh, 1100px);
+  padding: 30px;
+  border-radius: 16px;
+  z-index: 1001; /* Au-dessus du fond sombre */
+  display: none; /* Invisible par défaut */
+}
+
+#btn-fermer-boutique {
+  color: #fcaedb;
+  position: absolute !important;
+  top: 15px !important;
+  right: 20px !important;
+  font-size: 28px !important;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer;
+}
+
+#btn-fermer-boutique:hover {
+  color: #fa70c0;
+}
+
+/*----------------------------coin_popup-----------------------------*/
+.coin_display {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  top: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--bg-card-50);
+  border-radius: 20px;
+  border: 2px solid var(--primary-light);
+  height: 25px; /* Même hauteur que la barre d'XP */
+  width: 130px;
+  padding: 1px 0;
+  box-shadow: 0 2px 8px rgba(252, 174, 219, 0.3);
+  justify-content: center;
+  gap: 8px;
+}
+
+.icone_piece_popup {
+  font-size: 14px;
+  filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.2));
+  line-height: 1; /* Pour que l'icône soit bien centrée verticalement */
+  display: flex;
+  align-items: center;
+}
+
+.montant_pieces_popup {
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--text-light);
+  font-family: "Arial Black", sans-serif;
+  line-height: 1; /* Pour que le texte soit bien centré verticalement */
+  display: flex;
+  align-items: center;
+  font-family: "Arial Black", sans-serif;
+  font-size: 12px;
+}
+/*------------barre_supérieur_popup*---------------*/
+
+/* Ajuste le padding de ta popup pour laisser la barre aller jusqu'aux bords */
+#popup-boutique {
+  padding: 0 !important; /* On retire le padding global pour coller la en-tête */
+  overflow: hidden; /* Conserve les arrondis sur la barre du haut */
+}
+
+/* La barre supérieure sombre */
+.popup-header {
+  background-color: #ffb3cc;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  user-select: none;
+}
+
+/* Titre dans la barre */
+.popup-title {
+  color: #ffffff;
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+/* Alignement des 3 boutons à droite */
+.popup-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Style général des boutons de contrôle */
+.btn-control {
+  background: transparent;
+  border: none;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.btn-control:hover {
+  background-color: #333333;
+  color: white;
+}
+
+/* Repositionnement du bouton de fermeture dans la barre */
+#btn-fermer-boutique {
+  position: static !important; /* Désactive l'ancien positionnement absolu */
+  font-size: 20px !important;
+}
+
+#btn-fermer-boutique:hover {
+  background-color: #e81123 !important; /* Rouge au survol style Windows */
+}
+
+/* Espace pour le contenu en dessous de la barre */
+.popup-body {
+  padding: 20px;
+}
+
+/*----------------contenu_boutique-----------------*/
+/* Le conteneur principal sous forme de grille */
+.contenu-boutique {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 4 colonnes de taille égale */
+  gap: 15px; /* L'espace entre chaque carte */
+  padding: 20px;
+  background-color: #ffe6eb; /* Le fond rose clair de la boutique */
+  border-radius: 0 0 20px 20px; /* Arrondi en bas pour fermer la fenêtre */
+  height: 400px; /* À ajuster selon la taille de ta fenêtre */
+  overflow-y: auto; /* Permet de scroller s'il y a beaucoup d'objets */
+}
+
+/* Le style d'une carte individuelle */
+.carte-objet {
+  background-color: #fff9fa; /* Un blanc très légèrement rosé */
+  border: 2px solid #ffb6c1; /* Une bordure rose un peu plus foncée */
+  border-radius: 15px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centre le contenu horizontalement */
+  justify-content: space-between; /* Espace bien le titre en haut et le bouton en bas */
+  text-align: center;
+}
+
+/* L'image de l'objet */
+.image-objet {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+/* Le texte de la carte */
+.titre-objet {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  margin: 5px 0;
+}
+
+.description-objet {
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+/* Le bouton d'achat bleu */
+.bouton-achat {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Espace entre le prix et la petite pièce */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.bouton-achat:hover {
+  background-color: #2563eb; /* Le bouton devient un peu plus foncé quand on passe la souris */
+}
+
+/* La petite icône de pièce dans le bouton */
+.petite-piece {
+  width: 16px;
+  height: 16px;
+}
+
+/* --- STYLE DES ONGLETS --- */
+.onglets {
+  display: flex;
+  margin-top: 20px; /* Espace avec le compteur de pièces au-dessus */
+  margin-bottom: 20px; /* Espace avec les cartes en dessous */
+  background-color: #ffc4d0;
+  border-radius: 10px;
+  overflow: hidden; /* Pour que les bords restent bien arrondis */
+}
+
+.onglet {
+  flex: 1;
+  text-align: center;
+  padding: 10px 0;
+  font-weight: bold;
+  color: #d85c75;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.onglet.actif {
+  background-color: #fff9fa; /* Même couleur que le fond de ta boutique */
+  color: #a8324a;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/*------------------carte-----------------*/
+
+
+
+/*---------------image_carte-------------*/
+.image_objet{
+  width: 130px;
+}

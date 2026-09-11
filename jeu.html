@@ -1,101 +1,208 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>squishydex</title>
-    <link rel="stylesheet" href="static/css/style_jeu.css">
-</head>
-<body> <!-- Le body DOIT commencer avant ton header -->
-  <header>
-    <div class="profil_joueur">
-      <img
-        src="static/images/profils/pp_jeu.jpg" 
-        alt="Avatar" class="avatar_img">
-    </div>
+    <link rel="stylesheet" href="static/css/style_jeu.css" />
+  </head>
+  <body>
+    <!-- Le body DOIT commencer avant ton header -->
+    <header>
+      <div class="profil_joueur">
+        <img
+          src="static/images/profils/pp_jeu.jpg"
+          alt="Avatar"
+          class="avatar_img"
+        />
+      </div>
       <div class="zone_xp">
         <div class="barre_xp">
-          <div class="barre_remplissage" style="width: 60%;">
-          </div>
+          <div class="barre_remplissage" style="width: 60%"></div>
           <span class="texte_niveau">Niveau 1</span>
+        </div>
       </div>
-    </div>
-    <div class="barre_pieces">
-      <span class="icone_piece">🪙</span>
-      <span class="montant_pieces">138000</span>
-      <a href="description.html#shop" class="btn_plus_pieces">+</a>
-  </div>
-  <div class="barre_squishy">
-      <span class="icone_squishy">🧸</span>
-      <span class="montant_squishy">138/500</span>
-  </div>
-  <div class="barre_nourriture">
-      <span class="icone_nourriture">🍪</span>
-      <span class="nourriture_disponible">138/500</span>
-  </div>
+      <div class="barre_pieces">
+        <span class="icone_piece">🪙</span>
+        <span class="montant_pieces">138000</span>
+        <a href="description.html#shop" class="btn_plus_pieces">+</a>
+      </div>
+      <div class="barre_squishy">
+        <span class="icone_squishy">🧸</span>
+        <span class="montant_squishy">138/500</span>
+      </div>
+      <div class="barre_nourriture">
+        <span class="icone_nourriture">🍪</span>
+        <span class="nourriture_disponible">138/500</span>
+      </div>
 
-    <button id="btn-ouvrir" class="settings-button">
-      <div class="gears-container">
-        <!-- Grand engrenage (Haut gauche) -->
-        <svg class="gear-large" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="3"></circle>
-          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-        </svg>
-        <!-- Petit engrenage (Bas droite) -->
-        <!-- <svg class="gear-small" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <button id="btn-ouvrir" class="settings-button">
+        <div class="gears-container">
+          <!-- Grand engrenage (Haut gauche) -->
+          <svg
+            class="gear-large"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="black"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="3"></circle>
+            <path
+              d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+            ></path>
+          </svg>
+          <!-- Petit engrenage (Bas droite) -->
+          <!-- <svg class="gear-small" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="3"></circle>
           <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
         </svg> -->
-      </div>
-    </button>
-
-    <div id="overlay-sombre" class="overlay"></div>
-    
-
-  </header>
-  <div id="menu-lateral" class="sidebar">
-    <button id="btn-fermer" class="close-btn">&times;</button>
-    
-    <h2>Squishydex</h2>
-    <nav class="liens-sidebar">
-      <a href="#">Profil</a>
-      <a href="#">Ma Collection</a>
-      <a href="#">Boutique</a>
-      <a href="#">Aventures</a>
-      <a href="#">Paramètres</a>
-    </nav>
-  </div>
-  
-  <!-- La boîte de la pop-up -->
-  <div id="ma-popup">
-    <button id="btn-fermer-popup">&times;</button>
-    <h2>Félicitations !</h2>
-    <p>Vous avez obtenu un nouveau squishy rare.</p>
-  </div>
-
-  <main>
-    <section>
-      <article>
-        <div>
-
         </div>
-      </article>
-    </section>
-  </main>
+      </button>
 
-  <footer>
-    <button id="btn-ouvrir-popup" class="btn_aventure">
-      <span class="swords">⚔️</span>
-      <span class="text">AVENTURE</span>
+      <div id="overlay-sombre" class="overlay"></div>
+    </header>
+    <div id="menu-lateral" class="sidebar">
+      <button id="btn-fermer" class="close-btn">&times;</button>
+
+      <h2>Squishydex</h2>
+      <nav class="liens-sidebar">
+        <a href="#">Profil</a>
+        <a href="#">Ma Collection</a>
+        <a href="#">Boutique</a>
+        <a href="#">Aventures</a>
+        <a href="#">Paramètres</a>
+      </nav>
+    </div>
+
+    <!-- La boîte de la pop-up -->
+    <div id="ma-popup">
+      <button id="btn-fermer-popup">&times;</button>
+      <h2>Félicitations !</h2>
+      <p>Vous avez obtenu un nouveau squishy rare.</p>
+    </div>
+
+    <!-- Fond sombre de la boutique (s'il est géré séparément) -->
+    <div id="overlay-sombre-boutique" class="overlay-popup"></div>
+
+    <!-- La boîte de la pop-up Boutique avec la barre -->
+    <div id="popup-boutique" class="ma-popup-style">
+      <div class="popup-header">
+        <span class="popup-title">La Boutique</span>
+        <div class="popup-controls">
+          <button class="btn-control">—</button>
+          <button class="btn-control">☐</button>
+          <button id="btn-fermer-boutique" class="btn-control btn-close">
+            &times;
+          </button>
+        </div>
+      </div>
+
+      <div class="popup-body">
+        <!-- Ton compteur de pièces -->
+        <div class="coin_display">
+          <span class="icone_piece">🪙</span>
+          <span class="coin-amount">138000</span>
+        </div>
+
+        <!-- Les onglets avec l'attribut data-categorie -->
+        <div class="onglets">
+          <div class="onglet actif" data-categorie="coffres">Coffres</div>
+          <div class="onglet" data-categorie="pieces">Pièces</div>
+          <div class="onglet" data-categorie="nourriture">Nourriture</div>
+          <div class="onglet" data-categorie="exp">EXP</div>
+        </div>
+
+        <div id="coffres" class="contenu-boutique">
+
+  <!-- Carte 1 : Coffre -->
+  <div class="carte-objet">
+    <img src="static\images\chest\commun_chest.png" alt="Coffre d'Aventure" class="image_objet">
+    <h3 class="titre-objet">Coffre simple</h3>
+    <p class="description-objet">Contient des objets aléatoires pour l'aventure.</p>
+    <button class="bouton-achat">
+      15000 <img src="chemin/vers/icone-piece.png" alt="Pièces" class="petite-piece">
     </button>
-    <button class="btn_boutique">
-      <span class="shop">🛒</span>
-      <span class="text">BOUTIQUE</span>
+  </div>
+
+  <!-- Carte 2 : Nourriture -->
+  <div class="carte-objet">
+    <img src="static\images\chest\uncommun_chest.png" alt="commun_chest" class="image_objet">
+    <h3 class="titre-objet">coffre améliorer</h3>
+    <p class="description-objet">Restaure l'énergie de ton équipe.</p>
+    <button class="bouton-achat">
+      30000 <img src="chemin/vers/icone-piece.png" alt="Pièces" class="petite-piece">
     </button>
-  </footer>
-  
-<script src="static\js\sidebar.js"></script>
-<script src="static\js\popup.js"></script>
-</body> 
+  </div>
+
+  <!-- Carte 3 : Coffre Magique -->
+  <div class="carte-objet">
+    <img src="static\images\chest\rare_chest.png" alt="uncommun_chest" class="image_objet">
+    <h3 class="titre-objet">Coffre Magique</h3>
+    <p class="description-objet">Un coffre contenant des récompenses rares.</p>
+    <button class="bouton-achat">
+      45000 <img src="chemin/vers/icone-piece.png" alt="Pièces" class="petite-piece">
+    </button>
+  </div>
+
+  <!-- Carte 4 : Potion EXP -->
+  <div class="carte-objet">
+    <img src="static\images\chest\epic_chest.png" alt="rare_chest" class="image_objet">
+    <h3 class="titre-objet">Coffre enchanté</h3>
+    <p class="description-objet">Donne de l'expérience à tes Squishies.</p>
+    <button class="bouton-achat">
+      12000 <img src="chemin/vers/icone-piece.png" alt="Pièces" class="petite-piece">
+    </button>
+  </div>
+
+<div class="carte-objet">
+    <img src="static\images\chest\legandary_chest.png" alt="legandary_chest" class="image_objet">
+    <h3 class="titre-objet">Coffre enchanté légendaire</h3>
+    <p class="description-objet">Donne de l'expérience à tes Squishies.</p>
+    <button class="bouton-achat">
+      12000 <img src="chemin/vers/icone-piece.png" alt="Pièces" class="petite-piece">
+    </button>
+  </div>
+
+
+</div>
+
+        <div id="pieces" class="contenu-boutique" >
+          <!-- Cartes de pièces ici -->
+        </div>
+
+        <div id="nourriture" class="contenu-boutique" >
+          <!-- Cartes de nourriture ici -->
+        </div>
+
+        <div id="exp" class="contenu-boutique">
+          <!-- Cartes d'EXP ici -->
+        </div>
+      </div>
+    </div>
+    <main>
+      <section>
+        <article>
+          <div></div>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <button id="btn-ouvrir-popup" class="btn_aventure">
+        <span class="swords">⚔️</span>
+        <span class="text">AVENTURE</span>
+      </button>
+
+      <button id="btn-ouvrir-boutique" class="btn_boutique">
+        <span class="shop">🛒</span>
+        <span class="text">BOUTIQUE</span>
+      </button>
+    </footer>
+
+    <script src="static\js\sidebar.js"></script>
+    <script src="static\js\popup.js"></script>
+    <script src="static\js\onglets_boutique.js"></script>
+  </body>
 </html>
-
