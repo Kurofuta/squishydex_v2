@@ -696,6 +696,7 @@ body {
   align-items: center; /* Centre le contenu horizontalement */
   justify-content: space-between; /* Espace bien le titre en haut et le bouton en bas */
   text-align: center;
+  gap: 10px;
 }
 
 /* L'image de l'objet */
@@ -778,4 +779,11 @@ body {
 /*---------------image_carte-------------*/
 .image_objet{
   width: 130px;
+}
+
+/*----------------titre_objet-------------*/
+.titre_objet{
+  margin-top: 0;
+  margin-bottom: 5px;
+
 }
