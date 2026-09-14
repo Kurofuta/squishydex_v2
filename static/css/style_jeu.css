@@ -736,7 +736,7 @@ body {
   margin-bottom: 15px;
 }
 
-/* Le bouton d'achat bleu */
+/* Le bouton d'achat bleu (pour coffres) */
 .bouton-achat {
   background-color: #3b82f6;
   color: white;
@@ -749,10 +749,54 @@ body {
   align-items: center;
   gap: 5px; /* Espace entre le prix et la petite pièce */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.15s ease, background-color 0.2s ease;
 }
 
 .bouton-achat:hover {
   background-color: #2563eb; /* Le bouton devient un peu plus foncé quand on passe la souris */
+  transform: translateY(-2px);
+}
+
+/* Le bouton vidéo vert émeraude (pour visionnage de pubs/vidéos) */
+.btn-video {
+  background: linear-gradient(180deg, #10b981 0%, #059669 100%) !important;
+  box-shadow: 0 3px 6px rgba(5, 150, 105, 0.3) !important;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.btn-video:hover {
+  background: linear-gradient(180deg, #34d399 0%, #059669 100%) !important;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 5px 12px rgba(5, 150, 105, 0.4) !important;
+}
+
+.btn-video:active {
+  transform: translateY(0) scale(0.96);
+}
+
+.icone_video {
+  font-size: 15px;
+  line-height: 1;
+}
+
+/* Badge de récompense en pièces */
+.gain-pieces {
+  background-color: #fff9db;
+  color: #b45309;
+  font-weight: 800;
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  border: 1px solid #fde047;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 1px 3px rgba(180, 83, 9, 0.1);
+  margin-bottom: 4px;
 }
 
 /* La petite icône de pièce dans le bouton */

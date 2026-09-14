@@ -211,9 +211,10 @@
               <circle cx="18" cy="17" r="1.5" fill="#FFF9C4"/>
             </svg>
             <h3 class="titre_objet">Deux Pièces</h3>
-            <p class="description-objet">Une modeste poignée pour démarrer ou compléter un achat imprévu.</p>
-            <button class="bouton-achat">
-              <span class="icone_piece">🪙</span> +100
+            <p class="description-objet">Visionne 1 vidéo pour obtenir 100 pièces d'or immédiatement.</p>
+            <div class="gain-pieces">+100 <span class="icone_piece">🪙</span></div>
+            <button class="bouton-achat btn-video">
+              <span class="icone_video">🎬</span> 1 Vidéo
             </button>
           </div>
 
@@ -266,9 +267,10 @@
               <circle cx="14" cy="23" r="1.5" fill="#FFFDE7"/>
             </svg>
             <h3 class="titre_objet">Petit Tas</h3>
-            <p class="description-objet">Une pile pratique pour améliorer un squishy ou s'offrir un coffre simple.</p>
-            <button class="bouton-achat">
-              <span class="icone_piece">🪙</span> +500
+            <p class="description-objet">Visionne 2 vidéos pour financer tes premières améliorations.</p>
+            <div class="gain-pieces">+500 <span class="icone_piece">🪙</span></div>
+            <button class="bouton-achat btn-video">
+              <span class="icone_video">🎬</span> 2 Vidéos
             </button>
           </div>
 
@@ -322,9 +324,10 @@
               <circle cx="15" cy="29" r="1.5" fill="#FFF9C4"/>
             </svg>
             <h3 class="titre_objet">Gros Tas</h3>
-            <p class="description-objet">Un trésor généreux pour faire le plein de ressources et d'accessoires.</p>
-            <button class="bouton-achat">
-              <span class="icone_piece">🪙</span> +1500
+            <p class="description-objet">Visionne 4 vidéos pour faire le plein de pièces et débloquer des coffres.</p>
+            <div class="gain-pieces">+1 500 <span class="icone_piece">🪙</span></div>
+            <button class="bouton-achat btn-video">
+              <span class="icone_video">🎬</span> 4 Vidéos
             </button>
           </div>
 
@@ -381,9 +384,10 @@
               <path d="M46 19 C46 21 47 22 48.5 22 C47 22 46 23 46 25 C46 23 45 22 43.5 22 C45 22 46 21 46 19 Z" fill="#FFFDE7"/>
             </svg>
             <h3 class="titre_objet">Coffre Doré</h3>
-            <p class="description-objet">Un coffre qui déborde d'or pour enrichir rapidement ta collection.</p>
-            <button class="bouton-achat">
-              <span class="icone_piece">🪙</span> +5000
+            <p class="description-objet">Visionne 8 vidéos pour remporter un coffre plein de pièces d'or.</p>
+            <div class="gain-pieces">+5 000 <span class="icone_piece">🪙</span></div>
+            <button class="bouton-achat btn-video">
+              <span class="icone_video">🎬</span> 8 Vidéos
             </button>
           </div>
 
@@ -448,19 +452,55 @@
               <circle cx="17" cy="14" r="1.2" fill="#FFFDE7"/>
             </svg>
             <h3 class="titre_objet">La Banque</h3>
-            <p class="description-objet">La réserve suprême pour débloquer tous les squishys sans compter !</p>
-            <button class="bouton-achat">
-              <span class="icone_piece">🪙</span> +25000
+            <p class="description-objet">Visionne 15 vidéos pour débloquer le trésor suprême de la banque !</p>
+            <div class="gain-pieces">+25 000 <span class="icone_piece">🪙</span></div>
+            <button class="bouton-achat btn-video">
+              <span class="icone_video">🎬</span> 15 Vidéos
             </button>
           </div>
         </div>
+      
+        
 
-        <div id="nourriture" class="contenu-boutique" >
+        <div id="nourriture" class="contenu-boutique">
           <!-- Cartes de nourriture ici -->
         </div>
 
         <div id="exp" class="contenu-boutique">
-          <!-- Cartes d'EXP ici -->
+          <div class="carte-objet">
+            <h3 class="titre_objet">Fiole d'XP Simple</h3>
+            <p class="description-objet"></p>
+            <div class="gain-pieces">50 <span class="icone_piece">🪙</span></div>
+            </button>
+          </div>
+
+          <div class="carte-objet">
+            <h3 class="titre_objet">Fiole d'XP Simple</h3>
+            <p class="description-objet"></p>
+            <div class="gain-pieces">50 <span class="icone_piece">🪙</span></div>
+            </button>
+          </div>
+
+          <div class="carte-objet">
+            <h3 class="titre_objet">Fiole d'XP Simple</h3>
+            <p class="description-objet"></p>
+            <div class="gain-pieces">50 <span class="icone_piece">🪙</span></div>
+            </button>
+          </div>
+
+          <div class="carte-objet">
+            <h3 class="titre_objet">Fiole d'XP Simple</h3>
+            <p class="description-objet"></p>
+            <div class="gain-pieces">50 <span class="icone_piece">🪙</span></div>
+            </button>
+          </div>
+
+          <div class="carte-objet">
+            <h3 class="titre_objet">Fiole d'XP Simple</h3>
+            <p class="description-objet"></p>
+            <div class="gain-pieces">50 <span class="icone_piece">🪙</span></div>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -487,5 +527,6 @@
     <script src="static\js\sidebar.js"></script>
     <script src="static\js\popup.js"></script>
     <script src="static\js\onglets_boutique.js"></script>
+    <script src="static\js\exp.js"></script>
   </body>
 </html>
