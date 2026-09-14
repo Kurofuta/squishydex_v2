@@ -1,0 +1,169 @@
+<svg viewBox="0 0 64 64" width="60" height="60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="p5_roof" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#93C5FD"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="p5_wall" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </linearGradient>
+    <linearGradient id="p5_gold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF9C4"/>
+      <stop offset="50%" stop-color="#FFCA28"/>
+      <stop offset="100%" stop-color="#FF8F00"/>
+    </linearGradient>
+    <linearGradient id="p5_gold_bright" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFDE7"/>
+      <stop offset="60%" stop-color="#FFD54F"/>
+      <stop offset="100%" stop-color="#FFA000"/>
+    </linearGradient>
+    <linearGradient id="p5_bill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#86EFAC"/>
+      <stop offset="50%" stop-color="#22C55E"/>
+      <stop offset="100%" stop-color="#15803D"/>
+    </linearGradient>
+    <linearGradient id="p5_bill_light" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#DCFCE7"/>
+      <stop offset="100%" stop-color="#4ADE80"/>
+    </linearGradient>
+  </defs>
+  <!-- Ombre douce pastel -->
+  <ellipse cx="32" cy="58" rx="27" ry="5" fill="#fbcfe8" opacity="0.9"/>
+
+  <!-- === BÂTIMENT DE LA BANQUE === -->
+  <!-- Marches -->
+  <rect x="7" y="52" width="50" height="4" rx="1.5" fill="#CBD5E1"/>
+  <rect x="10" y="49" width="44" height="3.5" rx="1" fill="#E2E8F0"/>
+  <rect x="13" y="46" width="38" height="3" rx="1" fill="#F8FAFC"/>
+
+  <!-- Porte sombre / Coffre fort intérieur -->
+  <rect x="25" y="29" width="14" height="18" rx="2" fill="#0F172A"/>
+
+  <!-- 4 Colonnes classiques -->
+  <rect x="15" y="27" width="4.5" height="19" rx="1" fill="url(#p5_wall)"/>
+  <rect x="14" y="26" width="6.5" height="2" rx="0.5" fill="#CBD5E1"/>
+  <rect x="14" y="44.5" width="6.5" height="1.5" rx="0.5" fill="#CBD5E1"/>
+
+  <rect x="22" y="27" width="4" height="19" rx="1" fill="url(#p5_wall)"/>
+  <rect x="21" y="26" width="6" height="2" rx="0.5" fill="#CBD5E1"/>
+  <rect x="21" y="44.5" width="6" height="1.5" rx="0.5" fill="#CBD5E1"/>
+
+  <rect x="38" y="27" width="4" height="19" rx="1" fill="url(#p5_wall)"/>
+  <rect x="37" y="26" width="6" height="2" rx="0.5" fill="#CBD5E1"/>
+  <rect x="37" y="44.5" width="6" height="1.5" rx="0.5" fill="#CBD5E1"/>
+
+  <rect x="44.5" y="27" width="4.5" height="19" rx="1" fill="url(#p5_wall)"/>
+  <rect x="43.5" y="26" width="6.5" height="2" rx="0.5" fill="#CBD5E1"/>
+  <rect x="43.5" y="44.5" width="6.5" height="1.5" rx="0.5" fill="#CBD5E1"/>
+
+  <!-- Entablement et Fronton triangulaire -->
+  <rect x="11" y="23" width="42" height="4" rx="1" fill="#E2E8F0"/>
+  <path d="M9 23 L32 9 L55 23 Z" fill="url(#p5_roof)"/>
+  <path d="M13 22 L32 11 L51 22 Z" fill="#DBEAFE"/>
+
+  <!-- Pièce d'or gravée au fronton -->
+  <circle cx="32" cy="17" r="3.5" fill="url(#p5_gold)"/>
+  <circle cx="32" cy="17" r="2.5" fill="none" stroke="#FFFDE7" stroke-width="0.7"/>
+  <path d="M32 15 L32.5 16.5 L34 17 L32.5 17.5 L32 19 L31.5 17.5 L30 17 L31.5 16.5 Z" fill="#FFFDE7"/>
+
+  <!-- Drapeau du sommet -->
+  <line x1="32" y1="9" x2="32" y2="3" stroke="#64748B" stroke-width="1.2"/>
+  <path d="M32 3 L39 5.5 L32 8 Z" fill="#EF4444"/>
+
+  <!-- === PIÈCES ET BILLETS PARTOUT ! === -->
+  <!-- Pièces posées sur le toit -->
+  <ellipse cx="14" cy="22" rx="3.5" ry="1.8" fill="url(#p5_gold)"/>
+  <ellipse cx="50" cy="22" rx="3.5" ry="1.8" fill="url(#p5_gold_bright)"/>
+
+  <!-- Débordement de pièces depuis la porte centrale -->
+  <ellipse cx="32" cy="38" rx="5" ry="2.5" fill="url(#p5_gold)"/>
+  <ellipse cx="29" cy="41" rx="5.5" ry="2.8" fill="url(#p5_gold_bright)"/>
+  <ellipse cx="35" cy="41" rx="5" ry="2.5" fill="url(#p5_gold)"/>
+  <ellipse cx="32" cy="44" rx="6.5" ry="3.2" fill="url(#p5_gold_bright)"/>
+  <ellipse cx="28" cy="46" rx="5" ry="2.5" fill="url(#p5_gold)"/>
+  <ellipse cx="36" cy="46" rx="5" ry="2.5" fill="url(#p5_gold_bright)"/>
+
+  <!-- Liasse de billets centrale (sur les marches) -->
+  <g transform="translate(26, 44) rotate(-4)">
+    <rect x="0" y="2" width="12" height="4.5" rx="1" fill="#15803D"/>
+    <rect x="0" y="0" width="12" height="4.5" rx="1" fill="url(#p5_bill)"/>
+    <rect x="1" y="0.8" width="10" height="2.9" rx="0.5" fill="none" stroke="#DCFCE7" stroke-width="0.5"/>
+    <ellipse cx="6" cy="2.2" rx="1.6" ry="1" fill="#14532D"/>
+    <rect x="5" y="-0.5" width="2" height="5.5" fill="#FEF08A" stroke="#CA8A04" stroke-width="0.3"/>
+  </g>
+
+  <!-- Pile de pièces à gauche (au pied de la colonne 1) -->
+  <path d="M9 46 C9 49 19 49 19 46 L19 51 C19 54 9 54 9 51 Z" fill="#D84315"/>
+  <ellipse cx="14" cy="46" rx="5" ry="2.5" fill="url(#p5_gold)"/>
+  <path d="M9 43 C9 46 19 46 19 43 L19 46 C19 49 9 49 9 46 Z" fill="#D84315"/>
+  <ellipse cx="14" cy="43" rx="5" ry="2.5" fill="url(#p5_gold_bright)"/>
+
+  <!-- Liasse de billets 1 (bas gauche, inclinée) -->
+  <g transform="translate(4, 48) rotate(-14)">
+    <rect x="0" y="2.5" width="14" height="5.5" rx="1.2" fill="#15803D"/>
+    <rect x="0" y="0" width="14" height="5.5" rx="1.2" fill="url(#p5_bill)"/>
+    <rect x="1.2" y="1" width="11.6" height="3.5" rx="0.6" fill="none" stroke="#DCFCE7" stroke-width="0.6"/>
+    <ellipse cx="7" cy="2.7" rx="2" ry="1.2" fill="#14532D"/>
+    <rect x="5.8" y="-0.5" width="2.4" height="6.5" fill="#FEF08A" stroke="#CA8A04" stroke-width="0.3"/>
+  </g>
+
+  <!-- Pile de pièces à droite (au pied de la colonne 4) -->
+  <path d="M45 46 C45 49 55 49 55 46 L55 51 C55 54 45 54 45 51 Z" fill="#D84315"/>
+  <ellipse cx="50" cy="46" rx="5" ry="2.5" fill="url(#p5_gold)"/>
+  <path d="M45 43 C45 46 55 46 55 43 L55 46 C55 49 45 49 45 46 Z" fill="#D84315"/>
+  <ellipse cx="50" cy="43" rx="5" ry="2.5" fill="url(#p5_gold_bright)"/>
+
+  <!-- Liasse de billets 2 (bas droite, inclinée) -->
+  <g transform="translate(47, 49) rotate(16)">
+    <rect x="0" y="2.5" width="13" height="5" rx="1.2" fill="#15803D"/>
+    <rect x="0" y="0" width="13" height="5" rx="1.2" fill="url(#p5_bill)"/>
+    <rect x="1" y="0.9" width="11" height="3.2" rx="0.5" fill="none" stroke="#DCFCE7" stroke-width="0.5"/>
+    <ellipse cx="6.5" cy="2.5" rx="1.8" ry="1" fill="#14532D"/>
+    <rect x="5.3" y="-0.5" width="2.4" height="6" fill="#FEF08A" stroke="#CA8A04" stroke-width="0.3"/>
+  </g>
+
+  <!-- Billets volants / qui flottent dans les airs -->
+  <!-- Billet en haut à gauche -->
+  <g transform="translate(5, 13) rotate(-22)">
+    <rect x="0" y="0" width="11" height="5" rx="1" fill="url(#p5_bill_light)" stroke="#16A34A" stroke-width="0.6"/>
+    <ellipse cx="5.5" cy="2.5" rx="1.5" ry="1" fill="#16A34A"/>
+  </g>
+
+  <!-- Billet en haut à droite -->
+  <g transform="translate(49, 12) rotate(24)">
+    <rect x="0" y="0" width="11" height="5" rx="1" fill="url(#p5_bill_light)" stroke="#16A34A" stroke-width="0.6"/>
+    <ellipse cx="5.5" cy="2.5" rx="1.5" ry="1" fill="#16A34A"/>
+  </g>
+
+  <!-- Billet flottant côté gauche (milieu) -->
+  <g transform="translate(8, 32) rotate(18)">
+    <rect x="0" y="0" width="9" height="4.2" rx="0.8" fill="url(#p5_bill_light)" stroke="#16A34A" stroke-width="0.5"/>
+    <ellipse cx="4.5" cy="2.1" rx="1.2" ry="0.8" fill="#16A34A"/>
+  </g>
+
+  <!-- Billet flottant côté droit (milieu) -->
+  <g transform="translate(49, 31) rotate(-28)">
+    <rect x="0" y="0" width="9.5" height="4.4" rx="0.8" fill="url(#p5_bill_light)" stroke="#16A34A" stroke-width="0.5"/>
+    <ellipse cx="4.7" cy="2.2" rx="1.3" ry="0.8" fill="#16A34A"/>
+  </g>
+
+  <!-- Pièces tombées et éparpillées au premier plan -->
+  <ellipse cx="20" cy="54" rx="4" ry="2.2" transform="rotate(-15 20 54)" fill="url(#p5_gold_bright)"/>
+  <ellipse cx="26" cy="55" rx="3.8" ry="2" fill="url(#p5_gold)"/>
+  <ellipse cx="38" cy="55" rx="4" ry="2.2" fill="url(#p5_gold_bright)"/>
+  <ellipse cx="44" cy="54" rx="3.5" ry="2" transform="rotate(20 44 54)" fill="url(#p5_gold)"/>
+
+  <!-- Pièces en vol / sautillantes -->
+  <circle cx="21" cy="33" r="1.8" fill="url(#p5_gold_bright)"/>
+  <circle cx="43" cy="35" r="1.8" fill="url(#p5_gold)"/>
+
+  <!-- === ÉTINCELLES ÉCLATANTES === -->
+  <path d="M48 9 C48 11.5 49 13 51 13 C49 13 48 14.5 48 17 C48 14.5 47 13 45 13 C47 13 48 11.5 48 9 Z" fill="#FFFDE7"/>
+  <path d="M16 11 C16 13 17 14 18.5 14 C17 14 16 15 16 17 C16 15 15 14 13.5 14 C15 14 16 13 16 11 Z" fill="#FFFDE7"/>
+  <path d="M32 30 C32 32 33 33 34.5 33 C33 33 32 34 32 36 C32 34 31 33 29.5 33 C31 33 32 32 32 30 Z" fill="#FFFDE7"/>
+  <circle cx="3" cy="27" r="1.2" fill="#FFFDE7"/>
+  <circle cx="61" cy="27" r="1.3" fill="#FFF9C4"/>
+  <circle cx="32" cy="51" r="1.2" fill="#FFFDE7"/>
+</svg>
+

@@ -1,0 +1,71 @@
+<svg viewBox="0 0 64 64" width="60" height="60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Dégradé du liquide violet XP -->
+    <linearGradient id="fxp_liquid" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E9D5FF"/>
+      <stop offset="35%" stop-color="#C084FC"/>
+      <stop offset="70%" stop-color="#9333EA"/>
+      <stop offset="100%" stop-color="#581C87"/>
+    </linearGradient>
+    <!-- Dégradé du verre -->
+    <linearGradient id="fxp_glass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.7"/>
+      <stop offset="40%" stop-color="#F3E8FF" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#A855F7" stop-opacity="0.4"/>
+    </linearGradient>
+    <!-- Bouchon de liège -->
+    <linearGradient id="fxp_cork" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#92400E"/>
+      <stop offset="50%" stop-color="#B45309"/>
+      <stop offset="100%" stop-color="#78350F"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Ombre au sol -->
+  <ellipse cx="32" cy="56" rx="18" ry="4.5" fill="#fbcfe8" opacity="0.9"/>
+
+  <!-- Lueur magique violette en arrière-plan -->
+  <circle cx="32" cy="38" r="16" fill="#C084FC" opacity="0.25"/>
+
+  <!-- Corps de la fiole (forme ronde sphérique) -->
+  <!-- Col de la bouteille -->
+  <path d="M 27 16 L 27 26 C 27 26 18 30 18 39 C 18 47 24 53 32 53 C 40 53 46 47 46 39 C 46 30 37 26 37 26 L 37 16 Z" fill="url(#fxp_glass)" stroke="#9333EA" stroke-width="1.2"/>
+
+  <!-- Remplissage du liquide magique violet -->
+  <path d="M 18.5 38 C 22 36 26 40 32 38 C 38 36 42 40 45.5 38 C 45.8 45 40 52 32 52 C 24 52 18.2 45 18.5 38 Z" fill="url(#fxp_liquid)"/>
+
+  <!-- Surface ondulée du liquide -->
+  <path d="M 18.5 38 C 22 36 26 40 32 38 C 38 36 42 40 45.5 38" stroke="#E9D5FF" stroke-width="1.2" stroke-linecap="round"/>
+
+  <!-- Bulles magiques flottantes -->
+  <circle cx="28" cy="45" r="1.5" fill="#FFFFFF" opacity="0.75"/>
+  <circle cx="35" cy="42" r="2" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="33" cy="47" r="1" fill="#FFFFFF" opacity="0.8"/>
+
+  <!-- Reflets brillants sur le verre -->
+  <!-- Grand reflet galbé à gauche -->
+  <path d="M 22 32 C 20 35 20 42 22 46 C 21 43 21 35 23 32 Z" fill="#FFFFFF" opacity="0.85"/>
+  <!-- Petit reflet haut droite -->
+  <ellipse cx="40" cy="34" rx="2" ry="4" transform="rotate(30 40 34)" fill="#FFFFFF" opacity="0.5"/>
+  <!-- Reflet col -->
+  <path d="M 28 17 L 28 24" stroke="#FFFFFF" stroke-width="1" opacity="0.7" stroke-linecap="round"/>
+
+  <!-- Anneau du goulot -->
+  <rect x="25" y="15" width="14" height="2.5" rx="1.2" fill="#C084FC" stroke="#7E22CE" stroke-width="0.8"/>
+
+  <!-- Bouchon de liège -->
+  <path d="M 27 15 L 28 8 C 28 7.5 36 7.5 36 8 L 37 15 Z" fill="url(#fxp_cork)" stroke="#451A03" stroke-width="0.8"/>
+  <ellipse cx="32" cy="8" rx="4" ry="1.2" fill="#D97706"/>
+
+  <!-- Cordon autour du goulot avec étiquette -->
+  <path d="M 26 17 C 28 18.5 36 18.5 38 17" stroke="#FEF08A" stroke-width="1" fill="none"/>
+  <path d="M 36 18 C 38 21 39 23 38 25" stroke="#CA8A04" stroke-width="0.9" fill="none"/>
+  <!-- Petite étiquette parchemin -->
+  <rect x="36" y="24" width="4.5" height="5.5" rx="0.8" transform="rotate(-15 36 24)" fill="#FEF3C7" stroke="#B45309" stroke-width="0.6"/>
+
+  <!-- Étincelles magiques simples -->
+  <path d="M 47 22 C 47 24 48 25 50 25 C 48 25 47 26 47 28 C 47 26 46 25 44 25 C 46 25 47 24 47 22 Z" fill="#E9D5FF"/>
+  <circle cx="15" cy="27" r="1.2" fill="#E9D5FF"/>
+  <circle cx="49" cy="46" r="1" fill="#C084FC"/>
+</svg>
+

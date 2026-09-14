@@ -1,0 +1,36 @@
+<svg viewBox="0 0 64 64" width="60" height="60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="p1_g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE082"/>
+      <stop offset="50%" stop-color="#FFB300"/>
+      <stop offset="100%" stop-color="#FF8F00"/>
+    </linearGradient>
+    <linearGradient id="p1_g2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF8E1"/>
+      <stop offset="40%" stop-color="#FFCA28"/>
+      <stop offset="100%" stop-color="#FFA000"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="32" cy="54" rx="22" ry="6" fill="#fbcfe8" opacity="0.8"/>
+  <!-- Pièce arrière -->
+  <g transform="translate(13, 11)">
+    <path d="M7 26 C7 33 25 33 25 26 L25 29 C25 36 7 36 7 29 Z" fill="#C43E00"/>
+    <path d="M7 25 C7 31 25 31 25 25 L25 27 C25 33 7 33 7 27 Z" fill="#E65100"/>
+    <ellipse cx="16" cy="24" rx="11" ry="9" fill="url(#p1_g1)"/>
+    <ellipse cx="16" cy="24" rx="8.5" ry="6.5" fill="none" stroke="#FFE082" stroke-width="1.2"/>
+    <path d="M16 21.5 L17 23.5 L19.2 23.8 L17.5 25.2 L18 27.2 L16 26.2 L14 27.2 L14.5 25.2 L12.8 23.8 L15 23.5 Z" fill="#FFF9C4"/>
+  </g>
+  <!-- Pièce avant -->
+  <g transform="translate(24, 17)">
+    <ellipse cx="13" cy="28" rx="14" ry="11" fill="rgba(0,0,0,0.12)"/>
+    <path d="M4 27 C4 35 26 35 26 27 L26 31 C26 39 4 39 4 31 Z" fill="#BF360C"/>
+    <path d="M4 26 C4 33 26 33 26 26 L26 29 C26 36 4 36 4 29 Z" fill="#E65100"/>
+    <ellipse cx="15" cy="25" rx="13" ry="10.5" fill="url(#p1_g2)"/>
+    <ellipse cx="15" cy="25" rx="10" ry="8" fill="none" stroke="#FFF59D" stroke-width="1.4"/>
+    <path d="M15 21 L16.3 24 L19.5 24.4 L17 26.5 L17.8 29.5 L15 28 L12.2 29.5 L13 26.5 L10.5 24.4 L13.7 24 Z" fill="#FFFDE7"/>
+  </g>
+  <!-- Étincelle -->
+  <path d="M48 12 C48 15 50 17 53 17 C50 17 48 19 48 22 C48 19 46 17 43 17 C46 17 48 15 48 12 Z" fill="#FFF9C4"/>
+  <circle cx="18" cy="17" r="1.5" fill="#FFF9C4"/>
+</svg>
+

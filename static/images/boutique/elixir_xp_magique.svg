@@ -1,0 +1,79 @@
+<svg viewBox="0 0 64 64" width="60" height="60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Dégradé de l'élixir cosmique -->
+    <linearGradient id="emg_liquid" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FDF4FF"/>
+      <stop offset="20%" stop-color="#F472B6"/>
+      <stop offset="55%" stop-color="#C026D3"/>
+      <stop offset="100%" stop-color="#4C1D95"/>
+    </linearGradient>
+    <!-- Dégradé or magique des ornements -->
+    <linearGradient id="emg_gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEF08A"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+    <!-- Verre alchimique -->
+    <linearGradient id="emg_glass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.65"/>
+      <stop offset="50%" stop-color="#F0ABFC" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#9333EA" stop-opacity="0.45"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Ombre au sol -->
+  <ellipse cx="32" cy="57" rx="22" ry="5" fill="#fbcfe8" opacity="0.9"/>
+
+  <!-- Halo d'énergie mystique -->
+  <circle cx="32" cy="38" r="20" fill="#D946EF" opacity="0.25"/>
+
+  <!-- === AILES / VOLUTES DORÉES EXTÉRIEURES (Cadre d'or) === -->
+  <!-- Aile / volute gauche -->
+  <path d="M 23 28 C 14 26 8 33 11 41 C 13 46 19 46 22 45 C 17 44 14 40 14 36 C 14 31 18 29 23 30 Z" fill="url(#emg_gold)" stroke="#92400E" stroke-width="0.8"/>
+  <!-- Aile / volute droite -->
+  <path d="M 41 28 C 50 26 56 33 53 41 C 51 46 45 46 42 45 C 47 44 50 40 50 36 C 50 31 46 29 41 30 Z" fill="url(#emg_gold)" stroke="#92400E" stroke-width="0.8"/>
+
+  <!-- Support doré sous le flacon -->
+  <path d="M 24 51 C 28 54 36 54 40 51 L 38 54 C 35 55.5 29 55.5 26 54 Z" fill="url(#emg_gold)" stroke="#92400E" stroke-width="0.7"/>
+
+  <!-- Flacon goutte d'eau / cœur alchimique -->
+  <path d="M 28 17 L 28 24 C 28 24 16 30 16 40 C 16 49 23 53 32 53 C 41 53 48 49 48 40 C 48 30 36 24 36 24 L 36 17 Z" fill="url(#emg_glass)" stroke="#86198F" stroke-width="1.2"/>
+
+  <!-- Liquide magique avec étoiles internes -->
+  <path d="M 17 38 C 21 35 26 40 32 37 C 38 34 43 39 47 37 C 47.8 45 41 52 32 52 C 23 52 16.2 45 17 38 Z" fill="url(#emg_liquid)"/>
+
+  <!-- Surface scintillante du liquide -->
+  <path d="M 17 38 C 21 35 26 40 32 37 C 38 34 43 39 47 37" stroke="#FDF4FF" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Étoiles magiques flottant dans le liquide -->
+  <!-- Étoile 1 -->
+  <path d="M 25 43 L 25.8 44.5 L 27.5 45 L 26 46 L 26.5 47.5 L 25 46.5 L 23.5 47.5 L 24 46 L 22.5 45 L 24.2 44.5 Z" fill="#FEF08A"/>
+  <!-- Étoile 2 -->
+  <path d="M 36 43 L 36.6 44.2 L 38 44.5 L 36.8 45.4 L 37.2 46.6 L 36 45.8 L 34.8 46.6 L 35.2 45.4 L 34 44.5 L 35.4 44.2 Z" fill="#FDF4FF"/>
+  <!-- Petites particules -->
+  <circle cx="31" cy="46" r="1.5" fill="#FFFFFF"/>
+  <circle cx="33" cy="41" r="1" fill="#FEF08A"/>
+
+  <!-- Reflet galbé de lumière sur la paroi gauche -->
+  <path d="M 20 33 C 18 36 18 43 20 47 C 19 44 19 36 21 33 Z" fill="#FFFFFF" opacity="0.85"/>
+
+  <!-- Col doré ciselé -->
+  <rect x="25" y="16" width="14" height="4" rx="1.2" fill="url(#emg_gold)" stroke="#92400E" stroke-width="0.8"/>
+  <circle cx="32" cy="18" r="1.5" fill="#F43F5E"/>
+
+  <!-- Bouchon couronne royale dorée avec rubis flamboyant -->
+  <path d="M 26 16 L 27 9 L 29.5 12 L 32 7 L 34.5 12 L 37 9 L 38 16 Z" fill="url(#emg_gold)" stroke="#78350F" stroke-width="0.8" stroke-linejoin="round"/>
+  <!-- Gemme rubis incrustée au centre de la couronne -->
+  <polygon points="32,9 34,13 32,16 30,13" fill="#F43F5E"/>
+  <polygon points="32,9 33,13 32,16" fill="#FDA4AF"/>
+
+  <!-- === GRANDES ÉTINCELLES MAGIQUES === -->
+  <!-- Sommet droite -->
+  <path d="M 49 10 C 49 13.5 50.5 15.5 53.5 15.5 C50.5 15.5 49 17.5 49 21 C 49 17.5 47.5 15.5 44.5 15.5 C 47.5 15.5 49 13.5 49 10 Z" fill="#FEF08A"/>
+  <!-- Gauche -->
+  <path d="M 12 18 C 12 20.5 13 22 15 22 C 13 22 12 23.5 12 26 C 12 23.5 11 22 9 22 C 11 22 12 20.5 12 18 Z" fill="#FDF4FF"/>
+  <!-- Étoile bas droite -->
+  <circle cx="53" cy="48" r="1.5" fill="#F472B6"/>
+  <circle cx="9" cy="44" r="1.2" fill="#FEF08A"/>
+</svg>
+
