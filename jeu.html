@@ -28,11 +28,11 @@
         <a href="description.html#shop" class="btn_plus_pieces">+</a>
       </div>
       <div class="barre_squishy">
-        <span class="icone_squishy">🧸</span>
+        <span class="icone_squishy">🐾</span>
         <span class="montant_squishy">138/500</span>
       </div>
       <div class="barre_nourriture">
-        <span class="icone_nourriture">🍪</span>
+        <span class="icone_nourriture">🍓</span>
         <span class="nourriture_disponible">138/500</span>
       </div>
 
@@ -178,10 +178,12 @@
             <img src="static/images/boutique/deux_pieces.svg" alt="Deux Pièces" class="image_objet">
             <h3 class="titre_objet">Deux Pièces</h3>
             <p class="description-objet">Visionne 1 vidéo pour obtenir 100 pièces d'or immédiatement.</p>
-            <div class="gain-pieces">+100 <span class="icone_piece">🪙</span></div>
-            <button class="bouton-achat btn-video">
-              <span class="icone_video">🎬</span> 1 Vidéo
-            </button>
+            <div class="ligne-gains">
+              <button class="bouton-achat btn-video">
+                <span class="icone_video">🎬</span> 1 Vidéo
+              </button>
+              <div class="gain-pieces">+100 <span class="icone_piece">🪙</span></div>
+            </div>
           </div>
 
           <!-- Carte 2 : Petit tas de pièces -->
@@ -189,10 +191,12 @@
             <img src="static/images/boutique/petit_tas.svg" alt="Petit Tas" class="image_objet">
             <h3 class="titre_objet">Petit Tas</h3>
             <p class="description-objet">Visionne 2 vidéos pour financer tes premières améliorations.</p>
-            <div class="gain-pieces">+500 <span class="icone_piece">🪙</span></div>
-            <button class="bouton-achat btn-video">
-              <span class="icone_video">🎬</span> 2 Vidéos
-            </button>
+            <div class="ligne-gains">
+              <button class="bouton-achat btn-video">
+                <span class="icone_video">🎬</span> 2 Vidéos
+              </button>
+              <div class="gain-pieces">+500 <span class="icone_piece">🪙</span></div>
+            </div>
           </div>
 
           <!-- Carte 3 : Bourse de pièces -->
@@ -200,10 +204,12 @@
             <img src="static/images/boutique/bourse_pieces.svg" alt="Gros Tas" class="image_objet">
             <h3 class="titre_objet">Gros Tas</h3>
             <p class="description-objet">Visionne 4 vidéos pour faire le plein de pièces et débloquer des coffres.</p>
-            <div class="gain-pieces">+1 500 <span class="icone_piece">🪙</span></div>
-            <button class="bouton-achat btn-video">
-              <span class="icone_video">🎬</span> 4 Vidéos
-            </button>
+            <div class="ligne-gains">
+              <button class="bouton-achat btn-video">
+                <span class="icone_video">🎬</span> 4 Vidéos
+              </button>
+              <div class="gain-pieces">+1 500 <span class="icone_piece">🪙</span></div>
+            </div>
           </div>
 
           <!-- Carte 4 : Un coffre de pièces -->
@@ -211,10 +217,12 @@
             <img src="static/images/boutique/coffre_dore.svg" alt="Coffre Doré" class="image_objet">
             <h3 class="titre_objet">Coffre Doré</h3>
             <p class="description-objet">Visionne 8 vidéos pour remporter un coffre plein de pièces d'or.</p>
-            <div class="gain-pieces">+5 000 <span class="icone_piece">🪙</span></div>
-            <button class="bouton-achat btn-video">
-              <span class="icone_video">🎬</span> 8 Vidéos
-            </button>
+            <div class="ligne-gains">
+              <button class="bouton-achat btn-video">
+                <span class="icone_video">🎬</span> 8 Vidéos
+              </button>
+              <div class="gain-pieces">+5 000 <span class="icone_piece">🪙</span></div>
+            </div>
           </div>
 
           <!-- Carte 5 : La Banque -->
@@ -222,17 +230,82 @@
             <img src="static/images/boutique/banque.svg" alt="La Banque" class="image_objet">
             <h3 class="titre_objet">La Banque</h3>
             <p class="description-objet">Visionne 15 vidéos pour débloquer le trésor suprême de la banque !</p>
-            <div class="gain-pieces">+25 000 <span class="icone_piece">🪙</span></div>
-            <button class="bouton-achat btn-video">
-              <span class="icone_video">🎬</span> 15 Vidéos
-            </button>
+            <div class="ligne-gains">
+              <button class="bouton-achat btn-video">
+                <span class="icone_video">🎬</span> 15 Vidéos
+              </button>
+              <div class="gain-pieces">+25 000 <span class="icone_piece">🪙</span></div>
+            </div>
           </div>
         </div>
       
         
 
         <div id="nourriture" class="contenu-boutique">
-          <!-- Cartes de nourriture ici -->
+          <!-- Carte 1 : Deux Fraises -->
+          <div class="carte-objet">
+            <img src="static/images/boutique/deux_fraises.svg" alt="Deux Fraises" class="image_objet">
+            <h3 class="titre_objet">Deux Fraises</h3>
+            <p class="description-objet">Une petite collation sucrée pour restaurer l'énergie de ton premier squishy.</p>
+            <div class="ligne-gains">
+              <button class="bouton-achat btn-video">
+                <span class="icone_video">🎬</span> 1 Vidéo
+              </button>
+              <div class="gain-nourriture">+50 <span>🍓</span></div>
+            </div>
+          </div>
+
+          <!-- Carte 2 : Barquette de Fraises -->
+          <div class="carte-objet">
+            <img src="static/images/boutique/petit_tas_fraises.svg" alt="Barquette de Fraises" class="image_objet">
+            <h3 class="titre_objet">Barquette de Fraises</h3>
+            <p class="description-objet">Une poignée de fraises bien fraîches pour rassasier tes squishys affamés.</p>
+            <div class="ligne-gains">
+              <button class="bouton-achat btn-video">
+                <span class="icone_video">🎬</span> 2 Vidéos
+              </button>
+              <div class="gain-nourriture">+200 <span>🍓</span></div>
+            </div>
+          </div>
+
+          <!-- Carte 3 : Panier de Fraises -->
+          <div class="carte-objet">
+            <img src="static/images/boutique/panier_fraises.svg?v=2" alt="Panier de Fraises" class="image_objet">
+            <h3 class="titre_objet">Panier de Fraises</h3>
+            <p class="description-objet">Un panier tressé débordant de délicieuses fraises des bois sucrées et juteuses.</p>
+            <div class="ligne-gains">
+              <button class="bouton-achat btn-video">
+                <span class="icone_video">🎬</span> 4 Vidéos
+              </button>
+              <div class="gain-nourriture">+600 <span>🍓</span></div>
+            </div>
+          </div>
+
+          <!-- Carte 4 : Cagette Royale -->
+          <div class="carte-objet">
+            <img src="static/images/boutique/cagette_fraises.svg?v=2" alt="Cagette Royale" class="image_objet">
+            <h3 class="titre_objet">Cagette Royale</h3>
+            <p class="description-objet">Une grande récolte de fraises premium pour régaler toute ton équipe de squishys.</p>
+            <div class="ligne-gains">
+              <button class="bouton-achat btn-video">
+                <span class="icone_video">🎬</span> 8 Vidéos
+              </button>
+              <div class="gain-nourriture">+2 000 <span>🍓</span></div>
+            </div>
+          </div>
+
+          <!-- Carte 5 : Montagne Enchantée -->
+          <div class="carte-objet">
+            <img src="static/images/boutique/montagne_fraises.svg" alt="Montagne Enchantée" class="image_objet">
+            <h3 class="titre_objet">Montagne Enchantée</h3>
+            <p class="description-objet">Un festin légendaire de fraises dorées magiques garantissant un festin sans fin.</p>
+            <div class="ligne-gains">
+              <button class="bouton-achat btn-video">
+                <span class="icone_video">🎬</span> 15 Vidéos
+              </button>
+              <div class="gain-nourriture">+10 000 <span>🍓</span></div>
+            </div>
+          </div>
         </div>
 
         <div id="exp" class="contenu-boutique">

@@ -845,19 +845,35 @@ header {
   line-height: 1;
 }
 
-/* --- Ligne d'alignement côte-à-côte (Onglet EXP) --- */
+/* --- Ligne d'alignement côte-à-côte (Onglets Pièces & EXP) --- */
 .ligne-gains {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   width: 100%;
   margin-top: auto;
 }
 
 .ligne-gains .bouton-achat {
-  padding: 5px 10px;
+  padding: 5px 8px;
   font-size: 11px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.ligne-gains .btn-video {
+  gap: 4px;
+}
+
+.ligne-gains .icone_video {
+  font-size: 13px;
+}
+
+.ligne-gains .gain-pieces {
+  margin-bottom: 0;
+  font-size: 11px;
+  padding: 5px 8px;
   border-radius: 12px;
   white-space: nowrap;
 }
