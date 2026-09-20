@@ -30,6 +30,7 @@
   --sidebar-width: 380px;
   --radius: 16px;
   --radius-sm: 10px;
+  --bg-gradient: linear-gradient(0deg, #abf0f8, #59a4ef);
 }
 
 *,
@@ -52,7 +53,7 @@
 }
 
 body {
-  background-image: url("../images/map_1.jpg");
+  background: var(--bg-gradient);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -876,4 +877,12 @@ header {
   padding: 5px 8px;
   border-radius: 12px;
   white-space: nowrap;
+}
+
+#map_viewport {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: 1; 
+  cursor: grab; 
 }
