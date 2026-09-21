@@ -112,6 +112,7 @@
           <div class="onglet" data-categorie="pieces">Pièces</div>
           <div class="onglet" data-categorie="nourriture">Nourriture</div>
           <div class="onglet" data-categorie="exp">EXP</div>
+          <div class="onglet" data-categorie="village">Village</div>
         </div>
 
         <div id="coffres" class="contenu-boutique">
@@ -374,8 +375,48 @@
             </div>
           </div>
         </div>
+
+        <!-- Section Village avec sous-onglets -->
+        <div id="village" class="contenu-boutique">
+          <!-- Barre des sous-onglets du Village -->
+          <div class="sous-onglets">
+            <button class="sous-onglet actif" data-sous-cat="village-maisons">Maison</button>
+            <button class="sous-onglet" data-sous-cat="village-enclos">Enclos</button>
+            <button class="sous-onglet" data-sous-cat="village-obstacles">Obstacles</button>
+            <button class="sous-onglet" data-sous-cat="village-tours">Tours</button>
+          </div>
+
+          <!-- Sous-catégorie 1 : Maisons -->
+          <div id="village-maisons" class="sous-contenu actif">
+            <!-- Carte 1 : Green House -->
+            <div class="carte-objet">
+              <img src="static/images/houses/green_house.png" alt="Green House" class="image_objet">
+              <h3 class="titre_objet">Green House</h3>
+              <p class="description-objet">Une maison écologique pour tes squishys.</p>
+              <button class="bouton-achat">
+                500 <span class="icone_piece">🪙</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Sous-catégorie 2 : Enclos -->
+          <div id="village-enclos" class="sous-contenu">
+            <!-- Cartes d'enclos ici -->
+          </div>
+
+          <!-- Sous-catégorie 3 : Obstacles -->
+          <div id="village-obstacles" class="sous-contenu">
+            <!-- Cartes d'obstacles ici -->
+          </div>
+
+          <!-- Sous-catégorie 4 : Tours -->
+          <div id="village-tours" class="sous-contenu">
+            <!-- Cartes de tours ici -->
+          </div>
+        </div>
       </div>
     </div>
+  
 
     <main id="map_viewport">
       <section>

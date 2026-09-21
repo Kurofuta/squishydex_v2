@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     mapContainer.className = "map-container";
 
     mapImg = document.createElement("img");
-    mapImg.src = "static\\images\\islands\\island_1.png";
+    mapImg.src = "static\\images\\islands\\main_island.png";
     mapImg.alt = "Carte du monde";
     mapImg.draggable = false;
 
