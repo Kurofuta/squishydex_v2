@@ -46,3 +46,24 @@ sousOngletsVillage.forEach(sousOnglet => {
     }
   });
 });
+
+// Sélection du bouton vert "+"
+const btnPlusPieces = document.getElementById('btn-plus-pieces');
+
+if (btnPlusPieces) {
+  btnPlusPieces.addEventListener('click', (e) => {
+    e.preventDefault(); // Empêche le comportement de lien par défaut
+
+    // 1. Ouvrir la popup boutique et le fond sombre
+    const overlay = document.getElementById('overlay-sombre');
+    const popupBoutique = document.getElementById('popup-boutique');
+    if (overlay) overlay.classList.add('actif');
+    if (popupBoutique) popupBoutique.classList.add('afficher');
+
+    // 2. Simuler un clic sur l'onglet "Pièces"
+    const ongletPieces = document.querySelector('.onglet[data-categorie="pieces"]');
+    if (ongletPieces) {
+      ongletPieces.click();
+    }
+  });
+}

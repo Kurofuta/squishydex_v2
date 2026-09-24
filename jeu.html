@@ -25,7 +25,7 @@
       <div class="barre_pieces">
         <span class="icone_piece">🪙</span>
         <span class="montant_pieces">138000</span>
-        <a href="description.html#shop" class="btn_plus_pieces">+</a>
+        <a href="#" id="btn-plus-pieces" class="btn_plus_pieces">+</a>
       </div>
       <div class="barre_squishy">
         <span class="icone_squishy">🐾</span>
@@ -70,8 +70,8 @@
       <nav class="liens-sidebar">
         <a href="#">Profil</a>
         <a href="#">Ma Collection</a>
-        <a href="#">Boutique</a>
-        <a href="#">Aventures</a>
+        <a href="#" id="lien-sidebar-boutique">Boutique</a>
+        <a href="#" id="lien-sidebar-aventure">Aventures</a>
         <a href="#">Paramètres</a>
       </nav>
     </div>
@@ -316,10 +316,10 @@
             <h3 class="titre_objet">Fiole d'XP Simple</h3>
             <p class="description-objet">Une petite dose d'énergie pour aider un nouveau squishy à faire ses premiers pas.</p>
             <div class="ligne-gains">
-              <div class="gain-exp">+100 EXP 🧪</div>
-              <button class="bouton-achat">
-                50 <span class="icone_piece">🪙</span>
+              <button class="bouton-achat btn-piece">
+                <span class="icone_piece">🪙</span> 50
               </button>
+              <div class="gain-exp">+100 EXP 🧪</div>
             </div>
           </div>
 
@@ -329,10 +329,10 @@
             <h3 class="titre_objet">Potion d'XP Améliorée</h3>
             <p class="description-objet">Un breuvage efficace pour franchir rapidement les tout premiers niveaux d'entraînement.</p>
             <div class="ligne-gains">
-              <div class="gain-exp">+300 EXP 🧪</div>
-              <button class="bouton-achat">
-                120 <span class="icone_piece">🪙</span>
+              <button class="bouton-achat btn-piece">
+                <span class="icone_piece">🪙</span> 120
               </button>
+              <div class="gain-exp">+300 EXP 🧪</div>
             </div>
           </div>
 
@@ -342,10 +342,10 @@
             <h3 class="titre_objet">Élixir d'XP Magique</h3>
             <p class="description-objet"> Brille d'une lueur étrange. Propulse la puissance de ton squishy à un stade supérieur.</p>
             <div class="ligne-gains">
-              <div class="gain-exp">+800 EXP ✨</div>
-              <button class="bouton-achat">
-                280 <span class="icone_piece">🪙</span>
+              <button class="bouton-achat btn-piece">
+                <span class="icone_piece">🪙</span> 280
               </button>
+              <div class="gain-exp">+800 EXP ✨</div>
             </div>
           </div>
 
@@ -355,10 +355,10 @@
             <h3 class="titre_objet">Nectar d'XP Enchanté</h3>
             <p class="description-objet"> Une boisson luxueuse garantissant une montée en niveau fulgurante pour ton équipe.</p>
             <div class="ligne-gains">
-              <div class="gain-exp">+2 000 EXP 🌌</div>
-              <button class="bouton-achat">
-                650 <span class="icone_piece">🪙</span>
+              <button class="bouton-achat btn-piece">
+                <span class="icone_piece">🪙</span> 650
               </button>
+              <div class="gain-exp">+2 000 EXP 🌌</div>
             </div>
           </div>
 
@@ -368,10 +368,10 @@
             <h3 class="titre_objet">Ambroisie Légendaire</h3>
             <p class="description-objet">Le summum de l'expérience. L'ultime raccourci pour maximiser le potentiel de tes meilleurs combattants.</p>
             <div class="ligne-gains">
-              <div class="gain-exp">+6 000 EXP 👑</div>
-              <button class="bouton-achat">
-                1 800 <span class="icone_piece">🪙</span>
+              <button class="bouton-achat btn-piece">
+                <span class="icone_piece">🪙</span> 1 800
               </button>
+              <div class="gain-exp">+6 000 EXP 👑</div>
             </div>
           </div>
         </div>
@@ -397,21 +397,150 @@
                 500 <span class="icone_piece">🪙</span>
               </button>
             </div>
-          </div>
+
+            <!-- Carte 2 : Blue House -->
+            <div class="carte-objet">
+              <img src="static/images/houses/blue_house.png" alt="Blue House" class="image_objet">
+              <h3 class="titre_objet">Blue House</h3>
+              <p class="description-objet">Une maison écologique pour tes squishys.</p>
+              <button class="bouton-achat">
+                500 <span class="icone_piece">🪙</span>
+              </button>
+            </div>
+          
+
+           <div class="carte-objet">
+              <img src="static/images/houses/yellow_house.png" alt="yellow house" class="image_objet">
+              <h3 class="titre_objet">Yellow house</h3>
+              <p class="description-objet">Une maison écologique pour tes squishys.</p>
+              <button class="bouton-achat">
+                500 <span class="icone_piece">🪙</span>
+              </button>
+           </div>
+          
+
+          <div class="carte-objet">
+              <img src="static/images/houses/main_house.png" alt="main house" class="image_objet">
+              <h3 class="titre_objet">Main house</h3>
+              <p class="description-objet">Une maison écologique pour tes squishys.</p>
+              <button class="bouton-achat">
+                500 <span class="icone_piece">🪙</span>
+              </button>
+           </div>
+           </div>
+            
 
           <!-- Sous-catégorie 2 : Enclos -->
           <div id="village-enclos" class="sous-contenu">
             <!-- Cartes d'enclos ici -->
+             <div class="carte-objet">
+             <img src="static/images/enclosures/animal_enclosure.png" alt="animal enclosures" class="image_objet">
+              <h3 class="titre_objet">Animal enclosures</h3>
+              <p class="description-objet">.</p>
+              <button class="bouton-achat">
+                500 <span class="icone_piece">🪙</span>
+              </button>
+           </div>
+          
+
+            <div class="carte-objet">
+             <img src="static/images/enclosures/food_enclosure.png" alt="food enclosures" class="image_objet">
+              <h3 class="titre_objet">Food enclosures</h3>
+              <p class="description-objet">.</p>
+              <button class="bouton-achat">
+                500 <span class="icone_piece">🪙</span>
+              </button>
+           </div>
+          
+        
+           <div class="carte-objet">
+             <img src="static/images/enclosures/prod_field.png" alt="prod enclosures" class="image_objet">
+              <h3 class="titre_objet">Prod enclosures</h3>
+              <p class="description-objet">.</p>
+              <button class="bouton-achat">
+                500 <span class="icone_piece">🪙</span>
+              </button>
+           </div>
+          
+
+          <div class="carte-objet">
+             <img src="static/images/enclosures/soil_enclosure.png" alt="soil enclosures" class="image_objet">
+              <h3 class="titre_objet">Soil enclosures</h3>
+              <p class="description-objet">.</p>
+              <button class="bouton-achat">
+                500 <span class="icone_piece">🪙</span>
+              </button>
+           </div>
           </div>
+        
 
           <!-- Sous-catégorie 3 : Obstacles -->
           <div id="village-obstacles" class="sous-contenu">
             <!-- Cartes d'obstacles ici -->
+             <div class="carte-objet">
+             <img src="static/images/obstacles/bush.png" alt="bush" class="image_objet">
+              <h3 class="titre_objet">Bush</h3>
+              <p class="description-objet">.</p>
+              <button class="bouton-achat">
+                500 <span class="icone_piece">🪙</span>
+              </button>
+           </div>
+          
+
+          <div class="carte-objet">
+             <img src="static/images/obstacles/chest.png" alt="chest" class="image_objet">
+              <h3 class="titre_objet">Chest</h3>
+              <p class="description-objet">.</p>
+              <button class="bouton-achat">
+                500 <span class="icone_piece">🪙</span>
+              </button>
+           </div>
+          
+
+           <div class="carte-objet">
+             <img src="static/images/obstacles/tree.png" alt="tree" class="image_objet">
+              <h3 class="titre_objet">Tree</h3>
+              <p class="description-objet">.</p>
+              <button class="bouton-achat">
+                500 <span class="icone_piece">🪙</span>
+              </button>
+           </div>
+         
+
+          <div class="carte-objet">
+             <img src="static/images/obstacles/water_fountain.png" alt="water fountain" class="image_objet">
+              <h3 class="titre_objet">Water fountain</h3>
+              <p class="description-objet">.</p>
+              <button class="bouton-achat">
+                500 <span class="icone_piece">🪙</span>
+              </button>
+           </div>
           </div>
+          
 
           <!-- Sous-catégorie 4 : Tours -->
           <div id="village-tours" class="sous-contenu">
-            <!-- Cartes de tours ici -->
+            <div class="carte-objet">
+             <img src="static/images/towers/defense_tower.png" alt="defense tower" class="image_objet">
+              <h3 class="titre_objet">Defense tower</h3>
+              <p class="description-objet">.</p>
+              <button class="bouton-achat">
+                500 <span class="icone_piece">🪙</span>
+              </button>
+           </div>
+          
+
+          <div class="carte-objet">
+             <img src="static/images/towers/watch_tower.png" alt="watch tower" class="image_objet">
+              <h3 class="titre_objet">Watch tower</h3>
+              <p class="description-objet">.</p>
+              <button class="bouton-achat">
+                500 <span class="icone_piece">🪙</span>
+              </button>
+           </div>
+          </div>
+
+
           </div>
         </div>
       </div>
