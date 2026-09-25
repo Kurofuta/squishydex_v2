@@ -68,3 +68,47 @@ if (btnPlusPieces) {
   });
 }
 
+// ==========================================
+// EFFET SONORE LORS DES ACHATS EN PIÈCES
+// ==========================================
+let sonPiece = new Audio('static/sounds/coin%20effect/pickupcoin.wav');
+sonPiece.volume = 0.4;
+
+// Sécurité pour compatibilité selon l'encodage du dossier (avec ou sans %20)
+sonPiece.addEventListener('error', () => {
+  sonPiece = new Audio('static/sounds/coin effect/pickupcoin.wav');
+  sonPiece.volume = 0.4;
+});
+
+// On sélectionne tous les boutons d'achat qui utilisent des pièces (et PAS les vidéos)
+const boutonsPieces = document.querySelectorAll('.bouton-achat:not(.btn-video)');
+
+boutonsPieces.forEach(bouton => {
+  bouton.addEventListener('click', () => {
+    sonPiece.currentTime = 0;
+    sonPiece.play().catch(err => console.warn("Lecture du son :", err));
+  });
+});
+
+
+//=========================================
+// EFFET SONORE CLIQUE BOUTON (Boutique & Aventure)
+//=========================================
+let sonBtn = new Audio('static/sounds/click%20sound/click%20sound%20btn.mp3');
+sonBtn.volume = 0.4;
+
+// Sécurité pour compatibilité selon l'encodage du dossier (avec ou sans %20)
+sonBtn.addEventListener('error', () => {
+  sonBtn = new Audio('static/sounds/click sound/click sound btn.mp3');
+  sonBtn.volume = 0.4;
+});
+
+// Pour sélectionner DEUX boutons en même temps, on sépare leurs sélecteurs par une virgule !
+const boutonsPrincipaux = document.querySelectorAll('#btn-ouvrir-boutique, #btn-ouvrir-popup, #btn-plus-pieces');
+
+boutonsPrincipaux.forEach(bouton => {
+  bouton.addEventListener('click', () => {
+    sonBtn.currentTime = 0;
+    sonBtn.play().catch(err => console.warn("Lecture du son bouton :", err));
+  });
+});
