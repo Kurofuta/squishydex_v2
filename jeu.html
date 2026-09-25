@@ -61,6 +61,8 @@
         </div>
       </button>
 
+      
+
       <div id="overlay-sombre" class="overlay"></div>
     </header>
     <div id="menu-lateral" class="sidebar">
@@ -68,11 +70,11 @@
 
       <h2>Squishydex</h2>
       <nav class="liens-sidebar">
-        <a href="#">Profil</a>
+        <a href="#" id="lien-sidebar-profil">Profil</a>
         <a href="#">Ma Collection</a>
         <a href="#" id="lien-sidebar-boutique">Boutique</a>
         <a href="#" id="lien-sidebar-aventure">Aventures</a>
-        <a href="#">Paramètres</a>
+        <a href="#" id="lien-sidebar-parametres">Paramètres</a>
       </nav>
     </div>
 
@@ -81,6 +83,77 @@
       <button id="btn-fermer-popup">&times;</button>
       <h2>Félicitations !</h2>
       <p>Vous avez obtenu un nouveau squishy rare.</p>
+    </div>
+
+    <!-- La boîte de la pop-up Profil -->
+    <div id="popup-profil" class="ma-popup-style">
+      <div class="popup-header">
+        <span class="popup-title">Profil du Joueur</span>
+        <button id="btn-fermer-profil" class="btn-control btn-close" aria-label="Fermer">
+          <svg class="icone-fermer-svg" viewBox="0 0 100 100" width="24" height="24">
+            <circle cx="50" cy="50" r="48" fill="#E6192E" />
+            <path d="M31 31 L69 69 M69 31 L31 69" stroke="white" stroke-width="12" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="contenu-profil">
+        <!-- Section Identité -->
+        <div class="profil-identite">
+          <div class="avatar-container">
+            <img src="static/images/profils/pp_jeu.jpg" alt="Avatar" class="avatar-grand" />
+          </div>
+          <div class="infos-joueur">
+            <div class="ligne-pseudo">
+              <span class="pseudo-texte">Dresseur</span>
+            </div>
+            <span class="titre-joueur">🏆 Bâtisseur d'île</span>
+            
+            <div class="progression-bloc">
+              <div class="barre-xp-profil">
+                <div class="remplissage-xp-profil" style="width: 60%"></div>
+              </div>
+              <span class="details-xp">Niveau 1 — 120 / 200 XP</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section Statistiques -->
+        <h3 class="titre-section-profil">Statistiques</h3>
+        <div class="grille-stats">
+          <div class="carte-stat">
+            <span class="stat-icone">🐾</span>
+            <div class="stat-texte">
+              <span class="stat-valeur">138 / 500</span>
+              <span class="stat-label">Squishies découverts</span>
+            </div>
+          </div>
+
+          <div class="carte-stat">
+            <span class="stat-icone">⚔️</span>
+            <div class="stat-texte">
+              <span class="stat-valeur">12</span>
+              <span class="stat-label">Aventures réussies</span>
+            </div>
+          </div>
+
+          <div class="carte-stat">
+            <span class="stat-icone">🪙</span>
+            <div class="stat-texte">
+              <span class="stat-valeur">138 000</span>
+              <span class="stat-label">Pièces récoltées</span>
+            </div>
+          </div>
+
+          <div class="carte-stat">
+            <span class="stat-icone">🏡</span>
+            <div class="stat-texte">
+              <span class="stat-valeur">5</span>
+              <span class="stat-label">Bâtiments posés</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Fond sombre de la boutique (s'il est géré séparément) -->

@@ -613,7 +613,8 @@ header {
 }
 
 /* Bouton de fermeture SVG rouge */
-#btn-fermer-boutique {
+#btn-fermer-boutique,
+#btn-fermer-profil {
   background: transparent !important;
   border: none;
   padding: 0;
@@ -626,18 +627,21 @@ header {
   transition: transform 0.15s ease, filter 0.15s ease;
 }
 
-#btn-fermer-boutique .icone-fermer-svg {
+#btn-fermer-boutique .icone-fermer-svg,
+#btn-fermer-profil .icone-fermer-svg {
   pointer-events: none;
   display: block;
 }
 
-#btn-fermer-boutique:hover {
+#btn-fermer-boutique:hover,
+#btn-fermer-profil:hover {
   background: transparent !important;
   transform: scale(1.12);
   filter: brightness(1.1);
 }
 
-#btn-fermer-boutique:active {
+#btn-fermer-boutique:active,
+#btn-fermer-profil:active {
   transform: scale(0.95);
 }
 
@@ -1019,4 +1023,166 @@ header {
   overflow: hidden;
   z-index: 0; 
   cursor: grab; 
+}
+
+/* ==========================================================================
+   POPUP PROFIL (#popup-profil)
+   ========================================================================== */
+#popup-profil {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  color: black;
+  width: clamp(340px, 45vw, 600px);
+  max-height: 85vh;
+  padding: 0 !important;
+  border-radius: 16px;
+  z-index: 1001;
+  display: none;
+  font-family: "Arial Black", sans-serif;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.contenu-profil {
+  background-color: #ffe6eb;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  overflow-y: auto;
+  max-height: calc(85vh - 40px);
+}
+
+/* Bloc d'identité */
+.profil-identite {
+  background: white;
+  border-radius: 16px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 4px 10px rgba(255, 182, 193, 0.4);
+}
+
+.avatar-container {
+  flex-shrink: 0;
+}
+
+.avatar-grand {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 4px solid #ffb3cc;
+  object-fit: cover;
+  display: block;
+}
+
+.infos-joueur {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ligne-pseudo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pseudo-texte {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.titre-joueur {
+  font-size: 0.85rem;
+  color: #ff6b8b;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.progression-bloc {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.barre-xp-profil {
+  width: 100%;
+  height: 12px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #ffccd5;
+}
+
+.remplissage-xp-profil {
+  height: 100%;
+  background: linear-gradient(90deg, #ff85a2, #ff4d79);
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.details-xp {
+  font-size: 0.75rem;
+  color: #888;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+/* Section Statistiques */
+.titre-section-profil {
+  font-size: 1rem;
+  color: #a8324a;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.grille-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.carte-stat {
+  background: white;
+  border-radius: 14px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 2px solid #ffd1dc;
+  transition: transform 0.2s ease;
+}
+
+.carte-stat:hover {
+  transform: translateY(-2px);
+}
+
+.stat-icone {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.stat-texte {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-valeur {
+  font-size: 1.05rem;
+  color: #333;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #888;
+  font-family: sans-serif;
+  font-weight: bold;
 }

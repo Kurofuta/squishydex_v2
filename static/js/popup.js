@@ -47,3 +47,28 @@ const fermerBoutique = () => {
 btnFermerBoutique.addEventListener('click', fermerBoutique);
 if(overlayBoutique) overlayBoutique.addEventListener('click', fermerBoutique);
 
+// ==========================================
+// CODE POUR LA POPUP PROFIL
+// ==========================================
+const btnFermerProfil = document.getElementById('btn-fermer-profil');
+const popupProfil = document.getElementById('popup-profil');
+const avatarHeader = document.querySelector('.profil_joueur');
+
+// Fermeture du profil
+const fermerProfil = () => {
+  if (overlayPopup) overlayPopup.classList.remove('actif');
+  if (popupProfil) popupProfil.classList.remove('afficher');
+};
+
+if (btnFermerProfil) btnFermerProfil.addEventListener('click', fermerProfil);
+if (overlayPopup) overlayPopup.addEventListener('click', fermerProfil);
+
+// Permettre aussi d'ouvrir le profil en cliquant directement sur l'avatar du header
+if (avatarHeader) {
+  avatarHeader.style.cursor = 'pointer';
+  avatarHeader.addEventListener('click', () => {
+    if (overlayPopup) overlayPopup.classList.add('actif');
+    if (popupProfil) popupProfil.classList.add('afficher');
+  });
+}
+

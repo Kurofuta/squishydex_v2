@@ -62,3 +62,22 @@ if (lienSidebarAventure) {
     if (popupAventure) popupAventure.classList.add('afficher');
   });
 }
+
+// Sélection du lien "Profil" dans le menu latéral (engrenage)
+const lienSidebarProfil = document.getElementById('lien-sidebar-profil') || document.getElementById('lien_sidebar_profil');
+
+if (lienSidebarProfil) {
+  lienSidebarProfil.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    // 1. Fermer le menu latéral
+    const sidebar = document.getElementById('menu-lateral');
+    if (sidebar) sidebar.classList.remove('ouverte');
+
+    // 2. Ouvrir la popup profil et activer le fond sombre
+    const overlay = document.getElementById('overlay-sombre');
+    const popupProfil = document.getElementById('popup-profil');
+    if (overlay) overlay.classList.add('actif');
+    if (popupProfil) popupProfil.classList.add('afficher');
+  });
+}
