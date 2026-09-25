@@ -6,12 +6,14 @@ const popup = document.getElementById('ma-popup');
 
 // Action d'ouverture
 btnOuvrirPopup.addEventListener('click', () => {
+  if (window.jouerSon) window.jouerSon('coffre');
   overlayPopup.classList.add('actif');
   popup.classList.add('afficher');
 });
 
 // Action de fermeture
 const fermerPopup = () => {
+  if (window.jouerSon) window.jouerSon('fermer');
   overlayPopup.classList.remove('actif');
   popup.classList.remove('afficher');
 };
@@ -39,6 +41,7 @@ btnOuvrirBoutique.addEventListener('click', () => {
 
 // 3. Action de fermeture de la boutique
 const fermerBoutique = () => {
+  if (window.jouerSon) window.jouerSon('fermer');
   if(overlayBoutique) overlayBoutique.classList.remove('actif');
   if(popupBoutique) popupBoutique.classList.remove('afficher');
 };
@@ -56,6 +59,7 @@ const avatarHeader = document.querySelector('.profil_joueur');
 
 // Fermeture du profil
 const fermerProfil = () => {
+  if (window.jouerSon) window.jouerSon('fermer');
   if (overlayPopup) overlayPopup.classList.remove('actif');
   if (popupProfil) popupProfil.classList.remove('afficher');
 };
@@ -67,8 +71,24 @@ if (overlayPopup) overlayPopup.addEventListener('click', fermerProfil);
 if (avatarHeader) {
   avatarHeader.style.cursor = 'pointer';
   avatarHeader.addEventListener('click', () => {
+    if (window.jouerSon) window.jouerSon('bouton');
     if (overlayPopup) overlayPopup.classList.add('actif');
     if (popupProfil) popupProfil.classList.add('afficher');
   });
 }
+
+// ==========================================
+// CODE POUR LA POPUP PARAMÈTRES
+// ==========================================
+const btnFermerParametres = document.getElementById('btn-fermer-parametres');
+const popupParametres = document.getElementById('popup-parametres');
+
+const fermerParametres = () => {
+  if (window.jouerSon) window.jouerSon('fermer');
+  if (overlayPopup) overlayPopup.classList.remove('actif');
+  if (popupParametres) popupParametres.classList.remove('afficher');
+};
+
+if (btnFermerParametres) btnFermerParametres.addEventListener('click', fermerParametres);
+if (overlayPopup) overlayPopup.addEventListener('click', fermerParametres);
 

@@ -156,6 +156,102 @@
       </div>
     </div>
 
+    <!-- La boîte de la pop-up Paramètres -->
+    <div id="popup-parametres" class="ma-popup-style">
+      <div class="popup-header">
+        <span class="popup-title">Paramètres</span>
+        <button id="btn-fermer-parametres" class="btn-control btn-close" aria-label="Fermer">
+          <svg class="icone-fermer-svg" viewBox="0 0 100 100" width="24" height="24">
+            <circle cx="50" cy="50" r="48" fill="#E6192E" />
+            <path d="M31 31 L69 69 M69 31 L31 69" stroke="white" stroke-width="12" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="contenu-parametres">
+        <!-- Section 1 : Audio -->
+        <h3 class="titre-section-param">🔊 Audio & Effets Sonores</h3>
+        <div class="groupe-param">
+          <!-- Musique de fond -->
+          <div class="ligne-param">
+            <div class="param-info">
+              <span class="param-icone">🎵</span>
+              <span class="param-nom">Musique</span>
+            </div>
+            <div class="param-controles">
+              <input type="range" id="slider-musique" class="param-slider" min="0" max="100" value="40">
+              <span id="valeur-musique" class="param-pourcentage">40%</span>
+              <label class="toggle-switch">
+                <input type="checkbox" id="toggle-musique" checked>
+                <span class="slider-toggle"></span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Bruitages & Clics -->
+          <div class="ligne-param">
+            <div class="param-info">
+              <span class="param-icone">🔔</span>
+              <span class="param-nom">Bruitages</span>
+            </div>
+            <div class="param-controles">
+              <input type="range" id="slider-sfx" class="param-slider" min="0" max="100" value="40">
+              <span id="valeur-sfx" class="param-pourcentage">40%</span>
+              <label class="toggle-switch">
+                <input type="checkbox" id="toggle-sfx" checked>
+                <span class="slider-toggle"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2 : Thème & Langue -->
+        <h3 class="titre-section-param">🎨 Thème & Langue</h3>
+        <div class="groupe-param">
+          <!-- Mode Sombre -->
+          <div class="ligne-param">
+            <div class="param-info">
+              <span class="param-icone">🌙</span>
+              <span class="param-nom">Mode Sombre</span>
+            </div>
+            <div class="param-controles">
+              <label class="toggle-switch">
+                <input type="checkbox" id="toggle-theme">
+                <span class="slider-toggle"></span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Langue -->
+          <div class="ligne-param">
+            <div class="param-info">
+              <span class="param-icone">🌐</span>
+              <span class="param-nom">Langue</span>
+            </div>
+            <div class="param-controles">
+              <select id="select-langue" class="param-select">
+                <option value="fr" selected>Français 🇫🇷</option>
+                <option value="en">English 🇬🇧</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3 : Informations -->
+        <h3 class="titre-section-param">ℹ️ Informations</h3>
+        <div class="groupe-param carte-infos-jeu">
+          <div class="info-jeu-ligne">
+            <span class="info-jeu-label">Jeu</span>
+            <span class="info-jeu-valeur">Squishydex v1.0 🐾</span>
+          </div>
+          <div class="info-jeu-ligne">
+            <span class="info-jeu-label">Création</span>
+            <span class="info-jeu-valeur">Fait avec passion 💕</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Fond sombre de la boutique (s'il est géré séparément) -->
     <div id="overlay-sombre-boutique" class="overlay-popup"></div>
 
@@ -640,9 +736,11 @@
       </button>
     </footer>
 
+    <script src="static/js/audio.js"></script>
     <script src="static\js\sidebar.js"></script>
     <script src="static\js\popup.js"></script>
-    <script src="static/js/onglets_boutique.js?v=3"></script>
+    <script src="static/js/onglets_boutique.js?v=4"></script>
+    <script src="static/js/parametres.js"></script>
     <script src="static\js\exp.js"></script>
     <script src="static/js/map.js"></script>
   </body>

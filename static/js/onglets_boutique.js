@@ -8,6 +8,9 @@ const conteneurs = document.querySelectorAll('.contenu-boutique');
 
 onglets.forEach(onglet => {
   onglet.addEventListener('click', () => {
+    // Jouer le son d'onglet
+    if (window.jouerSon) window.jouerSon('onglet');
+
     // Retirer l'état actif sur tous les onglets principaux
     onglets.forEach(o => o.classList.remove('actif'));
     // Masquer tous les conteneurs principaux
@@ -31,6 +34,9 @@ const sousContenusVillage = document.querySelectorAll('.sous-contenu');
 
 sousOngletsVillage.forEach(sousOnglet => {
   sousOnglet.addEventListener('click', () => {
+    // Jouer le son d'onglet
+    if (window.jouerSon) window.jouerSon('onglet');
+
     // Retirer l'état actif sur tous les sous-onglets et sous-contenus
     sousOngletsVillage.forEach(so => so.classList.remove('actif'));
     sousContenusVillage.forEach(sc => sc.classList.remove('actif'));
@@ -69,46 +75,33 @@ if (btnPlusPieces) {
 }
 
 // ==========================================
-// EFFET SONORE LORS DES ACHATS EN PIÈCES
+// EFFETS SONORES DES BOUTONS DE LA BOUTIQUE
 // ==========================================
-let sonPiece = new Audio('static/sounds/coin%20effect/pickupcoin.wav');
-sonPiece.volume = 0.4;
 
-// Sécurité pour compatibilité selon l'encodage du dossier (avec ou sans %20)
-sonPiece.addEventListener('error', () => {
-  sonPiece = new Audio('static/sounds/coin effect/pickupcoin.wav');
-  sonPiece.volume = 0.4;
-});
-
-// On sélectionne tous les boutons d'achat qui utilisent des pièces (et PAS les vidéos)
+// 1. Boutons d'achat en pièces (EXP, Village, Coffres)
 const boutonsPieces = document.querySelectorAll('.bouton-achat:not(.btn-video)');
-
 boutonsPieces.forEach(bouton => {
   bouton.addEventListener('click', () => {
-    sonPiece.currentTime = 0;
-    sonPiece.play().catch(err => console.warn("Lecture du son :", err));
+    if (bouton.closest('#coffres')) {
+      if (window.jouerSon) window.jouerSon('coffre');
+    } else {
+      if (window.jouerSon) window.jouerSon('piece');
+    }
   });
 });
 
-
-//=========================================
-// EFFET SONORE CLIQUE BOUTON (Boutique & Aventure)
-//=========================================
-let sonBtn = new Audio('static/sounds/click%20sound/click%20sound%20btn.mp3');
-sonBtn.volume = 0.4;
-
-// Sécurité pour compatibilité selon l'encodage du dossier (avec ou sans %20)
-sonBtn.addEventListener('error', () => {
-  sonBtn = new Audio('static/sounds/click sound/click sound btn.mp3');
-  sonBtn.volume = 0.4;
+// 2. Boutons de visionnage vidéo (Pièces & Nourriture)
+const boutonsVideos = document.querySelectorAll('.bouton-achat.btn-video');
+boutonsVideos.forEach(bouton => {
+  bouton.addEventListener('click', () => {
+    if (window.jouerSon) window.jouerSon('video');
+  });
 });
 
-// Pour sélectionner DEUX boutons en même temps, on sépare leurs sélecteurs par une virgule !
+// 3. Boutons principaux de navigation (Boutique, Aventure, + pièces)
 const boutonsPrincipaux = document.querySelectorAll('#btn-ouvrir-boutique, #btn-ouvrir-popup, #btn-plus-pieces');
-
 boutonsPrincipaux.forEach(bouton => {
   bouton.addEventListener('click', () => {
-    sonBtn.currentTime = 0;
-    sonBtn.play().catch(err => console.warn("Lecture du son bouton :", err));
+    if (window.jouerSon) window.jouerSon('bouton');
   });
 });

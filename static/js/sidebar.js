@@ -8,12 +8,14 @@ const overlay = document.getElementById('overlay-sombre');
 
 // Fonction pour ouvrir le menu
 btnOuvrir.addEventListener('click', () => {
+  if (window.jouerSon) window.jouerSon('bouton');
   sidebar.classList.add('ouverte');
   overlay.classList.add('actif');
 });
 
 // Fonction pour fermer le menu (via le bouton ou en cliquant sur l'overlay sombre)
 const fermerMenu = () => {
+  if (window.jouerSon) window.jouerSon('fermer');
   sidebar.classList.remove('ouverte');
   overlay.classList.remove('actif');
 };
@@ -79,5 +81,24 @@ if (lienSidebarProfil) {
     const popupProfil = document.getElementById('popup-profil');
     if (overlay) overlay.classList.add('actif');
     if (popupProfil) popupProfil.classList.add('afficher');
+  });
+}
+
+// Sélection du lien "Paramètres" dans le menu latéral (engrenage)
+const lienSidebarParametres = document.getElementById('lien-sidebar-parametres') || document.getElementById('lien_sidebar_parametres');
+
+if (lienSidebarParametres) {
+  lienSidebarParametres.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    // 1. Fermer le menu latéral
+    const sidebar = document.getElementById('menu-lateral');
+    if (sidebar) sidebar.classList.remove('ouverte');
+
+    // 2. Ouvrir la popup paramètres et activer le fond sombre
+    const overlay = document.getElementById('overlay-sombre');
+    const popupParametres = document.getElementById('popup-parametres');
+    if (overlay) overlay.classList.add('actif');
+    if (popupParametres) popupParametres.classList.add('afficher');
   });
 }
