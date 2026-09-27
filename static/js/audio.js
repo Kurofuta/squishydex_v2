@@ -20,11 +20,11 @@ const creerElementAudio = (chemin, volumeDefaut = 0.4, boucle = false) => {
 // 1. Dictionnaire de tous les sons du jeu
 window.sonsJeu = {
   // Sons déjà en place
-  piece: creerElementAudio('static/sounds/coin effect/pickupcoin.wav', 0.4),
-  bouton: creerElementAudio('static/sounds/click sound/click sound btn.mp3', 0.4),
+  piece: creerElementAudio('static/sounds/coin effect/freesound_gamestudio-drop-coin-384921.mp3', 0.4),
+  bouton: creerElementAudio('static/sounds/click sound/vadim_makes_sound-soft-app-button-tap-sound-5-547873.mp3', 0.4),
 
   // Nouveaux sons prévus (avec des noms simples)
-  video: creerElementAudio('static/sounds/video.mp3', 0.4),
+  video: creerElementAudio('static/sounds/video.mp3', 0.3),
   onglet: creerElementAudio('static/sounds/onglet.mp3', 0.3),
   fermer: creerElementAudio('static/sounds/fermer.mp3', 0.35),
   coffre: creerElementAudio('static/sounds/coffre.mp3', 0.5),

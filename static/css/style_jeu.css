@@ -614,7 +614,9 @@ header {
 
 /* Bouton de fermeture SVG rouge */
 #btn-fermer-boutique,
-#btn-fermer-profil {
+#btn-fermer-profil,
+#btn-fermer-parametres,
+#btn-fermer-collection {
   background: transparent !important;
   border: none;
   padding: 0;
@@ -628,20 +630,26 @@ header {
 }
 
 #btn-fermer-boutique .icone-fermer-svg,
-#btn-fermer-profil .icone-fermer-svg {
+#btn-fermer-profil .icone-fermer-svg,
+#btn-fermer-parametres .icone-fermer-svg,
+#btn-fermer-collection .icone-fermer-svg {
   pointer-events: none;
   display: block;
 }
 
 #btn-fermer-boutique:hover,
-#btn-fermer-profil:hover {
+#btn-fermer-profil:hover,
+#btn-fermer-parametres:hover,
+#btn-fermer-collection:hover {
   background: transparent !important;
   transform: scale(1.12);
   filter: brightness(1.1);
 }
 
 #btn-fermer-boutique:active,
-#btn-fermer-profil:active {
+#btn-fermer-profil:active,
+#btn-fermer-parametres:active,
+#btn-fermer-collection:active {
   transform: scale(0.95);
 }
 
@@ -776,7 +784,7 @@ header {
 /* Grilles pour chaque sous-catégorie du Village */
 .sous-contenu {
   display: none;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 15px;
   width: 100%;
 }
@@ -815,12 +823,20 @@ header {
 .image-objet,
 .image_objet {
   width: 100%;
-  max-width: 135px;
-  height: 115px;
+  max-width: 100%;
+  height: 150px;
   object-fit: contain;
   margin: 0 auto;
   display: block;
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.08));
+}
+
+#village .image_objet,
+#village .image-objet {
+  width: 100%;
+  max-width: 100%;
+  height: 175px;
+  object-fit: contain;
 }
 
 .titre-objet,
@@ -1023,6 +1039,42 @@ header {
   overflow: hidden;
   z-index: 0; 
   cursor: grab; 
+}
+
+/* Le conteneur qui porte la carte et tous les bâtiments */
+.map-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Style de base pour les bâtiments posés sur la carte */
+.batiment-ile {
+  position: absolute;
+  /* Taille du bâtiment sur l'île */
+  width: 80px; 
+  z-index: 2; /* Pour être au-dessus du sol de l'île */
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.batiment-ile img {
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none; /* Le clic va directement sur le conteneur du bâtiment */
+  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.25)); /* Ombre au sol */
+}
+
+/* Petit effet au survol */
+.batiment-ile:hover {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+/* Coordonnées spécifiques de ta première maison */
+.maison-1 {
+  top: 227px;   /* Position verticale sur l'île */
+  left: 467px;  /* Position horizontale sur l'île */
 }
 
 /* ==========================================================================
@@ -1418,5 +1470,458 @@ body.dark-theme .info-jeu-valeur {
 body.dark-theme .param-select {
   background-color: #2b2233;
   color: #f3ebf2;
+  border-color: #4a344f;
+}
+
+/* ==========================================================================
+   POPUP MA COLLECTION (#popup-collection)
+   ========================================================================== */
+#popup-collection {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  color: black;
+  width: clamp(800px, 80vw, 1700px);
+  max-height: 88vh;
+  padding: 0 !important;
+  border-radius: 16px;
+  z-index: 1001;
+  display: none;
+  font-family: "Arial Black", sans-serif;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Barre d'outils, jauge & filtres --- */
+.barre-collection {
+  background-color: #fff0f3;
+  padding: 14px 20px;
+  border-bottom: 2px solid #ffd1dc;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ligne-outils-collection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Jauge de capacité */
+.bloc-capacite-collection {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 240px;
+}
+
+.texte-capacite {
+  font-size: 13.5px;
+  color: #632231;
+  font-family: sans-serif;
+}
+
+.texte-capacite strong {
+  color: #d6336c;
+  font-weight: 800;
+}
+
+.barre-capacite {
+  width: 100%;
+  height: 12px;
+  background-color: #ffe3e8;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #ffccd5;
+}
+
+.remplissage-capacite {
+  height: 100%;
+  background: linear-gradient(90deg, #ff85a2, #e64980);
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+/* Outils droite : recherche & tri */
+.outils-droite-collection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.boite-recherche-squishy {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  border: 2px solid #ffccd5;
+  border-radius: 20px;
+  padding: 6px 14px;
+}
+
+.icone-loupe {
+  font-size: 14px;
+}
+
+.input-recherche-squishy {
+  border: none;
+  outline: none;
+  font-family: sans-serif;
+  font-size: 13px;
+  color: #333;
+  width: 160px;
+}
+
+.select-tri-collection {
+  background: white;
+  border: 2px solid #ffccd5;
+  border-radius: 20px;
+  padding: 8px 14px;
+  font-family: sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  color: #632231;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Lignes de filtres */
+.ligne-filtres-collection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.titre-filtre-collection {
+  font-size: 12.5px;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #a8324a;
+  min-width: 55px;
+}
+
+.groupe-pills-collection {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.filtre-pill {
+  background: white;
+  border: 1.5px solid #ffccd5;
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #a8324a;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.filtre-pill:hover {
+  background-color: #ffe6eb;
+  transform: translateY(-1px);
+}
+
+.filtre-pill.actif {
+  background-color: #e64980;
+  color: white;
+  border-color: #e64980;
+  box-shadow: 0 2px 6px rgba(230, 73, 128, 0.35);
+}
+
+/* --- Grille des cartes Squishies --- */
+.contenu-collection {
+  background-color: #ffe6eb;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  overflow-y: auto;
+  max-height: 58vh;
+}
+
+/* Carte de Squishy */
+.carte-squishy {
+  background-color: #fff9fa;
+  border-radius: 16px;
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-height: 220px;
+}
+
+.carte-squishy:hover {
+  transform: translateY(-4px);
+}
+
+/* En-tête de la carte (Type & Favori) */
+.carte-squishy-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.badge-type-squishy {
+  font-size: 18px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.btn-favori-squishy {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 2px;
+  transition: transform 0.15s ease;
+}
+
+.btn-favori-squishy:hover {
+  transform: scale(1.25);
+}
+
+/* Visuel SVG */
+.squishy-visuel {
+  width: 100%;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svg-squishy {
+  width: 95px;
+  height: 95px;
+  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.12));
+  transition: transform 0.2s ease;
+}
+
+.carte-squishy:hover .svg-squishy {
+  transform: scale(1.08);
+}
+
+/* Détails du Squishy */
+.squishy-details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nom-squishy {
+  margin: 0;
+  font-size: 14.5px;
+  color: #2b262d;
+  font-family: inherit;
+}
+
+.ligne-niveau-rarete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.badge-rarete-carte {
+  font-size: 10px;
+  font-family: sans-serif;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+
+.niveau-squishy {
+  font-size: 11px;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #777;
+}
+
+.badge-statut {
+  font-size: 10.5px;
+  font-family: sans-serif;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 10px;
+  margin-top: 3px;
+  display: inline-block;
+}
+
+.statut-ile {
+  background-color: #e6fcf5;
+  color: #0ca678;
+}
+
+.statut-refuge {
+  background-color: #f1f3f5;
+  color: #868e96;
+}
+
+.statut-mascotte {
+  background-color: #fff9db;
+  color: #f59f00;
+  border: 1px solid #ffe066;
+}
+
+/* --- Raretés (Bordures, Dégradés et Lueurs) --- */
+/* Commun */
+.rarete-commun {
+  border: 2px solid #dee2e6;
+}
+.pill-commun {
+  background-color: #f1f3f5;
+  color: #495057;
+}
+
+/* Peu Commun */
+.rarete-peu-commun {
+  border: 2px solid #69db7c;
+  box-shadow: 0 4px 12px rgba(105, 219, 124, 0.2);
+}
+.pill-peu-commun {
+  background-color: #ebfbee;
+  color: #2b8a3e;
+}
+
+/* Rare */
+.rarete-rare {
+  border: 2px solid #4dabf7;
+  box-shadow: 0 4px 12px rgba(77, 171, 247, 0.25);
+}
+.pill-rare {
+  background-color: #e7f5ff;
+  color: #1971c2;
+}
+
+/* Épique */
+.rarete-epique {
+  border: 2px solid #b197fc;
+  box-shadow: 0 4px 14px rgba(177, 151, 252, 0.3);
+}
+.pill-epique {
+  background-color: #f3f0ff;
+  color: #6741d9;
+}
+
+/* Légendaire (Aura dorée scintillante) */
+.rarete-legendaire {
+  border: 2px solid #ffd43b;
+  background: linear-gradient(180deg, #fffdf2 0%, #fff8db 100%);
+  box-shadow: 0 4px 16px rgba(255, 212, 59, 0.45);
+  animation: aura-legendaire 3s infinite ease-in-out;
+}
+.pill-legendaire {
+  background-color: #fff9db;
+  color: #e67700;
+}
+
+@keyframes aura-legendaire {
+  0%, 100% {
+    box-shadow: 0 4px 14px rgba(255, 212, 59, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 22px rgba(255, 212, 59, 0.7);
+  }
+}
+
+/* --- Emplacements libres (Slots vides) --- */
+.carte-squishy.slot-libre {
+  border: 2px dashed #ffb6c1;
+  background-color: rgba(255, 255, 255, 0.4);
+  cursor: default;
+  justify-content: center;
+  gap: 8px;
+}
+
+.carte-squishy.slot-libre:hover {
+  transform: none;
+  background-color: rgba(255, 255, 255, 0.65);
+}
+
+.slot-libre-contenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.slot-numero {
+  font-size: 11px;
+  color: #adb5bd;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.slot-icone-plus {
+  font-size: 26px;
+  opacity: 0.5;
+  margin: 8px 0;
+}
+
+.slot-texte {
+  font-size: 13px;
+  color: #c2255c;
+  font-weight: bold;
+}
+
+.slot-indication {
+  font-size: 11px;
+  color: #888;
+  font-family: sans-serif;
+}
+
+/* Thème sombre pour la collection */
+body.dark-theme #popup-collection {
+  background-color: #241d28;
+  color: #f3ebf2;
+}
+
+body.dark-theme .barre-collection {
+  background-color: #201724;
+  border-color: #3b2a42;
+}
+
+body.dark-theme .contenu-collection {
+  background-color: #1a131e;
+}
+
+body.dark-theme .carte-squishy {
+  background-color: #2b2233;
+}
+
+body.dark-theme .nom-squishy {
+  color: #f3ebf2;
+}
+
+body.dark-theme .boite-recherche-squishy,
+body.dark-theme .select-tri-collection {
+  background-color: #2b2233;
+  color: #f3ebf2;
+  border-color: #4a344f;
+}
+
+body.dark-theme .input-recherche-squishy {
+  background: transparent;
+  color: #f3ebf2;
+}
+
+body.dark-theme .filtre-pill {
+  background-color: #2b2233;
+  color: #d1b8dc;
   border-color: #4a344f;
 }

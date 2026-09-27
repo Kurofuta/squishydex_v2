@@ -92,3 +92,18 @@ const fermerParametres = () => {
 if (btnFermerParametres) btnFermerParametres.addEventListener('click', fermerParametres);
 if (overlayPopup) overlayPopup.addEventListener('click', fermerParametres);
 
+// ==========================================
+// CODE POUR LA POPUP MA COLLECTION
+// ==========================================
+const btnFermerCollection = document.getElementById('btn-fermer-collection');
+const popupCollection = document.getElementById('popup-collection');
+
+const fermerCollection = () => {
+  if (window.jouerSon) window.jouerSon('fermer');
+  if (overlayPopup) overlayPopup.classList.remove('actif');
+  if (popupCollection) popupCollection.classList.remove('afficher');
+};
+
+if (btnFermerCollection) btnFermerCollection.addEventListener('click', fermerCollection);
+if (overlayPopup) overlayPopup.addEventListener('click', fermerCollection);
+

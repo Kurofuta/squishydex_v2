@@ -102,3 +102,22 @@ if (lienSidebarParametres) {
     if (popupParametres) popupParametres.classList.add('afficher');
   });
 }
+
+// Sélection du lien "Ma Collection" dans le menu latéral (engrenage)
+const lienSidebarCollection = document.getElementById('lien-sidebar-collection') || document.getElementById('lien_sidebar_collection');
+
+if (lienSidebarCollection) {
+  lienSidebarCollection.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    // 1. Fermer le menu latéral
+    const sidebar = document.getElementById('menu-lateral');
+    if (sidebar) sidebar.classList.remove('ouverte');
+
+    // 2. Ouvrir la popup collection et activer le fond sombre
+    const overlay = document.getElementById('overlay-sombre');
+    const popupCollection = document.getElementById('popup-collection');
+    if (overlay) overlay.classList.add('actif');
+    if (popupCollection) popupCollection.classList.add('afficher');
+  });
+}

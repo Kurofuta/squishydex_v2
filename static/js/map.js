@@ -46,8 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 2. Variables de position et de zoom
   let scale = 1;
-  const minScale = 0.5;
-  const maxScale = 3.0;
+  const minScale = 0.8;
+  const maxScale = 1.8;
 
   let translateX = 0;
   let translateY = 0;
@@ -67,21 +67,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 4. Centrage initial de la carte dans l'écran
   function centerMap() {
-    const vpWidth = viewport.clientWidth || window.innerWidth;
-    const vpHeight = viewport.clientHeight || window.innerHeight;
+  const vpWidth = viewport.clientWidth || window.innerWidth;
+  const vpHeight = viewport.clientHeight || window.innerHeight;
 
-    const imgWidth = mapImg?.naturalWidth || mapContainer.offsetWidth || 1920;
-    const imgHeight = mapImg?.naturalHeight || mapContainer.offsetHeight || 1080;
+  const imgWidth = mapImg?.naturalWidth || mapContainer.offsetWidth || 1920;
+  const imgHeight = mapImg?.naturalHeight || mapContainer.offsetHeight || 1080;
 
-    // Définir un zoom initial adapté pour couvrir une bonne partie de l'écran
-    scale = Math.max(vpWidth / imgWidth, vpHeight / imgHeight, 0.85);
+  // 1. LE NIVEAU DE ZOOM INITIAL (Ligne 77)
+  scale = 1.3; // ou 1.2 si tu veux être plus près des maisons
 
-    // Centrer l'image
-    translateX = (vpWidth - imgWidth * scale) / 2;
-    translateY = (vpHeight - imgHeight * scale) / 2;
+  // 2. LE POSITIONNEMENT INITIAL (Lignes 80 et 81)
+  translateX = (vpWidth - imgWidth * scale) / 2;
+  translateY = (vpHeight - imgHeight * scale) / 2;
 
-    updateTransform();
-  }
+  updateTransform();
+}
 
   if (mapImg && !mapImg.complete) {
     mapImg.addEventListener("load", centerMap);
@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const mouseX = e.clientX - rect.left;
       const mouseY = e.clientY - rect.top;
 
-      const zoomIntensity = 0.12;
+      const zoomIntensity = 0.05;
       const delta = e.deltaY < 0 ? 1 : -1;
       const factor = 1 + delta * zoomIntensity;
 

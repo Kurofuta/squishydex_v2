@@ -71,7 +71,7 @@
       <h2>Squishydex</h2>
       <nav class="liens-sidebar">
         <a href="#" id="lien-sidebar-profil">Profil</a>
-        <a href="#">Ma Collection</a>
+        <a href="#" id="lien-sidebar-collection">Ma Collection</a>
         <a href="#" id="lien-sidebar-boutique">Boutique</a>
         <a href="#" id="lien-sidebar-aventure">Aventures</a>
         <a href="#" id="lien-sidebar-parametres">Paramètres</a>
@@ -153,6 +153,465 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- La boîte de la pop-up Ma Collection -->
+    <div id="popup-collection" class="ma-popup-style">
+      <div class="popup-header">
+        <span class="popup-title">🐾 Ma Collection (<span id="compteur-titre-collection">10</span>/50)</span>
+        <button id="btn-fermer-collection" class="btn-control btn-close" aria-label="Fermer">
+          <svg class="icone-fermer-svg" viewBox="0 0 100 100" width="24" height="24">
+            <circle cx="50" cy="50" r="48" fill="#E6192E" />
+            <path d="M31 31 L69 69 M69 31 L31 69" stroke="white" stroke-width="12" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Barre d'outils, jauge & filtres -->
+      <div class="barre-collection">
+        <!-- Ligne 1 : Jauge de capacité + Recherche + Tri -->
+        <div class="ligne-outils-collection">
+          <div class="bloc-capacite-collection">
+            <div class="info-capacite">
+              <span class="texte-capacite">Capacité du refuge : <strong id="texte-capacite-chiffres">10 / 50 🐾</strong></span>
+            </div>
+            <div class="barre-capacite">
+              <div class="remplissage-capacite" id="jauge-capacite" style="width: 20%;"></div>
+            </div>
+          </div>
+
+          <div class="outils-droite-collection">
+            <div class="boite-recherche-squishy">
+              <span class="icone-loupe">🔍</span>
+              <input type="text" id="recherche-squishy" placeholder="Rechercher un squishy..." class="input-recherche-squishy" autocomplete="off" />
+            </div>
+
+            <select id="tri-squishy" class="select-tri-collection">
+              <option value="rarete-desc">Trier : Rareté (Haute ➔ Basse)</option>
+              <option value="rarete-asc">Trier : Rareté (Basse ➔ Haute)</option>
+              <option value="niveau-desc">Trier : Niveau (Plus fort)</option>
+              <option value="niveau-asc">Trier : Niveau (Plus faible)</option>
+              <option value="nom-asc">Trier : Nom (A ➔ Z)</option>
+              <option value="favori">Trier : Favoris d'abord ❤️</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Ligne 2 : Filtres Rareté -->
+        <div class="ligne-filtres-collection">
+          <span class="titre-filtre-collection">Rareté :</span>
+          <div class="groupe-pills-collection" id="filtres-rarete">
+            <button class="filtre-pill actif" data-rarete="all">Tous</button>
+            <button class="filtre-pill pill-commun" data-rarete="commun">⚪ Commun</button>
+            <button class="filtre-pill pill-peu-commun" data-rarete="peu-commun">🟢 Peu Commun</button>
+            <button class="filtre-pill pill-rare" data-rarete="rare">🔵 Rare</button>
+            <button class="filtre-pill pill-epique" data-rarete="epique">🟣 Épique</button>
+            <button class="filtre-pill pill-legendaire" data-rarete="legendaire">🟡 Légendaire</button>
+          </div>
+        </div>
+
+        <!-- Ligne 3 : Filtres Types -->
+        <div class="ligne-filtres-collection">
+          <span class="titre-filtre-collection">Type :</span>
+          <div class="groupe-pills-collection" id="filtres-type">
+            <button class="filtre-pill actif" data-type="all">Tous</button>
+            <button class="filtre-pill" data-type="plante">🌿 Plante</button>
+            <button class="filtre-pill" data-type="eau">💧 Eau</button>
+            <button class="filtre-pill" data-type="feu">🔥 Feu</button>
+            <button class="filtre-pill" data-type="sucre">🍓 Sucré</button>
+            <button class="filtre-pill" data-type="electro">⚡ Électro</button>
+            <button class="filtre-pill" data-type="feerique">✨ Féerique</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grille des squishies -->
+      <div class="contenu-collection" id="grille-collection">
+
+        <!-- 1. Froggo (Plante, Commun) -->
+        <div class="carte-squishy rarete-commun" data-nom="Froggo" data-type="plante" data-rarete="commun" data-rarete-val="1" data-niveau="3" data-favori="1">
+          <div class="carte-squishy-header">
+            <span class="badge-type-squishy" title="Type Plante">🌿</span>
+            <button class="btn-favori-squishy actif" aria-label="Favori" title="Favori">❤️</button>
+          </div>
+          <div class="squishy-visuel">
+            <svg viewBox="0 0 100 100" class="svg-squishy">
+              <circle cx="32" cy="22" r="14" fill="#69db7c"/>
+              <circle cx="68" cy="22" r="14" fill="#69db7c"/>
+              <circle cx="32" cy="22" r="7" fill="#1b4d2e"/>
+              <circle cx="68" cy="22" r="7" fill="#1b4d2e"/>
+              <circle cx="34" cy="20" r="3" fill="#ffffff"/>
+              <circle cx="70" cy="20" r="3" fill="#ffffff"/>
+              <ellipse cx="50" cy="58" rx="42" ry="34" fill="#8ce99a"/>
+              <ellipse cx="50" cy="65" rx="30" ry="22" fill="#d3f9d8"/>
+              <ellipse cx="26" cy="62" rx="7" ry="4" fill="#ff8787" opacity="0.65"/>
+              <ellipse cx="74" cy="62" rx="7" ry="4" fill="#ff8787" opacity="0.65"/>
+              <path d="M42 58 Q50 66 58 58" stroke="#2b8a3e" stroke-width="3" stroke-linecap="round" fill="none"/>
+              <path d="M48 20 C42 10 58 10 52 20 Z" fill="#2f9e44"/>
+            </svg>
+          </div>
+          <div class="squishy-details">
+            <h4 class="nom-squishy">Froggo</h4>
+            <div class="ligne-niveau-rarete">
+              <span class="badge-rarete-carte pill-commun">Commun</span>
+              <span class="niveau-squishy">Nv. 3</span>
+            </div>
+            <span class="badge-statut statut-ile">🏡 Sur l'île</span>
+          </div>
+        </div>
+
+        <!-- 2. Puff-Bunny (Sucré, Commun) -->
+        <div class="carte-squishy rarete-commun" data-nom="Puff-Bunny" data-type="sucre" data-rarete="commun" data-rarete-val="1" data-niveau="1" data-favori="0">
+          <div class="carte-squishy-header">
+            <span class="badge-type-squishy" title="Type Sucré">🍓</span>
+            <button class="btn-favori-squishy" aria-label="Favori" title="Favori">🤍</button>
+          </div>
+          <div class="squishy-visuel">
+            <svg viewBox="0 0 100 100" class="svg-squishy">
+              <ellipse cx="32" cy="18" rx="8" ry="18" fill="#ffc9c9" transform="rotate(-10 32 18)"/>
+              <ellipse cx="32" cy="18" rx="4" ry="12" fill="#ff8787" transform="rotate(-10 32 18)"/>
+              <ellipse cx="68" cy="18" rx="8" ry="18" fill="#ffc9c9" transform="rotate(10 68 18)"/>
+              <ellipse cx="68" cy="18" rx="4" ry="12" fill="#ff8787" transform="rotate(10 68 18)"/>
+              <circle cx="50" cy="58" r="35" fill="#ffe3e3"/>
+              <circle cx="37" cy="52" r="5" fill="#495057"/>
+              <circle cx="63" cy="52" r="5" fill="#495057"/>
+              <circle cx="39" cy="50" r="2" fill="#ffffff"/>
+              <circle cx="65" cy="50" r="2" fill="#ffffff"/>
+              <ellipse cx="27" cy="62" rx="6" ry="4" fill="#ff8787" opacity="0.6"/>
+              <ellipse cx="73" cy="62" rx="6" ry="4" fill="#ff8787" opacity="0.6"/>
+              <polygon points="50,57 47,61 53,61" fill="#e03131"/>
+              <path d="M47 62 Q50 66 53 62" stroke="#495057" stroke-width="2" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <div class="squishy-details">
+            <h4 class="nom-squishy">Puff-Bunny</h4>
+            <div class="ligne-niveau-rarete">
+              <span class="badge-rarete-carte pill-commun">Commun</span>
+              <span class="niveau-squishy">Nv. 1</span>
+            </div>
+            <span class="badge-statut statut-refuge">💤 Au refuge</span>
+          </div>
+        </div>
+
+        <!-- 3. Aqua-Axo (Eau, Peu Commun) -->
+        <div class="carte-squishy rarete-peu-commun" data-nom="Aqua-Axo" data-type="eau" data-rarete="peu-commun" data-rarete-val="2" data-niveau="4" data-favori="0">
+          <div class="carte-squishy-header">
+            <span class="badge-type-squishy" title="Type Eau">💧</span>
+            <button class="btn-favori-squishy" aria-label="Favori" title="Favori">🤍</button>
+          </div>
+          <div class="squishy-visuel">
+            <svg viewBox="0 0 100 100" class="svg-squishy">
+              <!-- Branchies d'axolotl -->
+              <path d="M18 42 Q8 40 12 50 Q8 58 20 54" fill="#ff85a2"/>
+              <path d="M82 42 Q92 40 88 50 Q92 58 80 54" fill="#ff85a2"/>
+              <ellipse cx="50" cy="56" rx="38" ry="32" fill="#99e9f2"/>
+              <ellipse cx="50" cy="64" rx="26" ry="20" fill="#e3fafc"/>
+              <circle cx="36" cy="52" r="5" fill="#1864ab"/>
+              <circle cx="64" cy="52" r="5" fill="#1864ab"/>
+              <circle cx="38" cy="50" r="2" fill="#ffffff"/>
+              <circle cx="66" cy="50" r="2" fill="#ffffff"/>
+              <ellipse cx="26" cy="62" rx="7" ry="4" fill="#ff6b8b" opacity="0.6"/>
+              <ellipse cx="74" cy="62" rx="7" ry="4" fill="#ff6b8b" opacity="0.6"/>
+              <path d="M44 58 Q50 64 56 58" stroke="#1864ab" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <div class="squishy-details">
+            <h4 class="nom-squishy">Aqua-Axo</h4>
+            <div class="ligne-niveau-rarete">
+              <span class="badge-rarete-carte pill-peu-commun">Peu Commun</span>
+              <span class="niveau-squishy">Nv. 4</span>
+            </div>
+            <span class="badge-statut statut-ile">🏡 Sur l'île</span>
+          </div>
+        </div>
+
+        <!-- 4. Sprout-Koala (Plante, Peu Commun) -->
+        <div class="carte-squishy rarete-peu-commun" data-nom="Sprout-Koala" data-type="plante" data-rarete="peu-commun" data-rarete-val="2" data-niveau="2" data-favori="0">
+          <div class="carte-squishy-header">
+            <span class="badge-type-squishy" title="Type Plante">🌿</span>
+            <button class="btn-favori-squishy" aria-label="Favori" title="Favori">🤍</button>
+          </div>
+          <div class="squishy-visuel">
+            <svg viewBox="0 0 100 100" class="svg-squishy">
+              <circle cx="22" cy="38" r="16" fill="#adb5bd"/>
+              <circle cx="22" cy="38" r="10" fill="#dee2e6"/>
+              <circle cx="78" cy="38" r="16" fill="#adb5bd"/>
+              <circle cx="78" cy="38" r="10" fill="#dee2e6"/>
+              <circle cx="50" cy="58" r="34" fill="#ced4da"/>
+              <!-- Petite pousse verte sur la tête -->
+              <path d="M50 24 Q44 14 36 18 Q44 26 49 24" fill="#51cf66"/>
+              <path d="M50 24 Q56 14 64 18 Q56 26 51 24" fill="#40c057"/>
+              <circle cx="36" cy="52" r="4.5" fill="#212529"/>
+              <circle cx="64" cy="52" r="4.5" fill="#212529"/>
+              <circle cx="37.5" cy="50.5" r="1.8" fill="#ffffff"/>
+              <circle cx="65.5" cy="50.5" r="1.8" fill="#ffffff"/>
+              <ellipse cx="50" cy="59" rx="8" ry="12" fill="#343a40"/>
+              <ellipse cx="28" cy="64" rx="6" ry="3.5" fill="#ff8787" opacity="0.6"/>
+              <ellipse cx="72" cy="64" rx="6" ry="3.5" fill="#ff8787" opacity="0.6"/>
+            </svg>
+          </div>
+          <div class="squishy-details">
+            <h4 class="nom-squishy">Sprout-Koala</h4>
+            <div class="ligne-niveau-rarete">
+              <span class="badge-rarete-carte pill-peu-commun">Peu Commun</span>
+              <span class="niveau-squishy">Nv. 2</span>
+            </div>
+            <span class="badge-statut statut-refuge">💤 Au refuge</span>
+          </div>
+        </div>
+
+        <!-- 5. Sparky-Mouse (Électro, Rare) -->
+        <div class="carte-squishy rarete-rare" data-nom="Sparky-Mouse" data-type="electro" data-rarete="rare" data-rarete-val="3" data-niveau="6" data-favori="1">
+          <div class="carte-squishy-header">
+            <span class="badge-type-squishy" title="Type Électro">⚡</span>
+            <button class="btn-favori-squishy actif" aria-label="Favori" title="Favori">❤️</button>
+          </div>
+          <div class="squishy-visuel">
+            <svg viewBox="0 0 100 100" class="svg-squishy">
+              <polygon points="26,12 36,36 18,34" fill="#ffd43b" stroke="#f59f00" stroke-width="2"/>
+              <polygon points="74,12 64,36 82,34" fill="#ffd43b" stroke="#f59f00" stroke-width="2"/>
+              <circle cx="50" cy="58" r="35" fill="#ffe066"/>
+              <circle cx="36" cy="52" r="5" fill="#212529"/>
+              <circle cx="64" cy="52" r="5" fill="#212529"/>
+              <circle cx="38" cy="50" r="2" fill="#ffffff"/>
+              <circle cx="66" cy="50" r="2" fill="#ffffff"/>
+              <!-- Joues éclairs rouges -->
+              <circle cx="25" cy="64" r="8" fill="#ff6b6b"/>
+              <circle cx="75" cy="64" r="8" fill="#ff6b6b"/>
+              <polygon points="50,56 48,59 52,59" fill="#212529"/>
+              <path d="M45 61 Q50 65 55 61" stroke="#212529" stroke-width="2" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <div class="squishy-details">
+            <h4 class="nom-squishy">Sparky-Mouse</h4>
+            <div class="ligne-niveau-rarete">
+              <span class="badge-rarete-carte pill-rare">Rare</span>
+              <span class="niveau-squishy">Nv. 6</span>
+            </div>
+            <span class="badge-statut statut-ile">🏡 Sur l'île</span>
+          </div>
+        </div>
+
+        <!-- 6. Blaze-Fox (Feu, Rare) -->
+        <div class="carte-squishy rarete-rare" data-nom="Blaze-Fox" data-type="feu" data-rarete="rare" data-rarete-val="3" data-niveau="5" data-favori="0">
+          <div class="carte-squishy-header">
+            <span class="badge-type-squishy" title="Type Feu">🔥</span>
+            <button class="btn-favori-squishy" aria-label="Favori" title="Favori">🤍</button>
+          </div>
+          <div class="squishy-visuel">
+            <svg viewBox="0 0 100 100" class="svg-squishy">
+              <polygon points="20,16 38,36 16,40" fill="#f76707"/>
+              <polygon points="23,24 35,36 21,38" fill="#ffe8cc"/>
+              <polygon points="80,16 62,36 84,40" fill="#f76707"/>
+              <polygon points="77,24 65,36 79,38" fill="#ffe8cc"/>
+              <circle cx="50" cy="58" r="35" fill="#ff922b"/>
+              <path d="M22 64 Q50 88 78 64 Q68 50 50 62 Q32 50 22 64 Z" fill="#fff4e6"/>
+              <circle cx="36" cy="50" r="5" fill="#495057"/>
+              <circle cx="64" cy="50" r="5" fill="#495057"/>
+              <circle cx="38" cy="48" r="2" fill="#ffffff"/>
+              <circle cx="66" cy="48" r="2" fill="#ffffff"/>
+              <polygon points="50,56 46,60 54,60" fill="#212529"/>
+              <!-- Petite flammèche au sommet -->
+              <path d="M50 26 Q46 16 50 10 Q56 18 50 26 Z" fill="#ffd43b"/>
+            </svg>
+          </div>
+          <div class="squishy-details">
+            <h4 class="nom-squishy">Blaze-Fox</h4>
+            <div class="ligne-niveau-rarete">
+              <span class="badge-rarete-carte pill-rare">Rare</span>
+              <span class="niveau-squishy">Nv. 5</span>
+            </div>
+            <span class="badge-statut statut-refuge">💤 Au refuge</span>
+          </div>
+        </div>
+
+        <!-- 7. Berry-Cat (Sucré, Épique) -->
+        <div class="carte-squishy rarete-epique" data-nom="Berry-Cat" data-type="sucre" data-rarete="epique" data-rarete-val="4" data-niveau="8" data-favori="1">
+          <div class="carte-squishy-header">
+            <span class="badge-type-squishy" title="Type Sucré">🍓</span>
+            <button class="btn-favori-squishy actif" aria-label="Favori" title="Favori">❤️</button>
+          </div>
+          <div class="squishy-visuel">
+            <svg viewBox="0 0 100 100" class="svg-squishy">
+              <polygon points="22,18 40,36 18,38" fill="#e64980"/>
+              <polygon points="25,25 37,36 22,37" fill="#fcc2d7"/>
+              <polygon points="78,18 60,36 82,38" fill="#e64980"/>
+              <polygon points="75,25 63,36 78,37" fill="#fcc2d7"/>
+              <circle cx="50" cy="58" r="35" fill="#f783ac"/>
+              <circle cx="36" cy="52" r="5" fill="#495057"/>
+              <circle cx="64" cy="52" r="5" fill="#495057"/>
+              <circle cx="38" cy="50" r="2.2" fill="#ffffff"/>
+              <circle cx="66" cy="50" r="2.2" fill="#ffffff"/>
+              <!-- Moustaches -->
+              <line x1="22" y1="56" x2="10" y2="54" stroke="#c2255c" stroke-width="2"/>
+              <line x1="22" y1="62" x2="10" y2="64" stroke="#c2255c" stroke-width="2"/>
+              <line x1="78" y1="56" x2="90" y2="54" stroke="#c2255c" stroke-width="2"/>
+              <line x1="78" y1="62" x2="90" y2="64" stroke="#c2255c" stroke-width="2"/>
+              <!-- Petite fraise sur la tête -->
+              <ellipse cx="50" cy="23" rx="7" ry="9" fill="#ff6b6b"/>
+              <polygon points="50,14 47,18 53,18" fill="#51cf66"/>
+              <ellipse cx="26" cy="64" rx="6" ry="4" fill="#e64980" opacity="0.6"/>
+              <ellipse cx="74" cy="64" rx="6" ry="4" fill="#e64980" opacity="0.6"/>
+              <path d="M46 60 Q50 63 54 60" stroke="#495057" stroke-width="2" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <div class="squishy-details">
+            <h4 class="nom-squishy">Berry-Cat</h4>
+            <div class="ligne-niveau-rarete">
+              <span class="badge-rarete-carte pill-epique">Épique</span>
+              <span class="niveau-squishy">Nv. 8</span>
+            </div>
+            <span class="badge-statut statut-ile">🏡 Sur l'île</span>
+          </div>
+        </div>
+
+        <!-- 8. Astral-Owl (Féerique, Épique) -->
+        <div class="carte-squishy rarete-epique" data-nom="Astral-Owl" data-type="feerique" data-rarete="epique" data-rarete-val="4" data-niveau="7" data-favori="0">
+          <div class="carte-squishy-header">
+            <span class="badge-type-squishy" title="Type Féerique">✨</span>
+            <button class="btn-favori-squishy" aria-label="Favori" title="Favori">🤍</button>
+          </div>
+          <div class="squishy-visuel">
+            <svg viewBox="0 0 100 100" class="svg-squishy">
+              <polygon points="26,18 38,34 18,32" fill="#7950f2"/>
+              <polygon points="74,18 62,34 82,32" fill="#7950f2"/>
+              <circle cx="50" cy="58" r="35" fill="#9775fa"/>
+              <circle cx="34" cy="52" r="11" fill="#eebefa"/>
+              <circle cx="66" cy="52" r="11" fill="#eebefa"/>
+              <circle cx="35" cy="52" r="6" fill="#3b1377"/>
+              <circle cx="65" cy="52" r="6" fill="#3b1377"/>
+              <circle cx="37" cy="50" r="2.5" fill="#ffffff"/>
+              <circle cx="67" cy="50" r="2.5" fill="#ffffff"/>
+              <polygon points="50,56 46,63 54,63" fill="#ffd43b"/>
+              <!-- Lune étoilée sur le front -->
+              <path d="M48 24 A 6 6 0 0 0 54 32 A 7 7 0 0 1 48 24 Z" fill="#ffd43b"/>
+            </svg>
+          </div>
+          <div class="squishy-details">
+            <h4 class="nom-squishy">Astral-Owl</h4>
+            <div class="ligne-niveau-rarete">
+              <span class="badge-rarete-carte pill-epique">Épique</span>
+              <span class="niveau-squishy">Nv. 7</span>
+            </div>
+            <span class="badge-statut statut-refuge">💤 Au refuge</span>
+          </div>
+        </div>
+
+        <!-- 9. Solar-Lion (Feu, Légendaire) -->
+        <div class="carte-squishy rarete-legendaire" data-nom="Solar-Lion" data-type="feu" data-rarete="legendaire" data-rarete-val="5" data-niveau="10" data-favori="1">
+          <div class="carte-squishy-header">
+            <span class="badge-type-squishy" title="Type Feu">🔥</span>
+            <button class="btn-favori-squishy actif" aria-label="Favori" title="Favori">❤️</button>
+          </div>
+          <div class="squishy-visuel">
+            <svg viewBox="0 0 100 100" class="svg-squishy">
+              <!-- Crinière solaire étincelante -->
+              <circle cx="50" cy="56" r="42" fill="#fd7e14" opacity="0.9"/>
+              <circle cx="50" cy="56" r="37" fill="#f76707"/>
+              <circle cx="50" cy="56" r="30" fill="#ffd43b"/>
+              <circle cx="36" cy="52" r="5" fill="#343a40"/>
+              <circle cx="64" cy="52" r="5" fill="#343a40"/>
+              <circle cx="38" cy="50" r="2.2" fill="#ffffff"/>
+              <circle cx="66" cy="50" r="2.2" fill="#ffffff"/>
+              <!-- Couronne dorée -->
+              <polygon points="36,24 43,14 50,22 57,14 64,24" fill="#ffd43b" stroke="#e67700" stroke-width="1.5"/>
+              <ellipse cx="28" cy="62" rx="6" ry="4" fill="#ff6b6b" opacity="0.6"/>
+              <ellipse cx="72" cy="62" rx="6" ry="4" fill="#ff6b6b" opacity="0.6"/>
+              <polygon points="50,56 46,61 54,61" fill="#792e00"/>
+              <path d="M45 62 Q50 67 55 62" stroke="#792e00" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <div class="squishy-details">
+            <h4 class="nom-squishy">Solar-Lion</h4>
+            <div class="ligne-niveau-rarete">
+              <span class="badge-rarete-carte pill-legendaire">Légendaire</span>
+              <span class="niveau-squishy">Nv. 10</span>
+            </div>
+            <span class="badge-statut statut-mascotte">👑 Mascotte</span>
+          </div>
+        </div>
+
+        <!-- 10. Tidal-Dragon (Eau, Légendaire) -->
+        <div class="carte-squishy rarete-legendaire" data-nom="Tidal-Dragon" data-type="eau" data-rarete="legendaire" data-rarete-val="5" data-niveau="12" data-favori="1">
+          <div class="carte-squishy-header">
+            <span class="badge-type-squishy" title="Type Eau">💧</span>
+            <button class="btn-favori-squishy actif" aria-label="Favori" title="Favori">❤️</button>
+          </div>
+          <div class="squishy-visuel">
+            <svg viewBox="0 0 100 100" class="svg-squishy">
+              <!-- Cornes et petites ailes -->
+              <path d="M20 28 Q24 10 36 20 Z" fill="#22b8cf"/>
+              <path d="M80 28 Q76 10 64 20 Z" fill="#22b8cf"/>
+              <ellipse cx="50" cy="58" rx="36" ry="32" fill="#15aabf"/>
+              <ellipse cx="50" cy="64" rx="24" ry="20" fill="#c5f6fa"/>
+              <circle cx="36" cy="52" r="5" fill="#0b7285"/>
+              <circle cx="64" cy="52" r="5" fill="#0b7285"/>
+              <circle cx="38" cy="50" r="2.5" fill="#ffffff"/>
+              <circle cx="66" cy="50" r="2.5" fill="#ffffff"/>
+              <!-- Joyau céleste sur le front -->
+              <polygon points="50,30 45,38 50,44 55,38" fill="#ffd43b"/>
+              <ellipse cx="28" cy="64" rx="6" ry="3.5" fill="#ff6b8b" opacity="0.6"/>
+              <ellipse cx="72" cy="64" rx="6" ry="3.5" fill="#ff6b8b" opacity="0.6"/>
+              <path d="M45 60 Q50 65 55 60" stroke="#0b7285" stroke-width="2" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <div class="squishy-details">
+            <h4 class="nom-squishy">Tidal-Dragon</h4>
+            <div class="ligne-niveau-rarete">
+              <span class="badge-rarete-carte pill-legendaire">Légendaire</span>
+              <span class="niveau-squishy">Nv. 12</span>
+            </div>
+            <span class="badge-statut statut-ile">🏡 Sur l'île</span>
+          </div>
+        </div>
+
+        <!-- Emplacements libres (Exemples jusqu'aux 50 places) -->
+        <div class="carte-squishy slot-libre" data-nom="Slot 11" data-rarete="libre" data-type="libre">
+          <div class="slot-libre-contenu">
+            <span class="slot-numero">#11</span>
+            <span class="slot-icone-plus">➕</span>
+            <span class="slot-texte">Place libre</span>
+            <span class="slot-indication">Ouvre un coffre !</span>
+          </div>
+        </div>
+
+        <div class="carte-squishy slot-libre" data-nom="Slot 12" data-rarete="libre" data-type="libre">
+          <div class="slot-libre-contenu">
+            <span class="slot-numero">#12</span>
+            <span class="slot-icone-plus">➕</span>
+            <span class="slot-texte">Place libre</span>
+            <span class="slot-indication">Ouvre un coffre !</span>
+          </div>
+        </div>
+
+        <div class="carte-squishy slot-libre" data-nom="Slot 13" data-rarete="libre" data-type="libre">
+          <div class="slot-libre-contenu">
+            <span class="slot-numero">#13</span>
+            <span class="slot-icone-plus">➕</span>
+            <span class="slot-texte">Place libre</span>
+            <span class="slot-indication">Ouvre un coffre !</span>
+          </div>
+        </div>
+
+        <div class="carte-squishy slot-libre" data-nom="Slot 14" data-rarete="libre" data-type="libre">
+          <div class="slot-libre-contenu">
+            <span class="slot-numero">#14</span>
+            <span class="slot-icone-plus">➕</span>
+            <span class="slot-texte">Place libre</span>
+            <span class="slot-indication">Ouvre un coffre !</span>
+          </div>
+        </div>
+
+        <div class="carte-squishy slot-libre" data-nom="Slot 15" data-rarete="libre" data-type="libre">
+          <div class="slot-libre-contenu">
+            <span class="slot-numero">#15</span>
+            <span class="slot-icone-plus">➕</span>
+            <span class="slot-texte">Place libre</span>
+            <span class="slot-indication">Ouvre un coffre !</span>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -714,15 +1173,19 @@
         </div>
       </div>
     </div>
-  
+
 
     <main id="map_viewport">
-      <section>
-        <article>
-          <div></div>
-        </article>
-      </section>
-    </main>
+  <div class="map-container">
+    <!-- 1. L'image de l'île en fond -->
+    <img src="static/images/islands/main_island.png" alt="Carte du monde" class="map-bg" draggable="false">
+
+    <!-- 2. Ta maison posée sur l'île -->
+    <div class="batiment-ile maison-1">
+      <img src="static/images/houses/main_house.png" alt="Maison Principale">
+    </div>
+  </div>
+</main>
 
     <footer>
       <button id="btn-ouvrir-popup" class="btn_aventure">
@@ -743,5 +1206,6 @@
     <script src="static/js/parametres.js"></script>
     <script src="static\js\exp.js"></script>
     <script src="static/js/map.js"></script>
+    <script src="static/js/collection.js"></script>
   </body>
 </html>
