@@ -1176,16 +1176,97 @@
 
 
     <main id="map_viewport">
-  <div class="map-container">
-    <!-- 1. L'image de l'île en fond -->
-    <img src="static/images/islands/main_island.png" alt="Carte du monde" class="map-bg" draggable="false">
+      <!-- Ciel avec oiseaux animés en SVG par groupes de 3 à 4 -->
+      <div class="ciel-oiseaux" aria-hidden="true">
+        <!-- Groupe 1 : 4 oiseaux en formation V -->
+        <div class="groupe-oiseaux groupe-1">
+          <div class="oiseau oiseau-leader">
+            <svg viewBox="0 0 36 20" class="svg-oiseau">
+              <path class="aile-g" d="M18 12 C12 3, 4 6, 1 13" />
+              <path class="aile-d" d="M18 12 C24 3, 32 6, 35 13" />
+            </svg>
+          </div>
+          <div class="oiseau oiseau-ailier-haut">
+            <svg viewBox="0 0 36 20" class="svg-oiseau">
+              <path class="aile-g" d="M18 12 C12 3, 4 6, 1 13" />
+              <path class="aile-d" d="M18 12 C24 3, 32 6, 35 13" />
+            </svg>
+          </div>
+          <div class="oiseau oiseau-ailier-bas">
+            <svg viewBox="0 0 36 20" class="svg-oiseau">
+              <path class="aile-g" d="M18 12 C12 3, 4 6, 1 13" />
+              <path class="aile-d" d="M18 12 C24 3, 32 6, 35 13" />
+            </svg>
+          </div>
+          <div class="oiseau oiseau-suiveur">
+            <svg viewBox="0 0 36 20" class="svg-oiseau">
+              <path class="aile-g" d="M18 12 C12 3, 4 6, 1 13" />
+              <path class="aile-d" d="M18 12 C24 3, 32 6, 35 13" />
+            </svg>
+          </div>
+        </div>
 
-    <!-- 2. Ta maison posée sur l'île -->
-    <div class="batiment-ile maison-1">
-      <img src="static/images/houses/main_house.png" alt="Maison Principale">
-    </div>
-  </div>
-</main>
+        <!-- Groupe 2 : 3 oiseaux en formation V (arrière-plan plus lointain) -->
+        <div class="groupe-oiseaux groupe-2">
+          <div class="oiseau oiseau-leader">
+            <svg viewBox="0 0 36 20" class="svg-oiseau">
+              <path class="aile-g" d="M18 12 C12 3, 4 6, 1 13" />
+              <path class="aile-d" d="M18 12 C24 3, 32 6, 35 13" />
+            </svg>
+          </div>
+          <div class="oiseau oiseau-ailier-haut">
+            <svg viewBox="0 0 36 20" class="svg-oiseau">
+              <path class="aile-g" d="M18 12 C12 3, 4 6, 1 13" />
+              <path class="aile-d" d="M18 12 C24 3, 32 6, 35 13" />
+            </svg>
+          </div>
+          <div class="oiseau oiseau-ailier-bas">
+            <svg viewBox="0 0 36 20" class="svg-oiseau">
+              <path class="aile-g" d="M18 12 C12 3, 4 6, 1 13" />
+              <path class="aile-d" d="M18 12 C24 3, 32 6, 35 13" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Groupe 3 : 4 oiseaux en formation V (vol régulier) -->
+        <div class="groupe-oiseaux groupe-3">
+          <div class="oiseau oiseau-leader">
+            <svg viewBox="0 0 36 20" class="svg-oiseau">
+              <path class="aile-g" d="M18 12 C12 3, 4 6, 1 13" />
+              <path class="aile-d" d="M18 12 C24 3, 32 6, 35 13" />
+            </svg>
+          </div>
+          <div class="oiseau oiseau-ailier-haut">
+            <svg viewBox="0 0 36 20" class="svg-oiseau">
+              <path class="aile-g" d="M18 12 C12 3, 4 6, 1 13" />
+              <path class="aile-d" d="M18 12 C24 3, 32 6, 35 13" />
+            </svg>
+          </div>
+          <div class="oiseau oiseau-ailier-bas">
+            <svg viewBox="0 0 36 20" class="svg-oiseau">
+              <path class="aile-g" d="M18 12 C12 3, 4 6, 1 13" />
+              <path class="aile-d" d="M18 12 C24 3, 32 6, 35 13" />
+            </svg>
+          </div>
+          <div class="oiseau oiseau-suiveur">
+            <svg viewBox="0 0 36 20" class="svg-oiseau">
+              <path class="aile-g" d="M18 12 C12 3, 4 6, 1 13" />
+              <path class="aile-d" d="M18 12 C24 3, 32 6, 35 13" />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-container">
+        <!-- 1. L'image de l'île en fond -->
+        <img src="static/images/islands/main_island.png" alt="Carte du monde" class="map-bg" draggable="false">
+
+        <!-- 2. Ta maison posée sur l'île -->
+        <div class="batiment-ile maison-1">
+          <img src="static/images/houses/main_house.png" alt="Maison Principale">
+        </div>
+      </div>
+    </main>
 
     <footer>
       <button id="btn-ouvrir-popup" class="btn_aventure">

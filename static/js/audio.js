@@ -30,7 +30,7 @@ window.sonsJeu = {
   coffre: creerElementAudio('static/sounds/coffre.mp3', 0.5),
 
   // Musique de fond (boucle infinie)
-  musique: creerElementAudio('static/sounds/musique.mp3', 0.3, true)
+  musique: creerElementAudio('static/sounds/sound play/musique_home.mp3', 0.3, true)
 };
 
 // Rétrocompatibilité pour les scripts existants
@@ -50,3 +50,5 @@ window.jouerSon = (nomSon) => {
     audio.play().catch(() => {});
   }
 };
+
+
