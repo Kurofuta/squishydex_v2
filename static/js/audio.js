@@ -30,7 +30,7 @@ window.sonsJeu = {
   coffre: creerElementAudio('static/sounds/coffre.mp3', 0.5),
 
   // Musique de fond (boucle infinie)
-  musique: creerElementAudio('static/sounds/sound play/musique_home.mp3', 0.3, true)
+  musique: creerElementAudio('static/sounds/sound play/bluelike_u-5-strawberry-mousse-cute-bgm-274668.mp3', 0.3, true)
 };
 
 // Rétrocompatibilité pour les scripts existants

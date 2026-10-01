@@ -1900,7 +1900,18 @@ body.dark-theme .param-select {
   transition: transform 0.2s ease;
 }
 
-.carte-squishy:hover .svg-squishy {
+.squishy-visuel img,
+.img-squishy {
+  max-width: 95px;
+  max-height: 95px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.12));
+  transition: transform 0.2s ease;
+}
+
+.carte-squishy:hover .svg-squishy,
+.carte-squishy:hover .squishy-visuel img,
+.carte-squishy:hover .img-squishy {
   transform: scale(1.08);
 }
 

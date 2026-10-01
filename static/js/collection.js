@@ -113,12 +113,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const valB = parseInt(b.getAttribute('data-rarete-val') || '0', 10);
         return valA - valB;
       } else if (critere === 'niveau-desc') {
-        const nivA = parseInt(a.getAttribute('data-niveau') || '0', 10);
-        const nivB = parseInt(b.getAttribute('data-niveau') || '0', 10);
+        const nivA = parseInt(a.getAttribute('data-niveau') || '1', 10);
+        const nivB = parseInt(b.getAttribute('data-niveau') || '1', 10);
         return nivB - nivA;
       } else if (critere === 'niveau-asc') {
-        const nivA = parseInt(a.getAttribute('data-niveau') || '0', 10);
-        const nivB = parseInt(b.getAttribute('data-niveau') || '0', 10);
+        const nivA = parseInt(a.getAttribute('data-niveau') || '1', 10);
+        const nivB = parseInt(b.getAttribute('data-niveau') || '1', 10);
         return nivA - nivB;
       } else if (critere === 'nom-asc') {
         const nomA = (a.getAttribute('data-nom') || '').toLowerCase();
